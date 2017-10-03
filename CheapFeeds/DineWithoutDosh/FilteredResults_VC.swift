@@ -66,9 +66,6 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.costLabel.text = ("Average price of a meal: " + pulledSearch[indexPath.row].currency +  pulledSearch[indexPath.row].averageCostPP.description)
         
-            let fontSize = cell.restLabel.font.pointSize
-            cell.restLabel.font = UIFont(name: "Superclarendon-Bold", size: fontSize)
-        
         return cell
     }
     

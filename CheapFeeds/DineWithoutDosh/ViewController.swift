@@ -11,8 +11,10 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
    
-    @IBOutlet weak var lab: UILabel!
+  
     @IBOutlet weak var textf: UITextField!
+    
+    @IBOutlet weak var lab: UILabel!
     @IBOutlet weak var cuisinePicker: UIPickerView!
 
     
@@ -81,15 +83,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             for items in restaurantInfo{
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
                     if(pickedCuisine == items.cuisines){
-                    print(items.name)
-                    print(items.averageCostPP)
-                    print(items.cuisines)
+                        let aa = items.id
+                        let bb = items.averageCostPP
+                        let cc = items.currency
+                        let dd = items.mainImage
+                        let ee = items.cuisines
+                        let ff = items.url
+                        let gg = items.address
+                        let hh = items.city
+                        let ii = items.menuUrl
+                        let jj = items.name
+                        let kk = items.aggregateRating
+                        let lat = items.latitude
+                        let long = items.longitude
+                        
+                        let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk)
+                        
+                        filteredAnyByCost.append(pop)
                     }
                 }
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
                 if(pickedCuisine == "Any"){
-                        //print(items.latitude + items.longitude)
-                        //print(items.averageCostPP)
                     
                     let aa = items.id
                     let bb = items.averageCostPP
@@ -117,19 +131,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         else{
             lab.text = "Please enter a number"
         }
-        //self.performSegue(withIdentifier: "push to results", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        if(segue.identifier == "push to results" ){
         let DestViewController: FilteredResults_VC = segue.destination as! FilteredResults_VC
         
         DestViewController.pulledSearch = filteredAnyByCost
         DestViewController.originLat = centerLatitude
         DestViewController.originLong = centerLongitude
-        filteredAnyByCost.removeAll()
- 
+            filteredAnyByCost.removeAll()
+        }
+        if(segue.identifier == "push to wheel" ){
+        let DestViewController: RandomGenerator = segue.destination as! RandomGenerator
+        DestViewController.dataToSelectFrom = restaurantInfo
+        }
     }
-    
+ 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first{
             lats = location.coordinate.latitude.hashValue
