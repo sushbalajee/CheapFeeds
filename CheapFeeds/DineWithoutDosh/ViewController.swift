@@ -82,8 +82,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         if let budget = Int(textf.text!){
             for items in restaurantInfo{
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
-                    if(pickedCuisine == items.cuisines){
-                        let aa = items.id
+                    //if(pickedCuisine == items.cuisines){
+                    if(items.cuisines.contains(pickedCuisine)){
+                    let aa = items.id
                         let bb = items.averageCostPP
                         let cc = items.currency
                         let dd = items.mainImage

@@ -34,6 +34,9 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         resultsTableView.rowHeight = (100.00)
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

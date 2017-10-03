@@ -12,8 +12,8 @@ import MapKit
 
 class DetailView_VC: UIViewController {
 
-    @IBOutlet weak var rateView: UIView!
-    @IBOutlet weak var costView: UIView!
+    @IBOutlet weak var urlLink: UIButton!
+    @IBOutlet weak var menuLink: UIButton!
     @IBOutlet weak var detailViewMain: UIView!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var urlView: UIView!
@@ -26,44 +26,45 @@ class DetailView_VC: UIViewController {
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var map: MKMapView!
     
-    @IBAction func urlLink(_ sender: Any) {
-        for it in dataFromResults{
-            openUrl(urlStr: it.url)
-        }
-    }
-    @IBAction func menuLink(_ sender: Any) {
-        for it in dataFromResults{
-            openUrl(urlStr: it.menuUrl)
-        }
-    }
-    
-    func openUrl(urlStr:String!) {
-        
-        if let url = NSURL(string:urlStr) {
-            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
-        }
-        
-    }
-    
     var dataFromResults = [RestaurantData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        detailViewMain.layer.shadowColor = UIColor.black.cgColor
+        detailViewMain.layer.shadowOpacity = 1
+        detailViewMain.layer.shadowOffset = CGSize.zero
+        detailViewMain.layer.shadowRadius = 10
+        detailViewMain.layer.cornerRadius = 10
+        
+        locationView.layer.shadowColor = UIColor.black.cgColor
+        locationView.layer.shadowOpacity = 1
+        locationView.layer.shadowOffset = CGSize.zero
+        locationView.layer.shadowRadius = 10
         locationView.layer.borderWidth = 1
         locationView.layer.borderColor = UIColor.black.cgColor
-        menuView.layer.cornerRadius = 20
-        urlView.layer.cornerRadius = 20
-        map.layer.cornerRadius = 10
-        headerView.layer.cornerRadius = 40
         locationView.layer.cornerRadius = 10
-        detailViewMain.layer.cornerRadius = 10
-        costView.layer.cornerRadius = 10
-        rateView.layer.cornerRadius = 10
         
-        let fontSize = mainTitle.font.pointSize
-        mainTitle.font = UIFont(name: "KohinoorBangla-Regular", size: fontSize)
-
+        menuView.layer.shadowColor = UIColor.black.cgColor
+        menuView.layer.shadowOpacity = 1
+        menuView.layer.shadowOffset = CGSize.zero
+        menuView.layer.shadowRadius = 10
+        menuView.layer.cornerRadius = 20
+        
+        urlView.layer.shadowColor = UIColor.black.cgColor
+        urlView.layer.shadowOpacity = 1
+        urlView.layer.shadowOffset = CGSize.zero
+        urlView.layer.shadowRadius = 10
+        urlView.layer.cornerRadius = 20
+        
+        headerView.layer.shadowColor = UIColor.black.cgColor
+        headerView.layer.shadowOpacity = 1
+        headerView.layer.shadowOffset = CGSize.zero
+        headerView.layer.shadowRadius = 10
+        headerView.layer.cornerRadius = 40
+        
+        map.layer.cornerRadius = 10
+        
         for item in dataFromResults {
             
             let loc = CLLocationCoordinate2D(latitude: Double(item.latitude)!, longitude: Double(item.longitude)!)
@@ -81,8 +82,6 @@ class DetailView_VC: UIViewController {
             
             map.addAnnotation(annotation)
             
-            
-            
             print(loc)
             
             mainTitle.lineBreakMode = .byWordWrapping
@@ -97,24 +96,27 @@ class DetailView_VC: UIViewController {
             averageCostLabel.text = (item.currency + item.averageCostPP.description)
             ratingLabel.text = (item.aggregateRating! + "/5.0")
         }
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        if(segue.identifier == "push menu" ){
+            let DestViewController: Links_VC = segue.destination as! Links_VC
+         
+            for it in dataFromResults{
+            DestViewController.linkkString = it.menuUrl
+            }
+        }
+        if(segue.identifier == "push zomato" ){
+            let DestViewController: Links_VC = segue.destination as! Links_VC
+            
+            for it in dataFromResults{
+                DestViewController.linkkString = it.url
+            }
+        }
     }
-    */
-
 }
