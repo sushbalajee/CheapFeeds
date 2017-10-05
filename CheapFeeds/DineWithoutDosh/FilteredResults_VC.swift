@@ -27,16 +27,11 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(pulledSearch.count)
-        print(originLat.description + " " + originLong.description )
-        
+  
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         resultsTableView.rowHeight = (100.00)
-        
-        
-        
+   
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,7 +61,6 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         }
 
         cell.restLabel.text = pulledSearch[indexPath.row].name
-        
         cell.costLabel.text = ("Average price of a meal: " + pulledSearch[indexPath.row].currency +  pulledSearch[indexPath.row].averageCostPP.description)
         
         return cell
@@ -93,8 +87,6 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         passOnData.append(populateForDetail)
         self.performSegue(withIdentifier: "push to detail view", sender: self)
     }
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DestViewController: DetailView_VC = segue.destination as! DetailView_VC

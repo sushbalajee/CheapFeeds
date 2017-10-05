@@ -31,6 +31,11 @@ class DetailView_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainTitle.layer.shadowColor = UIColor.black.cgColor
+        mainTitle.layer.shadowOpacity = 1
+        mainTitle.layer.shadowOffset = CGSize.zero
+        mainTitle.layer.shadowRadius = 10
+        
         detailViewMain.layer.shadowColor = UIColor.black.cgColor
         detailViewMain.layer.shadowOpacity = 1
         detailViewMain.layer.shadowOffset = CGSize.zero
@@ -81,9 +86,7 @@ class DetailView_VC: UIViewController {
             annotation.subtitle = item.cuisines
             
             map.addAnnotation(annotation)
-            
-            print(loc)
-            
+
             mainTitle.lineBreakMode = .byWordWrapping
             mainTitle.numberOfLines = 0
             mainTitle.text = item.name
