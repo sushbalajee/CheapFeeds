@@ -31,6 +31,8 @@ class DetailView_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         mainTitle.layer.shadowColor = UIColor.black.cgColor
         mainTitle.layer.shadowOpacity = 1
         mainTitle.layer.shadowOffset = CGSize.zero
@@ -98,6 +100,7 @@ class DetailView_VC: UIViewController {
             cuisineLabel.text = item.cuisines
             averageCostLabel.text = (item.currency + item.averageCostPP.description)
             ratingLabel.text = (item.aggregateRating! + "/5.0")
+            
         }
     }
 

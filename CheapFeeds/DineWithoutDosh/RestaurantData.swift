@@ -22,10 +22,10 @@ class RestaurantData{
     var longitude: String
     var menuUrl: String
     var name: String
-    //var phoneNumber: String
+    var phoneNumber: String?
     var aggregateRating: String?
     
-    init(id: String, averageCostPP: Int, currency: String, mainImage: String?, cuisines: String, url: String, address: String, city: String, latitude: String, longitude: String, menuUrl: String, name: String, aggregateRating: String?){
+    init(id: String, averageCostPP: Int, currency: String, mainImage: String?, cuisines: String, url: String, address: String, city: String, latitude: String, longitude: String, menuUrl: String, name: String, aggregateRating: String?, phoneNumber: String?){
         
         self.id = id
         self.averageCostPP = averageCostPP
@@ -39,7 +39,7 @@ class RestaurantData{
         self.longitude = longitude
         self.menuUrl = menuUrl
         self.name = name
-        //self.phoneNumber = phoneNumber
+        self.phoneNumber = phoneNumber
         self.aggregateRating = aggregateRating
     
     }

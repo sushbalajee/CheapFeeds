@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qtJ-zh-XDD">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,9 +14,6 @@
             <string>KohinoorBangla-Regular</string>
             <string>KohinoorBangla-Semibold</string>
         </array>
-        <array key="Palatino.ttc">
-            <string>Palatino-Bold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -24,16 +21,16 @@
             <objects>
                 <navigationController id="qtJ-zh-XDD" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ckO-SZ-Dwu">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.10258613905456659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.69803921570000005" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.5490196078431373" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -44,60 +41,94 @@
             </objects>
             <point key="canvasLocation" x="-684" y="91"/>
         </scene>
-        <!--What Do I Eat?-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DineWithoutDosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ham-2573326_1920" translatesAutoresizingMaskIntoConstraints="NO" id="q4g-dP-QuJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back4" translatesAutoresizingMaskIntoConstraints="NO" id="q4g-dP-QuJ">
+                                <rect key="frame" x="0.0" y="189" width="375" height="485"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X48-0S-ySj">
-                                <rect key="frame" x="6" y="142" width="362" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your budget in your local currency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X48-0S-ySj">
+                                <rect key="frame" x="0.0" y="160" width="362" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cook-food-kitchen-eat-54455" translatesAutoresizingMaskIntoConstraints="NO" id="6cg-rK-OwS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AppeTight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcO-0H-efz">
+                                <rect key="frame" x="52" y="33" width="270" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="56"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zomato" translatesAutoresizingMaskIntoConstraints="NO" id="J14-s2-6DY">
+                                <rect key="frame" x="76" y="589" width="222" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pexels-photo-568370" translatesAutoresizingMaskIntoConstraints="NO" id="LyY-yn-ROU">
+                                <rect key="frame" x="4" y="350" width="120" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pexels-photo-568370 2" translatesAutoresizingMaskIntoConstraints="NO" id="SYh-Hw-MLO">
+                                <rect key="frame" x="252" y="350" width="120" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pexels-photo-568370 3" translatesAutoresizingMaskIntoConstraints="NO" id="N3s-4K-xSc">
+                                <rect key="frame" x="128" y="350" width="120" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epo-zh-z72">
-                                <rect key="frame" x="0.0" y="188" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="227" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="VuZ-PQ-tby"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="06h-OM-jYL"/>
                                 </connections>
                             </pickerView>
-                            <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zomato" translatesAutoresizingMaskIntoConstraints="NO" id="J14-s2-6DY">
-                                <rect key="frame" x="76" y="525" width="222" height="78"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyt-zD-E5s">
+                                <rect key="frame" x="2" y="442" width="124" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLu-Bm-RNi">
-                                <rect key="frame" x="0.0" y="390" width="375" height="30"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
+                                <state key="normal" title="Choose For Me">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x5g-IB-2Wx"/>
+                                    <segue destination="P9j-3a-llu" kind="show" identifier="push to wheel" id="wcs-1x-et2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLu-Bm-RNi">
+                                <rect key="frame" x="138" y="460" width="99" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
                                 <state key="normal" title="Search">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="but:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xG6-Zv-M38"/>
                                     <segue destination="DRo-fm-0fy" kind="show" identifier="push to results" id="Nmw-lf-ze7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyt-zD-E5s">
-                                <rect key="frame" x="164" y="468" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg3-ef-Xdf">
+                                <rect key="frame" x="256" y="460" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="generate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x5g-IB-2Wx"/>
-                                    <segue destination="P9j-3a-llu" kind="show" identifier="push to wheel" id="wcs-1x-et2"/>
-                                </connections>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
+                                <state key="normal" title="Card Roulette">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9y-2b-o2P" userLabel="textf">
-                                <rect key="frame" x="139" y="64" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your budget in the local currency" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9y-2b-o2P" userLabel="textf">
+                                <rect key="frame" x="43" y="198" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -107,10 +138,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="What Do I Eat?" id="S3N-Y3-GRH">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Gpi-rl-Mea"/>
+                    <navigationItem key="navigationItem" id="CuL-wX-cvT">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="dke-RG-U5w"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="Appetight" destination="FcO-0H-efz" id="AIH-Df-qyR"/>
                         <outlet property="cuisinePicker" destination="epo-zh-z72" id="suv-6R-6gQ"/>
                         <outlet property="lab" destination="X48-0S-ySj" id="HHl-tZ-FQX"/>
                         <outlet property="textf" destination="w9y-2b-o2P" id="T0m-tn-7Bc"/>
@@ -118,14 +150,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="91.304347826086968"/>
+            <point key="canvasLocation" x="157.59999999999999" y="89.505247376311857"/>
         </scene>
         <!--Random Generator-->
         <scene sceneID="uia-Mg-mRl">
             <objects>
                 <viewController id="P9j-3a-llu" customClass="RandomGenerator" customModule="DineWithoutDosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0bE-ED-A5Y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ham-2573326_1920" translatesAutoresizingMaskIntoConstraints="NO" id="PMl-uO-yrI">
@@ -133,7 +165,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <pickerView alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzm-oM-LRl">
-                                <rect key="frame" x="0.0" y="336" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="336" width="375" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pickerView>
@@ -205,44 +237,56 @@
             <objects>
                 <viewController title="Results" id="DRo-fm-0fy" customClass="FilteredResults_VC" customModule="DineWithoutDosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VPU-uC-gyT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ham-2573326_1920" translatesAutoresizingMaskIntoConstraints="NO" id="5W3-6z-oZW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1x46kj" translatesAutoresizingMaskIntoConstraints="NO" id="pUg-Tg-aAC">
+                                <rect key="frame" x="0.0" y="148" width="375" height="257"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kF6-YQ-XPY">
-                                <rect key="frame" x="16" y="20" width="343" height="563"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1x4856" translatesAutoresizingMaskIntoConstraints="NO" id="1CY-rF-Qzn">
+                                <rect key="frame" x="0.0" y="298" width="375" height="285"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7e855277a50c5d1d75e4ebe39a638eedf6624af4ce7dc2f7ce846a0be9dc34e4" translatesAutoresizingMaskIntoConstraints="NO" id="trH-YR-seD">
+                                <rect key="frame" x="16" y="23" width="343" height="278"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kF6-YQ-XPY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="157" id="Omg-BO-mez" customClass="resultsTableViewCell" customModule="DineWithoutDosh" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="157"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="157"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Omg-BO-mez" id="hjS-4Q-igi">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="157"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back4" translatesAutoresizingMaskIntoConstraints="NO" id="5W3-6z-oZW">
+                                                    <rect key="frame" x="0.0" y="-223" width="375" height="603"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QiL-M3-qmu">
-                                                    <rect key="frame" x="-8" y="0.0" width="359" height="65"/>
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="22"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCV-S4-tXi" userLabel="Cost Label">
-                                                    <rect key="frame" x="9" y="54" width="324" height="21"/>
+                                                    <rect key="frame" x="25" y="56" width="324" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gv-wL-wT8" userLabel="Distance Label">
-                                                    <rect key="frame" x="41" y="70" width="261" height="35"/>
+                                                    <rect key="frame" x="57" y="73" width="261" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -261,6 +305,9 @@
                         <viewLayoutGuide key="safeArea" id="5SJ-ch-U0P"/>
                     </view>
                     <connections>
+                        <outlet property="errorMeme" destination="pUg-Tg-aAC" id="b70-0M-brh"/>
+                        <outlet property="noResultsMeme1" destination="1CY-rF-Qzn" id="RhU-SA-MO9"/>
+                        <outlet property="noResultsMeme2" destination="trH-YR-seD" id="avq-pM-Gr8"/>
                         <outlet property="resultsTableView" destination="kF6-YQ-XPY" id="bua-w7-vTB"/>
                         <segue destination="il3-bR-YGS" kind="show" identifier="push to detail view" id="1Sq-fq-pXC"/>
                     </connections>
@@ -274,7 +321,7 @@
             <objects>
                 <viewController id="il3-bR-YGS" customClass="DetailView_VC" customModule="DineWithoutDosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5E4-pN-mvn" userLabel="View">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ham-2573326_1920" translatesAutoresizingMaskIntoConstraints="NO" id="jbi-mu-f0O">
@@ -290,8 +337,8 @@
                                 <rect key="frame" x="0.0" y="-50" width="375" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-gk-5kH">
-                                        <rect key="frame" x="24" y="53" width="327" height="79"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-gk-5kH">
+                                        <rect key="frame" x="8" y="53" width="359" height="83"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -448,7 +495,7 @@
             <objects>
                 <viewController id="gSj-mw-ZYp" customClass="Links_VC" customModule="DineWithoutDosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rls-6G-MjA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UEL-E7-2sx">
@@ -474,14 +521,22 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1x46kj" width="610" height="458"/>
+        <image name="1x4856" width="526" height="440"/>
+        <image name="7e855277a50c5d1d75e4ebe39a638eedf6624af4ce7dc2f7ce846a0be9dc34e4" width="600" height="480"/>
+        <image name="back4" width="5000" height="7000"/>
+        <image name="cook-food-kitchen-eat-54455" width="5000" height="2253"/>
         <image name="ham-2573326_1920" width="1532" height="1920"/>
         <image name="icons8-Restaurant Menu Filled-50" width="50" height="50"/>
         <image name="icons8-Website-50" width="50" height="50"/>
+        <image name="pexels-photo-568370" width="2000" height="4000"/>
+        <image name="pexels-photo-568370 2" width="2001" height="4000"/>
+        <image name="pexels-photo-568370 3" width="2000" height="4000"/>
         <image name="spinwheel" width="721" height="720"/>
         <image name="zomato" width="650" height="163"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1Nl-O7-mgV"/>
-        <segue reference="FUI-aB-ZQo"/>
+        <segue reference="1Sq-fq-pXC"/>
     </inferredMetricsTieBreakers>
 </document>

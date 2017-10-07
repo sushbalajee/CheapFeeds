@@ -12,6 +12,9 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var resultsTableView: UITableView!
     
+    @IBOutlet weak var noResultsMeme2: UIImageView!
+    @IBOutlet weak var noResultsMeme1: UIImageView!
+    @IBOutlet weak var errorMeme: UIImageView!
     var pulledSearch = [RestaurantData]()
     var passOnData = [RestaurantData]()
     
@@ -23,11 +26,25 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     
     var passOnTitle = ""
     var passOnImageLink = ""
-    
+    var didTheyType = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        
+        //self.navigationController?.setNavigationBarHidden(false, animated: true)
+ 
+        if(didTheyType == false){
+            noResultsMeme1.isHidden = true
+            noResultsMeme2.isHidden = true
+        }
+            if(didTheyType == true){
+                errorMeme.isHidden = true
+            }
+            if(didTheyType == true && pulledSearch.count > 0){
+                noResultsMeme1.isHidden = true
+                noResultsMeme2.isHidden = true
+            }
+        
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         resultsTableView.rowHeight = (100.00)
@@ -81,8 +98,9 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         let kk = pulledSearch[indexPath.row].aggregateRating
         let lat = pulledSearch[indexPath.row].latitude
         let long = pulledSearch[indexPath.row].longitude
+        let phone = pulledSearch[indexPath.row].phoneNumber
         
-        let populateForDetail = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk)
+        let populateForDetail = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
         
         passOnData.append(populateForDetail)
         self.performSegue(withIdentifier: "push to detail view", sender: self)

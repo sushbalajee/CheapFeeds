@@ -11,6 +11,7 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
   
+    @IBOutlet weak var Appetight: UILabel!
     @IBOutlet weak var textf: UITextField!
     @IBOutlet weak var lab: UILabel!
     @IBOutlet weak var cuisinePicker: UIPickerView!
@@ -18,7 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     var pickCuisine = ["Any", "African", "American", "Argentine", "Asian", "BBQ", "Bakery", "Beverages", "British", "Burger", "Cafe", "Cambodian", "Chinese", "Coffee and Tea", "Contemporary", "Continental", "Deli", "Desserts", "Dim Sum", "Drinks Only", "European", "Filipino", "Finger Food", "Fish and Chips", "French", "Fusion", "German", "Greek", "Grill", "Healthy", "Food", "Ice Cream", "Indian", "Indonesian", "International", "Irish", "Italian", "Japanese", "Juices", "Kiwi", "Korean", "Latin American", "Lebanese", "Malaysian", "Mediterranean", "Mexican", "Middle Eastern", "Mongolian", "Moroccan", "Nepalese", "North Indian", "Pacific", "Pizza", "Portuguese", "Pub Food", "Seafood", "Singaporean", "South Indian", "Spanish", "Sri Lankan", "Steak", "Street Food", "Sushi", "Taiwanese", "Thai", "Turkish", "Vietnamese"]
     
     let locationManager = CLLocationManager()
-    var centerLatitude = -41.207372, centerLongitude = 174.907152
+    var centerLatitude = -41.291672, centerLongitude = 174.791883
     
     var lats = Int ()
     var longs = Int ()
@@ -30,8 +31,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     var filteredAnyByCost = [RestaurantData]()
     var restaurantInfo = [RestaurantData]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.navigationController?.isNavigationBarHidden = true
+        //self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+
+        //self.cuisinePicker.setValue(UIColor.white, forKey: "textColor")
+        
+        Appetight.layer.shadowColor = UIColor.lightGray.cgColor
+        Appetight.layer.shadowOpacity = 1
+        Appetight.layer.shadowOffset = CGSize.zero
+        Appetight.layer.shadowRadius = 10
         
         while xx < 100 {
         self.uploadData()
@@ -60,6 +86,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
+        self.cuisinePicker.setValue(UIColor.white, forKey: "textColor")
         return pickCuisine[row]
         
     }
@@ -90,8 +117,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                         let kk = items.aggregateRating
                         let lat = items.latitude
                         let long = items.longitude
+                        let phone = items.phoneNumber
                         
-                        let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk)
+                        let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
                         
                         filteredAnyByCost.append(pop)
                     }
@@ -112,8 +140,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                         let kk = items.aggregateRating
                         let lat = items.latitude
                         let long = items.longitude
+                        let phone = items.phoneNumber
                         
-                        let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk)
+                        let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
                         
                         filteredAnyByCost.append(pop)
                         
@@ -147,8 +176,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                         let kk = items.aggregateRating
                         let lat = items.latitude
                         let long = items.longitude
+                        let phone = items.phoneNumber
                         
-                        let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk)
+                        let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
                         
                         filteredAnyByCost.append(pop)
                     }
@@ -169,8 +199,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                     let kk = items.aggregateRating
                     let lat = items.latitude
                     let long = items.longitude
+                    let phone = items.phoneNumber
                     
-                    let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk)
+                    let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
                     
                     filteredAnyByCost.append(pop)
               
@@ -186,14 +217,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
+        
         if(segue.identifier == "push to results" ){
-            
+ 
         let DestViewController: FilteredResults_VC = segue.destination as! FilteredResults_VC
         
             DestViewController.pulledSearch = filteredAnyByCost
             DestViewController.originLat = centerLatitude
             DestViewController.originLong = centerLongitude
+            if(textf.text != "" ){
+                DestViewController.didTheyType = true
+                
+            }
             filteredAnyByCost.removeAll()
+            
+            
         }
         
         if(segue.identifier == "push to wheel" ){
@@ -205,6 +243,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             }
             else{
                 
+            DestViewController.didTheyType = true
             DestViewController.dataToSelectFrom = filteredAnyByCost
                 filteredAnyByCost.removeAll()
         
@@ -228,7 +267,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     func uploadData(){
         
         let zomatoKey = "d7aa15e105531ac1ece595a45666a3e8"
-        //let centerLatitude = -41.207372, centerLongitude = 174.907152
+        //let centerLatitude = -41.291672, centerLongitude = 174.791883
         let urlString = "https://developers.zomato.com/api/v2.1/search?&lat=\(centerLatitude)&lon=\(centerLongitude)&start=\(xx)&count=\(yy)";
         let url = NSURL(string: urlString)
         
@@ -261,11 +300,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         let longitude = (location["longitude"] as! String)
                                         let menuLink = (restaurant["menu_url"] as! String)
                                         let name = (restaurant["name"] as! String )
+                                        let phone = (restaurant["phone_numbers"] as? String)
                                         
                                         let user_rating = restaurant["user_rating"] as! NSDictionary
                                         let rating = (user_rating["aggregate_rating"] as! String)
                                         
-                                        let populate = RestaurantData(id: RestId, averageCostPP: averageCostPP, currency: currency, mainImage: mainImage, cuisines: cuisines, url: restURL, address: restAddress, city: restCity, latitude: latitude, longitude: longitude, menuUrl: menuLink, name: name, aggregateRating: rating)
+                                        let populate = RestaurantData(id: RestId, averageCostPP: averageCostPP, currency: currency, mainImage: mainImage, cuisines: cuisines, url: restURL, address: restAddress, city: restCity, latitude: latitude, longitude: longitude, menuUrl: menuLink, name: name, aggregateRating: rating, phoneNumber: phone)
                                         
                                         self.restaurantInfo.append(populate)
                                    

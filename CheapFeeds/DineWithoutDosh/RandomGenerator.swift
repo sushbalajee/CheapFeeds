@@ -24,9 +24,16 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     var timeTimer: Timer?
     var counter = 0
     var chosenPlace = ""
+    var didTheyType = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        if(didTheyType == false || dataToSelectFrom.count == 0){
+            spinButtonOutlet.removeFromSuperview()
+        }
         
         headerView.layer.shadowColor = UIColor.black.cgColor
         headerView.layer.shadowOpacity = 1
@@ -101,8 +108,9 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                     let kk = data.aggregateRating
                     let lat = data.latitude
                     let long = data.longitude
+                    let phone = data.phoneNumber
                     
-                    let populateForDetail = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk)
+                    let populateForDetail = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
                     
                     self.passOnData.append(populateForDetail)
                 }
