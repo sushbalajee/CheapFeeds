@@ -31,6 +31,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        resultsTableView.backgroundColor = UIColor.clear
         //self.navigationController?.setNavigationBarHidden(false, animated: true)
  
         if(didTheyType == false){
@@ -57,7 +58,9 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pulledSearch.count
+  
+            return pulledSearch.count 
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,6 +80,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
             cell.distLabel.text = ("Approximately " + dist.description + "m away")
         }
 
+        cell.backgroundColor = UIColor.clear
         cell.restLabel.text = pulledSearch[indexPath.row].name
         cell.costLabel.text = ("Average price of a meal: " + pulledSearch[indexPath.row].currency +  pulledSearch[indexPath.row].averageCostPP.description)
         
@@ -99,7 +103,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         let lat = pulledSearch[indexPath.row].latitude
         let long = pulledSearch[indexPath.row].longitude
         let phone = pulledSearch[indexPath.row].phoneNumber
-        
+    
         let populateForDetail = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
         
         passOnData.append(populateForDetail)

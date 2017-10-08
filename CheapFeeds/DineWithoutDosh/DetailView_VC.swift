@@ -14,12 +14,7 @@ class DetailView_VC: UIViewController {
 
     @IBOutlet weak var urlLink: UIButton!
     @IBOutlet weak var menuLink: UIButton!
-    @IBOutlet weak var detailViewMain: UIView!
-    @IBOutlet weak var menuView: UIView!
-    @IBOutlet weak var urlView: UIView!
     @IBOutlet weak var averageCostLabel: UILabel!
-    @IBOutlet weak var locationView: UIView!
-    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var cuisineLabel: UILabel!
@@ -33,43 +28,11 @@ class DetailView_VC: UIViewController {
         
         //self.navigationController?.setNavigationBarHidden(false, animated: true)
         
-        mainTitle.layer.shadowColor = UIColor.black.cgColor
-        mainTitle.layer.shadowOpacity = 1
+        mainTitle.layer.shadowColor = UIColor.white.cgColor
+        mainTitle.layer.shadowOpacity = 0.5
         mainTitle.layer.shadowOffset = CGSize.zero
         mainTitle.layer.shadowRadius = 10
-        
-        detailViewMain.layer.shadowColor = UIColor.black.cgColor
-        detailViewMain.layer.shadowOpacity = 1
-        detailViewMain.layer.shadowOffset = CGSize.zero
-        detailViewMain.layer.shadowRadius = 10
-        detailViewMain.layer.cornerRadius = 10
-        
-        locationView.layer.shadowColor = UIColor.black.cgColor
-        locationView.layer.shadowOpacity = 1
-        locationView.layer.shadowOffset = CGSize.zero
-        locationView.layer.shadowRadius = 10
-        locationView.layer.borderWidth = 1
-        locationView.layer.borderColor = UIColor.black.cgColor
-        locationView.layer.cornerRadius = 10
-        
-        menuView.layer.shadowColor = UIColor.black.cgColor
-        menuView.layer.shadowOpacity = 1
-        menuView.layer.shadowOffset = CGSize.zero
-        menuView.layer.shadowRadius = 10
-        menuView.layer.cornerRadius = 20
-        
-        urlView.layer.shadowColor = UIColor.black.cgColor
-        urlView.layer.shadowOpacity = 1
-        urlView.layer.shadowOffset = CGSize.zero
-        urlView.layer.shadowRadius = 10
-        urlView.layer.cornerRadius = 20
-        
-        headerView.layer.shadowColor = UIColor.black.cgColor
-        headerView.layer.shadowOpacity = 1
-        headerView.layer.shadowOffset = CGSize.zero
-        headerView.layer.shadowRadius = 10
-        headerView.layer.cornerRadius = 40
-        
+
         map.layer.cornerRadius = 10
         
         for item in dataFromResults {

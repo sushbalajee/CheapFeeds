@@ -65,6 +65,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
            yy += 20
         }
         
+        cuisinePicker.reloadAllComponents()
+        
         locationManager.requestAlwaysAuthorization()
         
         if CLLocationManager.locationServicesEnabled(){
@@ -87,7 +89,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         self.cuisinePicker.setValue(UIColor.white, forKey: "textColor")
+
         return pickCuisine[row]
+        
+        
         
     }
     
@@ -118,7 +123,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                         let lat = items.latitude
                         let long = items.longitude
                         let phone = items.phoneNumber
-                        
+         
                         let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
                         
                         filteredAnyByCost.append(pop)
@@ -141,7 +146,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                         let lat = items.latitude
                         let long = items.longitude
                         let phone = items.phoneNumber
-                        
+               
                         let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
                         
                         filteredAnyByCost.append(pop)
@@ -177,7 +182,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                         let lat = items.latitude
                         let long = items.longitude
                         let phone = items.phoneNumber
-                        
+   
                         let pop = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
                         
                         filteredAnyByCost.append(pop)
@@ -238,8 +243,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             
         let DestViewController: RandomGenerator = segue.destination as! RandomGenerator
             if(textf.text == "" && pickedCuisine == "Any"){
-                DestViewController.dataToSelectFrom = restaurantInfo
-                restaurantInfo.removeAll()
+                //DestViewController.dataToSelectFrom = restaurantInfo
+                //restaurantInfo.removeAll()
             }
             else{
                 
@@ -301,7 +306,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         let menuLink = (restaurant["menu_url"] as! String)
                                         let name = (restaurant["name"] as! String )
                                         let phone = (restaurant["phone_numbers"] as? String)
-                                        
+  
                                         let user_rating = restaurant["user_rating"] as! NSDictionary
                                         let rating = (user_rating["aggregate_rating"] as! String)
                                         

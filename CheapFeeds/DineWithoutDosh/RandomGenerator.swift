@@ -13,7 +13,6 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
 
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var mainTitle: UILabel!
-    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var pickAnimated: UIPickerView!
     @IBOutlet weak var spinButtonOutlet: UIButton!
     @IBOutlet weak var spinningWheel: UIImageView!
@@ -34,12 +33,6 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         if(didTheyType == false || dataToSelectFrom.count == 0){
             spinButtonOutlet.removeFromSuperview()
         }
-        
-        headerView.layer.shadowColor = UIColor.black.cgColor
-        headerView.layer.shadowOpacity = 1
-        headerView.layer.shadowOffset = CGSize.zero
-        headerView.layer.shadowRadius = 10
-        headerView.layer.cornerRadius = 40
         
         pickAnimated.layer.shadowColor = UIColor.black.cgColor
         pickAnimated.layer.shadowOpacity = 1
@@ -121,7 +114,7 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     @objc func rotateView()
     {
         UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut, animations: { () -> Void in
-            self.spinningWheel.transform = self.spinningWheel.transform.rotated(by: CGFloat(Double.pi/4))
+            self.spinningWheel.transform = self.spinningWheel.transform.rotated(by: CGFloat(Double.pi/8))
             
             let n = Int(arc4random_uniform(UInt32(self.dataToSelectFrom.count)))
             
@@ -141,6 +134,7 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     
+        self.pickAnimated.setValue(UIColor.white, forKey: "textColor")
         return dataToSelectFrom[row].name
     }
     
