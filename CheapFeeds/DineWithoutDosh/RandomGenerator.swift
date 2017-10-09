@@ -39,7 +39,7 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         pickAnimated.layer.shadowOffset = CGSize.zero
         pickAnimated.layer.shadowRadius = 10
      
-        mainTitle.layer.shadowColor = UIColor.black.cgColor
+        mainTitle.layer.shadowColor = UIColor.white.cgColor
         mainTitle.layer.shadowOpacity = 1
         mainTitle.layer.shadowOffset = CGSize.zero
         mainTitle.layer.shadowRadius = 10
@@ -132,10 +132,16 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         return dataToSelectFrom.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    /*func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     
         self.pickAnimated.setValue(UIColor.white, forKey: "textColor")
         return dataToSelectFrom[row].name
+    }*/
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        let string = dataToSelectFrom[row].name
+        return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){

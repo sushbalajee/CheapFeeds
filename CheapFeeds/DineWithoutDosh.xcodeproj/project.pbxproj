@@ -17,6 +17,7 @@
 		206297D61F7F594D00328DAD /* DineWithoutDoshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206297D51F7F594D00328DAD /* DineWithoutDoshUITests.swift */; };
 		206297E41F7F6C7E00328DAD /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206297E31F7F6C7E00328DAD /* RestaurantData.swift */; };
 		207D78E41F832042008C2B9B /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D78E31F832042008C2B9B /* RandomGenerator.swift */; };
+		2084FAB71F8B83BF006E3C0C /* Information_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084FAB61F8B83BE006E3C0C /* Information_VC.swift */; };
 		208F8FFF1F89D28F007B665C /* CardRoulette_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F8FFE1F89D28F007B665C /* CardRoulette_VC.swift */; };
 		20BE7C731F82497900CAA2E6 /* DetailView_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BE7C721F82497900CAA2E6 /* DetailView_VC.swift */; };
 		20F8447D1F80B07900791B27 /* FilteredResults_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8447C1F80B07900791B27 /* FilteredResults_VC.swift */; };
@@ -57,6 +58,7 @@
 		206297D71F7F594D00328DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		206297E31F7F6C7E00328DAD /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 		207D78E31F832042008C2B9B /* RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		2084FAB61F8B83BE006E3C0C /* Information_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information_VC.swift; sourceTree = "<group>"; };
 		208F8FFE1F89D28F007B665C /* CardRoulette_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRoulette_VC.swift; sourceTree = "<group>"; };
 		20BE7C721F82497900CAA2E6 /* DetailView_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView_VC.swift; sourceTree = "<group>"; };
 		20F8447C1F80B07900791B27 /* FilteredResults_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredResults_VC.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				206297B71F7F594D00328DAD /* ViewController.swift */,
 				20BE7C721F82497900CAA2E6 /* DetailView_VC.swift */,
 				207D78E31F832042008C2B9B /* RandomGenerator.swift */,
+				2084FAB61F8B83BE006E3C0C /* Information_VC.swift */,
 				208F8FFE1F89D28F007B665C /* CardRoulette_VC.swift */,
 				205A55AF1F8436F200087A9B /* Links_VC.swift */,
 				206297B91F7F594D00328DAD /* Main.storyboard */,
@@ -287,6 +290,7 @@
 				206297B81F7F594D00328DAD /* ViewController.swift in Sources */,
 				206297B61F7F594D00328DAD /* AppDelegate.swift in Sources */,
 				208F8FFF1F89D28F007B665C /* CardRoulette_VC.swift in Sources */,
+				2084FAB71F8B83BF006E3C0C /* Information_VC.swift in Sources */,
 				20BE7C731F82497900CAA2E6 /* DetailView_VC.swift in Sources */,
 				206297E41F7F6C7E00328DAD /* RestaurantData.swift in Sources */,
 			);

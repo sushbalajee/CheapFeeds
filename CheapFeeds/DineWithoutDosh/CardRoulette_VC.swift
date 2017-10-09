@@ -31,6 +31,8 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userInput.addTarget(nil, action:Selector(("firstResponderAction:")), for: .editingDidEndOnExit)
+        
         spinButtonOutlet.isHidden = true
         
         mainTitle.layer.shadowColor = UIColor.white.cgColor

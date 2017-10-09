@@ -13,7 +13,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
   
     @IBOutlet weak var Appetight: UILabel!
     @IBOutlet weak var textf: UITextField!
-    @IBOutlet weak var lab: UILabel!
     @IBOutlet weak var cuisinePicker: UIPickerView!
 
     var pickCuisine = ["Any", "African", "American", "Argentine", "Asian", "BBQ", "Bakery", "Beverages", "British", "Burger", "Cafe", "Cambodian", "Chinese", "Coffee and Tea", "Contemporary", "Continental", "Deli", "Desserts", "Dim Sum", "Drinks Only", "European", "Filipino", "Finger Food", "Fish and Chips", "French", "Fusion", "German", "Greek", "Grill", "Healthy", "Food", "Ice Cream", "Indian", "Indonesian", "International", "Irish", "Italian", "Japanese", "Juices", "Kiwi", "Korean", "Latin American", "Lebanese", "Malaysian", "Mediterranean", "Mexican", "Middle Eastern", "Mongolian", "Moroccan", "Nepalese", "North Indian", "Pacific", "Pizza", "Portuguese", "Pub Food", "Seafood", "Singaporean", "South Indian", "Spanish", "Sri Lankan", "Steak", "Street Food", "Sushi", "Taiwanese", "Thai", "Turkish", "Vietnamese"]
@@ -45,14 +44,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    /* self.myTextField.delegate = self;
+}
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    self.view.endEditing(true)
+    return false
+}
+     */
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //self.view.endEditing(true)
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        textf.addTarget(nil, action:Selector(("firstResponderAction:")), for: .editingDidEndOnExit)
         //self.navigationController?.isNavigationBarHidden = true
         //self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-
-        //self.cuisinePicker.setValue(UIColor.white, forKey: "textColor")
         
         Appetight.layer.shadowColor = UIColor.lightGray.cgColor
         Appetight.layer.shadowOpacity = 1
@@ -86,15 +98,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        self.cuisinePicker.setValue(UIColor.white, forKey: "textColor")
-
-        return pickCuisine[row]
-        
-        
-        
+        let string = pickCuisine[row]
+        return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -103,8 +112,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     }
     
     @IBAction func generate(_ sender: Any) {
-    
-        lab.text = ""
+
         if let budget = Int(textf.text!){
             for items in restaurantInfo{
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
@@ -156,14 +164,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             }
             
         }
-        else{
-            lab.text = "Please enter a number"
-        }
-        
-        
+   
     }
     @IBAction func but(_ sender: Any) {
-        lab.text = ""
         if let budget = Int(textf.text!){
             for items in restaurantInfo{
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
@@ -214,9 +217,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                 }
             }
             
-        }
-        else{
-            lab.text = "Please enter a number"
         }
     }
     
