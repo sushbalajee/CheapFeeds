@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -78,7 +79,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-YD-K6i">
                                 <rect key="frame" x="47" y="178" width="281" height="329"/>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -131,7 +132,7 @@
                                     <constraint firstAttribute="width" secondItem="WW9-c3-5Xx" secondAttribute="height" multiplier="125:57" id="Tbj-Gg-jbZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whos Going To Pay?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGd-wv-uPh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who's Going To Pay?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGd-wv-uPh">
                                 <rect key="frame" x="24" y="3" width="327" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QGd-wv-uPh" secondAttribute="height" multiplier="327:79" id="Fe4-bP-EyF"/>
@@ -841,28 +842,9 @@
                     <view key="view" contentMode="scaleToFill" id="Rls-6G-MjA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEL-E7-2sx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UEL-E7-2sx" firstAttribute="bottom" secondItem="QaR-Fe-eal" secondAttribute="bottom" id="AQS-bO-6X9"/>
-                            <constraint firstItem="UEL-E7-2sx" firstAttribute="top" secondItem="QaR-Fe-eal" secondAttribute="top" id="IsF-ig-PIb"/>
-                            <constraint firstItem="UEL-E7-2sx" firstAttribute="leading" secondItem="QaR-Fe-eal" secondAttribute="leading" id="M9H-q8-VeI"/>
-                            <constraint firstItem="UEL-E7-2sx" firstAttribute="trailing" secondItem="QaR-Fe-eal" secondAttribute="trailing" id="v1s-9k-7gg"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QaR-Fe-eal"/>
                     </view>
-                    <connections>
-                        <outlet property="linkWebView" destination="UEL-E7-2sx" id="lcq-7Y-gVl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xaw-Bw-ADc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

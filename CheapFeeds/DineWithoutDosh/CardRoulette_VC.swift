@@ -11,20 +11,13 @@ import UIKit
 class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
     @IBOutlet weak var removeButtonOutlet: UIButton!
-    
-    
-    
     @IBOutlet weak var spinButtonOutlet: UIButton!
     @IBOutlet weak var spinningImage: UIImageView!
-    var players = [String]()
-
     @IBOutlet weak var tableViewPlayers: UITableView!
     @IBOutlet weak var userInput: UITextField!
-    
-    
-    
     @IBOutlet weak var mainTitle: UILabel!
     
+    var players = [String]()
     var unlucky = ""
     var timeTimer: Timer?
     
@@ -45,7 +38,6 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
         tableViewPlayers.delegate = self
         tableViewPlayers.dataSource = self
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,15 +68,13 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         cell.textLabel?.textAlignment = .center
         cell.backgroundColor = UIColor.clear
 
-        
         return cell
-        
     }
     
     @IBAction func spinButton(_ sender: Any) {
         
         if(spinButtonOutlet.titleLabel?.text == "Spin"){
-            //passOnData.removeAll()
+            
             mainTitle.text = "Who's Going To Pay"
             timeTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.rotateView), userInfo: nil, repeats: true)
             self.rotateView()
@@ -96,22 +86,16 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
             timeTimer?.invalidate()
             spinButtonOutlet.setTitle("Spin", for: .normal)
             mainTitle.text = unlucky
-        
         }
-        
-        
     }
     
-    @objc func rotateView()
-    {
+    @objc func rotateView(){
         UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut, animations: { () -> Void in
             self.spinningImage.transform = self.spinningImage.transform.rotated(by: CGFloat(Double.pi/4))
             
             let n = Int(arc4random_uniform(UInt32(self.players.count)))
-            
-            //self.pickAnimated.selectRow(n , inComponent: 0, animated: true)
+
             self.unlucky = self.players[n]
-            
         })
     }
     
@@ -120,7 +104,5 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         players.removeAll()
         tableViewPlayers.reloadData()
         spinButtonOutlet.isHidden = true
-        
-    }
-    
+    } 
 }

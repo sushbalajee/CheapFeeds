@@ -11,10 +11,10 @@ import CoreLocation
 class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var resultsTableView: UITableView!
-    
     @IBOutlet weak var noResultsMeme2: UIImageView!
     @IBOutlet weak var noResultsMeme1: UIImageView!
     @IBOutlet weak var errorMeme: UIImageView!
+    
     var pulledSearch = [RestaurantData]()
     var passOnData = [RestaurantData]()
     
@@ -26,30 +26,29 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     
     var passOnTitle = ""
     var passOnImageLink = ""
+    
     var didTheyType = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resultsTableView.backgroundColor = UIColor.clear
-        //self.navigationController?.setNavigationBarHidden(false, animated: true)
- 
+        
         if(didTheyType == false){
             noResultsMeme1.isHidden = true
             noResultsMeme2.isHidden = true
         }
-            if(didTheyType == true){
-                errorMeme.isHidden = true
-            }
-            if(didTheyType == true && pulledSearch.count > 0){
-                noResultsMeme1.isHidden = true
-                noResultsMeme2.isHidden = true
-            }
+        if(didTheyType == true){
+            errorMeme.isHidden = true
+        }
+        if(didTheyType == true && pulledSearch.count > 0){
+            noResultsMeme1.isHidden = true
+            noResultsMeme2.isHidden = true
+        }
         
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         resultsTableView.rowHeight = (100.00)
-   
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,8 +58,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
   
-            return pulledSearch.count 
-
+        return pulledSearch.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,29 +82,16 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         cell.restLabel.text = pulledSearch[indexPath.row].name
         cell.costLabel.text = ("Average price of a meal: " + pulledSearch[indexPath.row].currency +  pulledSearch[indexPath.row].averageCostPP.description)
         
+        
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let aa = pulledSearch[indexPath.row].id
-        let bb = pulledSearch[indexPath.row].averageCostPP
-        let cc = pulledSearch[indexPath.row].currency
-        let dd = pulledSearch[indexPath.row].mainImage
-        let ee = pulledSearch[indexPath.row].cuisines
-        let ff = pulledSearch[indexPath.row].url
-        let gg = pulledSearch[indexPath.row].address
-        let hh = pulledSearch[indexPath.row].city
-        let ii = pulledSearch[indexPath.row].menuUrl
-        let jj = pulledSearch[indexPath.row].name
-        let kk = pulledSearch[indexPath.row].aggregateRating
-        let lat = pulledSearch[indexPath.row].latitude
-        let long = pulledSearch[indexPath.row].longitude
-        let phone = pulledSearch[indexPath.row].phoneNumber
-    
-        let populateForDetail = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
-        
-        passOnData.append(populateForDetail)
+
+        let all = pulledSearch[indexPath.row]
+   
+        passOnData.append(all)
         self.performSegue(withIdentifier: "push to detail view", sender: self)
     }
     

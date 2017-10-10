@@ -25,9 +25,7 @@ class DetailView_VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
+     
         mainTitle.layer.shadowColor = UIColor.white.cgColor
         mainTitle.layer.shadowOpacity = 0.5
         mainTitle.layer.shadowOffset = CGSize.zero
@@ -76,15 +74,15 @@ class DetailView_VC: UIViewController {
         if(segue.identifier == "push menu" ){
             let DestViewController: Links_VC = segue.destination as! Links_VC
          
-            for it in dataFromResults{
-            DestViewController.linkkString = it.menuUrl
+            for data in dataFromResults{
+            DestViewController.linkkString = data.menuUrl
             }
         }
         if(segue.identifier == "push zomato" ){
             let DestViewController: Links_VC = segue.destination as! Links_VC
             
-            for it in dataFromResults{
-                DestViewController.linkkString = it.url
+            for data in dataFromResults{
+                DestViewController.linkkString = data.url
             }
         }
     }

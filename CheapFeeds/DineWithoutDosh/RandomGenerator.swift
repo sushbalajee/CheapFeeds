@@ -9,7 +9,6 @@
 import UIKit
 
 class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
-    
 
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var mainTitle: UILabel!
@@ -21,14 +20,11 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     var passOnData = [RestaurantData]()
     
     var timeTimer: Timer?
-    var counter = 0
     var chosenPlace = ""
     var didTheyType = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         if(didTheyType == false || dataToSelectFrom.count == 0){
             spinButtonOutlet.removeFromSuperview()
@@ -61,7 +57,6 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         if(spinButtonOutlet.titleLabel?.text == "Spin The Wheel"){
             plusButton.isHidden = true
         }
-    
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,7 +72,7 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
             timeTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.rotateView), userInfo: nil, repeats: true)
             self.rotateView()
             spinButtonOutlet.setTitle("Stop", for: .normal)
-            
+
         }
         else{
             plusButton.isHidden = false
@@ -88,31 +83,14 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
             for data in dataToSelectFrom{
                 if(data.name == chosenPlace){
                     
-                    let aa = data.name
-                    let bb = data.averageCostPP
-                    let cc = data.currency
-                    let dd = data.mainImage
-                    let ee = data.cuisines
-                    let ff = data.url
-                    let gg = data.address
-                    let hh = data.city
-                    let ii = data.menuUrl
-                    let jj = data.name
-                    let kk = data.aggregateRating
-                    let lat = data.latitude
-                    let long = data.longitude
-                    let phone = data.phoneNumber
-                    
-                    let populateForDetail = RestaurantData(id: aa, averageCostPP: bb, currency: cc, mainImage: dd, cuisines: ee, url: ff, address: gg, city: hh, latitude: lat, longitude: long, menuUrl: ii, name: jj, aggregateRating: kk, phoneNumber: phone)
-                    
-                    self.passOnData.append(populateForDetail)
+                    let all = data
+                    self.passOnData.append(all)
                 }
             }
         }
     }
     
-    @objc func rotateView()
-    {
+    @objc func rotateView(){
         UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut, animations: { () -> Void in
             self.spinningWheel.transform = self.spinningWheel.transform.rotated(by: CGFloat(Double.pi/8))
             
@@ -120,7 +98,6 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
             
             self.pickAnimated.selectRow(n , inComponent: 0, animated: true)
             self.chosenPlace = self.dataToSelectFrom[n].name
-            
         })
     }
     
@@ -131,13 +108,7 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dataToSelectFrom.count
     }
-    
-    /*func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    
-        self.pickAnimated.setValue(UIColor.white, forKey: "textColor")
-        return dataToSelectFrom[row].name
-    }*/
-    
+
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
         let string = dataToSelectFrom[row].name
@@ -147,9 +118,7 @@ class RandomGenerator: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
 
             let DestViewController: DetailView_VC = segue.destination as! DetailView_VC
-            
             DestViewController.dataFromResults = passOnData
-
             passOnData.removeAll()
     }
 }

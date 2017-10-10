@@ -17,11 +17,8 @@ class Links_VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.navigationController?.setNavigationBarHidden(false, animated: true)
-
+   
         linkWebView.load(URLRequest(url: NSURL (string: linkkString)! as URL))
-
     }
 
     override func didReceiveMemoryWarning() {
