@@ -12,11 +12,15 @@ import MapKit
 
 class DetailView_VC: UIViewController {
 
+    
+    @IBOutlet weak var starImages: UIImageView!
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var headImage: UIImageView!
+    @IBOutlet weak var view3: UIView!
     @IBOutlet weak var urlLink: UIButton!
     @IBOutlet weak var menuLink: UIButton!
     @IBOutlet weak var averageCostLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var cuisineLabel: UILabel!
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var map: MKMapView!
@@ -31,9 +35,37 @@ class DetailView_VC: UIViewController {
         mainTitle.layer.shadowOffset = CGSize.zero
         mainTitle.layer.shadowRadius = 10
 
+        view1.layer.shadowColor = UIColor.darkGray.cgColor
+        view1.layer.shadowOpacity = 1
+        view1.layer.shadowOffset = CGSize.zero
+        view1.layer.shadowRadius = 1
+        
+        view3.layer.shadowColor = UIColor.darkGray.cgColor
+        view3.layer.shadowOpacity = 1
+        view3.layer.shadowOffset = CGSize.zero
+        view3.layer.shadowRadius = 1
+        
+        
         map.layer.cornerRadius = 10
         
         for item in dataFromResults {
+            
+            let url = URL(string: item.mainImage!)
+            
+            if(!(item.mainImage!.isEmpty)){
+                let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+                    guard let data = data, error == nil else { return }
+                    
+                    DispatchQueue.main.async() {
+                        self.headImage.image = UIImage(data: data)
+                    }
+                }
+                
+                task.resume()
+            }
+            else{
+                self.headImage.image = UIImage(named: "foodPasta")
+            }
             
             let loc = CLLocationCoordinate2D(latitude: Double(item.latitude)!, longitude: Double(item.longitude)!)
             
@@ -56,11 +88,40 @@ class DetailView_VC: UIViewController {
 
             addressLabel.lineBreakMode = .byWordWrapping
             addressLabel.numberOfLines = 0
-            addressLabel.text = item.address
+            addressLabel.text = ("Address: " + item.address)
             
-            cuisineLabel.text = item.cuisines
-            averageCostLabel.text = (item.currency + item.averageCostPP.description)
-            ratingLabel.text = (item.aggregateRating! + "/5.0")
+            cuisineLabel.text = ("Cuisines: " + item.cuisines)
+            averageCostLabel.text = ("Average cost: " + item.currency + item.averageCostPP.description)
+            
+            let doubleRating = Double(item.aggregateRating!)
+            
+            if (doubleRating! < 1){
+                self.starImages.image = UIImage(named: "1s")
+            }
+            else if (doubleRating! > 1 && doubleRating! <= 1.5){
+                self.starImages.image = UIImage(named: "1.5s")
+            }
+            else if (doubleRating! > 1.5 && doubleRating! <= 2){
+                self.starImages.image = UIImage(named: "2s")
+            }
+            else if (doubleRating! > 2 && doubleRating! <= 2.5){
+                self.starImages.image = UIImage(named: "2.5s")
+            }
+            else if (doubleRating! > 2.5 && doubleRating! <= 3){
+                self.starImages.image = UIImage(named: "3s")
+            }
+            else if (doubleRating! > 3 && doubleRating! <= 3.5){
+                self.starImages.image = UIImage(named: "3.5s")
+            }
+            else if (doubleRating! > 3.5 && doubleRating! <= 4){
+                self.starImages.image = UIImage(named: "4s")
+            }
+            else if (doubleRating! > 4 && doubleRating! <= 4.5){
+                self.starImages.image = UIImage(named: "4.5s")
+            }
+            else if (doubleRating! > 4.5 && doubleRating! <= 5){
+                self.starImages.image = UIImage(named: "5s")
+            }
             
         }
     }

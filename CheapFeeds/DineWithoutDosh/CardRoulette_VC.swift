@@ -10,6 +10,9 @@ import UIKit
 
 class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
+    @IBOutlet weak var view3: UIView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view1: UIView!
     @IBOutlet weak var removeButtonOutlet: UIButton!
     @IBOutlet weak var spinButtonOutlet: UIButton!
     @IBOutlet weak var spinningImage: UIImageView!
@@ -24,6 +27,21 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view1.layer.shadowColor = UIColor.darkGray.cgColor
+        view1.layer.shadowOpacity = 1
+        view1.layer.shadowOffset = CGSize.zero
+        view1.layer.shadowRadius = 1
+        
+        view2.layer.shadowColor = UIColor.darkGray.cgColor
+        view2.layer.shadowOpacity = 1
+        view2.layer.shadowOffset = CGSize.zero
+        view2.layer.shadowRadius = 1
+        
+        view3.layer.shadowColor = UIColor.darkGray.cgColor
+        view3.layer.shadowOpacity = 1
+        view3.layer.shadowOffset = CGSize.zero
+        view3.layer.shadowRadius = 1
+        
         userInput.addTarget(nil, action:Selector(("firstResponderAction:")), for: .editingDidEndOnExit)
         
         spinButtonOutlet.isHidden = true
@@ -34,12 +52,34 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         mainTitle.layer.shadowRadius = 10
         
         removeButtonOutlet.layer.cornerRadius = 10
-        spinButtonOutlet.layer.cornerRadius = 10
 
         tableViewPlayers.delegate = self
         tableViewPlayers.dataSource = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
 
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+                
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,7 +104,7 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let cell = UITableViewCell()
         
         cell.textLabel?.text = players[indexPath.row]
-        cell.textLabel?.textColor = UIColor.white
+        //cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.textAlignment = .center
         cell.backgroundColor = UIColor.clear
 

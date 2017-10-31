@@ -10,15 +10,16 @@ import UIKit
 import WebKit
 
 class Links_VC: UIViewController {
-
-    @IBOutlet weak var linkWebView: WKWebView!
+    
+    @IBOutlet weak var linkWebView: UIWebView!
     
     var linkkString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        linkWebView.load(URLRequest(url: NSURL (string: linkkString)! as URL))
+        linkWebView.loadRequest((URLRequest(url: NSURL (string: linkkString)! as URL)))
+        
     }
 
     override func didReceiveMemoryWarning() {

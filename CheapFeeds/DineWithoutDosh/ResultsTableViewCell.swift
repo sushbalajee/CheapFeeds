@@ -10,6 +10,7 @@ import UIKit
 
 class resultsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var featureImage: UIImageView!
     @IBOutlet weak var restLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var distLabel: UILabel!

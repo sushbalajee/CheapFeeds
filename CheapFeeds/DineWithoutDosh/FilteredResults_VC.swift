@@ -10,10 +10,9 @@ import UIKit
 import CoreLocation
 class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+
     @IBOutlet weak var resultsTableView: UITableView!
-    @IBOutlet weak var noResultsMeme2: UIImageView!
-    @IBOutlet weak var noResultsMeme1: UIImageView!
-    @IBOutlet weak var errorMeme: UIImageView!
+
     
     var pulledSearch = [RestaurantData]()
     var passOnData = [RestaurantData]()
@@ -31,10 +30,10 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
         resultsTableView.backgroundColor = UIColor.clear
         
-        if(didTheyType == false){
+        /*if(didTheyType == false){
             noResultsMeme1.isHidden = true
             noResultsMeme2.isHidden = true
         }
@@ -44,7 +43,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         if(didTheyType == true && pulledSearch.count > 0){
             noResultsMeme1.isHidden = true
             noResultsMeme2.isHidden = true
-        }
+        }*/
         
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
@@ -80,9 +79,27 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
 
         cell.backgroundColor = UIColor.clear
         cell.restLabel.text = pulledSearch[indexPath.row].name
-        cell.costLabel.text = ("Average price of a meal: " + pulledSearch[indexPath.row].currency +  pulledSearch[indexPath.row].averageCostPP.description)
+        cell.costLabel.text = ("Average price: " + pulledSearch[indexPath.row].currency +  pulledSearch[indexPath.row].averageCostPP.description)
         
+        let url = URL(string: pulledSearch[indexPath.row].mainImage!)
+
+        if(!(pulledSearch[indexPath.row].mainImage?.isEmpty)!){
+            let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+                guard let data = data, error == nil else { return }
+                
+                DispatchQueue.main.async() {
+                    cell.featureImage.image = UIImage(data: data)
+                }
+            }
+            
+            task.resume()
+        }
+        else{
+            cell.featureImage.image = UIImage(named: "foodPasta")
+        }
         
+        cell.featureImage.layer.borderColor = UIColor.white.cgColor
+        cell.featureImage.layer.borderWidth = 15
         
         return cell
     }
@@ -93,6 +110,10 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
    
         passOnData.append(all)
         self.performSegue(withIdentifier: "push to detail view", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 310
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

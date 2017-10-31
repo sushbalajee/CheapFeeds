@@ -10,11 +10,15 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
-  
-    @IBOutlet weak var Appetight: UILabel!
+
     @IBOutlet weak var textf: UITextField!
     @IBOutlet weak var cuisinePicker: UIPickerView!
     
+    @IBOutlet weak var view1: UIView!
+  
+    @IBOutlet weak var view3: UIView!
+    
+    @IBOutlet weak var view2: UIView!
     var x = 0
 
     var pickCC = [String]()
@@ -34,13 +38,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     var filteredAnyByCost = [RestaurantData]()
     var restaurantInfo = [RestaurantData]()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Hide the navigation bar on the this view controller
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -55,6 +52,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //createAlert(title: "Warning", message: "Stop It")
+        
+        view1.layer.shadowColor = UIColor.darkGray.cgColor
+        view1.layer.shadowOpacity = 1
+        view1.layer.shadowOffset = CGSize.zero
+        view1.layer.shadowRadius = 1
+        
+        view2.layer.shadowColor = UIColor.darkGray.cgColor
+        view2.layer.shadowOpacity = 1
+        view2.layer.shadowOffset = CGSize.zero
+        view2.layer.shadowRadius = 1
+        
+        view3.layer.shadowColor = UIColor.darkGray.cgColor
+        view3.layer.shadowOpacity = 1
+        view3.layer.shadowOffset = CGSize.zero
+        view3.layer.shadowRadius = 1
+   
       locationManager.requestAlwaysAuthorization()
         
         if CLLocationManager.locationServicesEnabled(){
@@ -66,10 +80,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         
         textf.addTarget(nil, action:Selector(("firstResponderAction:")), for: .editingDidEndOnExit)
   
-        Appetight.layer.shadowColor = UIColor.lightGray.cgColor
-        Appetight.layer.shadowOpacity = 1
-        Appetight.layer.shadowOffset = CGSize.zero
-        Appetight.layer.shadowRadius = 10
         
         textf.keyboardType = UIKeyboardType.numberPad
         
@@ -87,11 +97,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             longs = location.coordinate.longitude
             
             while xx < 100 {
-             //self.uploadData()
-             xx += 10
-             yy += 10
+             self.uploadData()
+             xx += 20
+             yy += 20
              }
-            self.uploadData1()
+            //self.uploadData1()
             
         }
     }
@@ -102,19 +112,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return pickCuisine.count
+        return pickCC.count
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        let string = pickCuisine[row]
-        return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
+        let string = pickCC[row]
+        return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor:UIColor.black])
     }
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        pickedCuisine = pickCuisine[row]
+        pickedCuisine = pickCC[row]
+
     }
     
     @IBAction func generate(_ sender: Any) {
@@ -162,29 +173,45 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
+        
         if(segue.identifier == "push to results" ){
  
         let DestViewController: FilteredResults_VC = segue.destination as! FilteredResults_VC
         
-            DestViewController.pulledSearch = filteredAnyByCost
+            if(textf.text == ""){
+                createAlert(title: "Warning", message: "Please enter your budget")
+            }
+            else{
+            if(filteredAnyByCost.count > 0){
+                DestViewController.pulledSearch = filteredAnyByCost
+            }
+            else{
+                createAlert(title: "Warning", message: "No results matching your budget/cuisine. Try increasing your budget!")
+            }
             DestViewController.originLat = lats
             DestViewController.originLong = longs
             
-            if(textf.text != "" ){
-                DestViewController.didTheyType = true
-            }
             filteredAnyByCost.removeAll()
+            }
         }
+        
+        
         
         if(segue.identifier == "push to wheel" ){
             
         let DestViewController: RandomGenerator = segue.destination as! RandomGenerator
             
             if(textf.text == "" && pickedCuisine == "Any"){
+                createAlert(title: "Warning", message: "Please enter your budget")
             }
             else{
-            DestViewController.didTheyType = true
-            DestViewController.dataToSelectFrom = filteredAnyByCost
+                if(filteredAnyByCost.count > 0){
+                    DestViewController.dataToSelectFrom = filteredAnyByCost
+                }
+                else{
+                    createAlert(title: "Warning", message: "No results matching your budget/cuisine. Try increasing your budget!")
+                }
+                //DestViewController.dataToSelectFrom = filteredAnyByCost
                 filteredAnyByCost.removeAll()
             }
         }
@@ -194,6 +221,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         super.didReceiveMemoryWarning()
     }
     
+    func createAlert(title :String, message: String){
+        // create the alert
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
 
 
     func uploadData(){
@@ -201,7 +240,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         print(lats)
         print(longs)
         
-        let zomatoKey = 
+        let zomatoKey = "d7aa15e105531ac1ece595a45666a3e8"
+
         //let centerLatitude = -41.211040, centerLongitude = 174.906596
         let urlString = "https://developers.zomato.com/api/v2.1/search?&lat=\(lats)&lon=\(longs)&start=\(xx)&count=\(yy)";
         
@@ -243,18 +283,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         
                                         let populate = RestaurantData(id: RestId, averageCostPP: averageCostPP, currency: currency, mainImage: mainImage, cuisines: cuisines, url: restURL, address: restAddress, city: restCity, latitude: latitude, longitude: longitude, menuUrl: menuLink, name: name, aggregateRating: rating, phoneNumber: phone)
                                         
-                                        self.restaurantInfo.append(populate)
-                                   
                                         let sepCuis = cuisines.components(separatedBy: ", ")
                                         
-                                        self.pickCC = [sepCuis[0]]
+                                        self.pickCC.append(sepCuis[0])
                                         
-                                        let unique = Array(Set(self.pickCC))
+                                        self.pickCC = Array(Set(self.pickCC))
                                         
-                                        for vaal in unique{
-                                            print (vaal)
-                                        }
+                                        //self.pickCC = self.pickCC.sorted()
+                                        self.pickCC = self.pickCC.sorted() { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
                                         
+                                        self.pickCC.insert("Any", at: 0 )
+                          
+                                        
+                                        self.restaurantInfo.append(populate)
+                                        
+                                    }
+                                    OperationQueue.main.addOperation {
+                                        self.cuisinePicker.reloadAllComponents()
                                     }
                                 }
                             }
@@ -271,7 +316,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     func uploadData1(){
         
-        let zomatoKey =
+        let zomatoKey = "d7aa15e105531ac1ece595a45666a3e8"
+
         //let centerLatitude = -41.211040, centerLongitude = 174.906596
         //let urlString = "https://developers.zomato.com/api/v2.1/search?&lat=\(centerLatitude)&lon=\(centerLongitude)&start=\(xx)&count=\(yy)";
         
@@ -320,31 +366,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         
                                         let populate = RestaurantData(id: RestId, averageCostPP: averageCostPP, currency: currency, mainImage: mainImage, cuisines: cuisines, url: restURL, address: restAddress, city: restCity, latitude: latitude, longitude: longitude, menuUrl: menuLink, name: name, aggregateRating: rating, phoneNumber: phone)
                                         
-                                        
-                                        
                                         let sepCuis = cuisines.components(separatedBy: ", ")
                                         
-                                        for items in sepCuis{
-                                            for data in self.pickCC{
-                                            if(!data.contains(items)){
-                                                self.pickCC = [sepCuis[0]]
-                                                
-                                                }
-                                            }
-                                        }
+                                        self.pickCC.append(sepCuis[0])
                                        
-                                        let unique = Array(Set(self.pickCC))
-                                       
-                                        for vaal in unique{
-                                            print (vaal)
-                                        }
+                                        self.pickCC = Array(Set(self.pickCC))
                                         
+                                        //self.pickCC.insert("Any", at: 0)
                                         
+                                        //self.pickCC = self.pickCC.removeDuplicates()
                                         
-                                        
-                                        //print(cuisines)
                                         self.restaurantInfo.append(populate)
                                         
+                                    }
+                                    OperationQueue.main.addOperation {
+                                        self.cuisinePicker.reloadAllComponents()
                                     }
                                 }
                             }
@@ -357,7 +393,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             })
             task.resume()
         }
+        
     }
-    
-    
 }
