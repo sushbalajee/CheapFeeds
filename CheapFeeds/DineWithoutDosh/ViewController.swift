@@ -240,7 +240,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         print(lats)
         print(longs)
         
-        let zomatoKey = "d7aa15e105531ac1ece595a45666a3e8"
+        let zomatoKey =
 
         //let centerLatitude = -41.211040, centerLongitude = 174.906596
         let urlString = "https://developers.zomato.com/api/v2.1/search?&lat=\(lats)&lon=\(longs)&start=\(xx)&count=\(yy)";
@@ -316,7 +316,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     func uploadData1(){
         
-        let zomatoKey = "d7aa15e105531ac1ece595a45666a3e8"
+        let zomatoKey = 
 
         //let centerLatitude = -41.211040, centerLongitude = 174.906596
         //let urlString = "https://developers.zomato.com/api/v2.1/search?&lat=\(centerLatitude)&lon=\(centerLongitude)&start=\(xx)&count=\(yy)";
