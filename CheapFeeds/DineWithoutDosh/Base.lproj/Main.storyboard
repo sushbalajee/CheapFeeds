@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -526,85 +527,123 @@ NOTE: Average cost per person is an approximate price according to results from 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-rT-pBS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-rT-pBS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AcS-rT-pBS" secondAttribute="height" multiplier="375:158" id="KME-Kx-dTn"/>
+                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Gm-67-SIM">
-                                <rect key="frame" x="0.0" y="256" width="375" height="287"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gm-67-SIM">
+                                <rect key="frame" x="0.0" y="256" width="375" height="286.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KB-Ex-PeK" userLabel="Address Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KB-Ex-PeK" userLabel="Address Label">
                                         <rect key="frame" x="24" y="0.0" width="327" height="73"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7KB-Ex-PeK" secondAttribute="height" multiplier="327:73" id="aSY-8r-cT9"/>
+                                            <constraint firstAttribute="width" secondItem="7KB-Ex-PeK" secondAttribute="height" multiplier="327:73" id="bHE-QR-8gF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="16"/>
                                         <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TwM-gK-by6">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TwM-gK-by6">
                                         <rect key="frame" x="24" y="75" width="327" height="123"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TwM-gK-by6" secondAttribute="height" multiplier="109:41" id="G1g-Iw-8Sa"/>
+                                            <constraint firstAttribute="width" secondItem="TwM-gK-by6" secondAttribute="height" multiplier="109:41" id="ehV-xo-cRg"/>
+                                        </constraints>
                                     </mapView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzn-mj-ZlP">
-                                        <rect key="frame" x="24" y="204" width="323" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzn-mj-ZlP">
+                                        <rect key="frame" x="24" y="204" width="327" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pzn-mj-ZlP" secondAttribute="height" multiplier="327:43" id="D1P-iO-aS8"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="16"/>
                                         <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMh-0V-qua" userLabel="AverageCostLabel">
-                                        <rect key="frame" x="24" y="252" width="162" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMh-0V-qua" userLabel="AverageCostLabel">
+                                        <rect key="frame" x="24" y="255" width="162" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bMh-0V-qua" secondAttribute="height" multiplier="27:4" id="Hgz-Fv-Pi9"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="17"/>
                                         <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bMh-0V-qua" firstAttribute="top" secondItem="pzn-mj-ZlP" secondAttribute="bottom" constant="8" id="7bz-fn-ZH7"/>
+                                    <constraint firstAttribute="trailing" secondItem="TwM-gK-by6" secondAttribute="trailing" constant="24" id="8AY-GV-VWy"/>
+                                    <constraint firstItem="TwM-gK-by6" firstAttribute="top" secondItem="7KB-Ex-PeK" secondAttribute="bottom" constant="2" id="D5Y-Ac-JWf"/>
+                                    <constraint firstItem="TwM-gK-by6" firstAttribute="top" secondItem="7KB-Ex-PeK" secondAttribute="bottom" constant="2" id="EDL-rA-BR0"/>
+                                    <constraint firstItem="TwM-gK-by6" firstAttribute="leading" secondItem="5Gm-67-SIM" secondAttribute="leading" constant="24" id="Rr1-6Z-kuM"/>
+                                    <constraint firstItem="pzn-mj-ZlP" firstAttribute="top" secondItem="TwM-gK-by6" secondAttribute="bottom" constant="6" id="RwN-HM-nmK"/>
+                                    <constraint firstItem="7KB-Ex-PeK" firstAttribute="leading" secondItem="5Gm-67-SIM" secondAttribute="leading" constant="24" id="Zch-H2-osH"/>
+                                    <constraint firstAttribute="trailing" secondItem="7KB-Ex-PeK" secondAttribute="trailing" constant="24" id="b2W-1A-VkB"/>
+                                    <constraint firstItem="pzn-mj-ZlP" firstAttribute="leading" secondItem="5Gm-67-SIM" secondAttribute="leading" constant="24" id="gSn-VD-I0Y"/>
+                                    <constraint firstItem="7KB-Ex-PeK" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="top" id="mNV-Hs-kG5"/>
+                                    <constraint firstItem="bMh-0V-qua" firstAttribute="leading" secondItem="5Gm-67-SIM" secondAttribute="leading" constant="24" id="n34-Nj-zev"/>
+                                    <constraint firstAttribute="width" secondItem="5Gm-67-SIM" secondAttribute="height" multiplier="375:287" id="oLu-e2-oNO"/>
+                                    <constraint firstAttribute="trailing" secondItem="pzn-mj-ZlP" secondAttribute="trailing" constant="24" id="sJh-QY-nwi"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsr-tf-nvX">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsr-tf-nvX">
                                 <rect key="frame" x="24" y="130" width="327" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-gk-5kH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-gk-5kH">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="92"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="BY7-gk-5kH" secondAttribute="height" multiplier="327:92" id="oI1-MB-XXn"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="23"/>
                                         <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="BY7-gk-5kH" firstAttribute="top" secondItem="Wsr-tf-nvX" secondAttribute="top" id="8X2-lM-VMP"/>
+                                    <constraint firstAttribute="width" secondItem="Wsr-tf-nvX" secondAttribute="height" multiplier="327:92" id="T0P-Sg-GIt"/>
+                                    <constraint firstAttribute="trailing" secondItem="BY7-gk-5kH" secondAttribute="trailing" id="WU6-Nz-ZBk"/>
+                                    <constraint firstAttribute="bottom" secondItem="BY7-gk-5kH" secondAttribute="bottom" id="c4Q-gp-v14"/>
+                                    <constraint firstItem="BY7-gk-5kH" firstAttribute="leading" secondItem="Wsr-tf-nvX" secondAttribute="leading" id="vnh-ee-WJk"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1s" translatesAutoresizingMaskIntoConstraints="NO" id="hDU-Ir-30B">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1s" translatesAutoresizingMaskIntoConstraints="NO" id="hDU-Ir-30B">
                                 <rect key="frame" x="84" y="226" width="206" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hDU-Ir-30B" secondAttribute="height" multiplier="103:13" id="JXl-2A-NxL"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zomato Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-qI-XcM">
-                                <rect key="frame" x="286" y="562" width="71" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zomato Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-qI-XcM">
+                                <rect key="frame" x="290" y="561.5" width="66" height="21.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="12"/>
                                 <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-eo-BD5">
-                                <rect key="frame" x="72" y="561" width="59" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-eo-BD5">
+                                <rect key="frame" x="72" y="562" width="55.5" height="23"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="12"/>
                                 <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTX-Ez-kx5">
-                                <rect key="frame" x="233" y="548" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTX-Ez-kx5">
+                                <rect key="frame" x="236" y="548" width="49" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eTX-Ez-kx5" secondAttribute="height" multiplier="49:50" id="JYb-gT-nHA"/>
+                                </constraints>
                                 <state key="normal" image="icons8-Website-50"/>
                                 <connections>
                                     <segue destination="gSj-mw-ZYp" kind="show" identifier="push zomato" id="kVM-wv-6kY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVG-05-Mbr">
-                                <rect key="frame" x="16" y="549" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVG-05-Mbr">
+                                <rect key="frame" x="16" y="547.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uVG-05-Mbr" secondAttribute="height" multiplier="1:1" id="AgW-O8-lek"/>
+                                </constraints>
                                 <state key="normal" image="icons8-Restaurant Menu-50">
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -614,6 +653,32 @@ NOTE: Average cost per person is an approximate price according to results from 
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AcS-rT-pBS" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="1LF-Av-Gap"/>
+                            <constraint firstItem="Wsr-tf-nvX" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="24" id="2wG-uW-irx"/>
+                            <constraint firstItem="KKf-qI-XcM" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="19" id="2zU-xH-AoB"/>
+                            <constraint firstItem="DGk-eo-BD5" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="19.5" id="4C3-T0-d7E"/>
+                            <constraint firstItem="hDU-Ir-30B" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="84" id="763-KU-Ra6"/>
+                            <constraint firstItem="DGk-eo-BD5" firstAttribute="leading" secondItem="uVG-05-Mbr" secondAttribute="trailing" constant="6" id="86d-5y-vos"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="KKf-qI-XcM" secondAttribute="bottom" constant="20" id="8Xh-CV-aUY"/>
+                            <constraint firstItem="uVG-05-Mbr" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5" id="8dL-5N-y9X"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="Wsr-tf-nvX" secondAttribute="trailing" constant="24" id="EUu-Xa-qCW"/>
+                            <constraint firstItem="5Gm-67-SIM" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="GPc-tX-c8y"/>
+                            <constraint firstItem="Wsr-tf-nvX" firstAttribute="top" secondItem="EUp-De-G6r" secondAttribute="top" constant="130" id="Ist-7T-RMY"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="KKf-qI-XcM" secondAttribute="trailing" constant="19" id="JMr-D1-0Ff"/>
+                            <constraint firstItem="AcS-rT-pBS" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="LGQ-r1-xUw"/>
+                            <constraint firstItem="KKf-qI-XcM" firstAttribute="leading" secondItem="eTX-Ez-kx5" secondAttribute="trailing" constant="5" id="Pcr-YL-jIS"/>
+                            <constraint firstItem="5Gm-67-SIM" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="Pdj-UC-LWf"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="eTX-Ez-kx5" secondAttribute="bottom" constant="5" id="Zxh-dE-F0s"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="DGk-eo-BD5" secondAttribute="bottom" constant="18" id="bzX-lw-dgu"/>
+                            <constraint firstItem="5Gm-67-SIM" firstAttribute="top" secondItem="hDU-Ir-30B" secondAttribute="bottom" constant="4" id="chg-PE-kow"/>
+                            <constraint firstItem="AcS-rT-pBS" firstAttribute="top" secondItem="EUp-De-G6r" secondAttribute="top" id="pJc-cQ-us6"/>
+                            <constraint firstItem="hDU-Ir-30B" firstAttribute="top" secondItem="Wsr-tf-nvX" secondAttribute="bottom" constant="4" id="qrU-LS-Xhk"/>
+                            <constraint firstItem="eTX-Ez-kx5" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5.5" id="qt0-XF-SzO"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="uVG-05-Mbr" secondAttribute="bottom" constant="5.5" id="tRS-eS-0b7"/>
+                            <constraint firstItem="uVG-05-Mbr" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="16" id="xhn-Vf-mrU"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="hDU-Ir-30B" secondAttribute="trailing" constant="85" id="y2b-FN-9Em"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EUp-De-G6r"/>
                     </view>
                     <navigationItem key="navigationItem" title="Restaurant Information" id="REW-tZ-o6V"/>
