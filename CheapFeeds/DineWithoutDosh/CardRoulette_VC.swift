@@ -20,6 +20,9 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var mainTitle: UILabel!
     
+    var tim = 0
+    var timmy: Timer?
+    
     var players = [String]()
     var unlucky = ""
     var timeTimer: Timer?
@@ -116,27 +119,44 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         if(spinButtonOutlet.titleLabel?.text == "Spin"){
             
             mainTitle.text = "Who's Going To Pay"
-            timeTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.rotateView), userInfo: nil, repeats: true)
+            //timeTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.rotateView), userInfo: nil, repeats: true)
+            
+            timmy = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RandomGenerator.action), userInfo: nil, repeats: true)
+            
             self.rotateView()
-            spinButtonOutlet.setTitle("Stop", for: .normal)
+            //spinButtonOutlet.setTitle("Stop", for: .normal)
             
         }
-        else{
+        //else{
 
-            timeTimer?.invalidate()
-            spinButtonOutlet.setTitle("Spin", for: .normal)
-            mainTitle.text = unlucky
-        }
+            //timeTimer?.invalidate()
+            //spinButtonOutlet.setTitle("Spin", for: .normal)
+            //mainTitle.text = unlucky
+        //}
     }
     
     @objc func rotateView(){
-        UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut, animations: { () -> Void in
-            self.spinningImage.transform = self.spinningImage.transform.rotated(by: CGFloat(Double.pi/4))
+        UIView.animate(withDuration: 5.0, delay: 0, options: .curveEaseInOut, animations: { () -> Void in
+            self.spinningImage.transform = self.spinningImage.transform.rotated(by: CGFloat(Double.pi/1))
             
             let n = Int(arc4random_uniform(UInt32(self.players.count)))
 
             self.unlucky = self.players[n]
         })
+    }
+    
+    @objc func action(){
+        if(tim == 4){
+            timmy?.invalidate()
+            tim = 0
+            mainTitle.text = unlucky
+            spinButtonOutlet.isHidden = false
+            
+        }
+        else{
+            tim += 1
+            print (tim)
+        }
     }
     
     @IBAction func removeAllButton(_ sender: Any) {
