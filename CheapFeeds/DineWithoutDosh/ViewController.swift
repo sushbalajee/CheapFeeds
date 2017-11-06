@@ -13,18 +13,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
 
     @IBOutlet weak var textf: UITextField!
     @IBOutlet weak var cuisinePicker: UIPickerView!
-    
     @IBOutlet weak var view1: UIView!
-  
     @IBOutlet weak var view3: UIView!
-    
     @IBOutlet weak var view2: UIView!
+    
     var x = 0
 
     var pickCC = [String]()
-    var third = [String]()
-    var pickCuisine = ["African", "American", "Argentine", "Asian", "BBQ", "Bakery", "Beverages", "British", "Burger", "Cafe", "Cambodian", "Chinese", "Coffee and Tea", "Contemporary", "Continental", "Deli", "Desserts", "Dim Sum", "Drinks Only", "European", "Filipino", "Finger Food", "Fish and Chips", "French", "Fusion", "German", "Greek", "Grill", "Healthy", "Food", "Ice Cream", "Indian", "Indonesian", "International", "Irish", "Italian", "Japanese", "Juices", "Kiwi", "Korean", "Latin American", "Lebanese", "Malaysian", "Mediterranean", "Mexican", "Middle Eastern", "Mongolian", "Moroccan", "Nepalese", "North Indian", "Pacific", "Pizza", "Portuguese", "Pub Food", "Seafood", "Singaporean", "South Indian", "Spanish", "Sri Lankan", "Steak", "Street Food", "Sushi", "Taiwanese", "Thai", "Turkish", "Vietnamese"]
-    
+
     let locationManager = CLLocationManager()
     
     var centerLatitude = -41.210930, centerLongitude = 174.906774
@@ -78,7 +74,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         
         textf.addTarget(nil, action:Selector(("firstResponderAction:")), for: .editingDidEndOnExit)
   
-        
         textf.keyboardType = UIKeyboardType.numberPad
         
         cuisinePicker.reloadAllComponents()
@@ -235,12 +230,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
 
     func uploadData(){
         
-        //print(lats)
-        //print(longs)
-        
-        let zomatoKey = 
+        let zomatoKey =
 
-        //let centerLatitude = -41.211040, centerLongitude = 174.906596
         let urlString = "https://developers.zomato.com/api/v2.1/search?&lat=\(lats)&lon=\(longs)&start=\(xx)&count=\(yy)";
         
         let url = NSURL(string: urlString)
@@ -287,16 +278,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         
                                         self.pickCC = Array(Set(self.pickCC))
                                         
-                                        //self.pickCC = self.pickCC.sorted()
                                         self.pickCC = self.pickCC.sorted() { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
-                                        
-                                        //self.pickCC.insert("Any", at: 0 )
-                          
+
                                         self.restaurantInfo.append(populate)
                                         
                                     }
                                     OperationQueue.main.addOperation {
-                                        //self.pickCC.insert("Any", at: 0 )
                                         
                                         self.cuisinePicker.reloadAllComponents()
                                     }
@@ -317,9 +304,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         
         let zomatoKey =
 
-        //let centerLatitude = -41.211040, centerLongitude = 174.906596
-        //let urlString = "https://developers.zomato.com/api/v2.1/search?&lat=\(centerLatitude)&lon=\(centerLongitude)&start=\(xx)&count=\(yy)";
-        
         let urlString = "https://developers.zomato.com/api/v2.1/geocode?lat=\(lats)&lon=\(longs)"
         
         let url = NSURL(string: urlString)
@@ -373,8 +357,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         
                                         self.pickCC = self.pickCC.sorted() { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
                                         
-                                        //self.pickCC.insert("Any", at: 0 )
-                                        
                                         self.restaurantInfo.append(populate)
                                         
                                     }
@@ -394,6 +376,5 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             })
             task.resume()
         }
-        
     }
 }

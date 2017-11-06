@@ -29,8 +29,22 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
     var unlucky = ""
     var timeTimer: Timer?
     
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil,action: nil)
+        
+        let addButton = UIBarButtonItem.init(title: "Click to add player", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.doneClicked))
+        
+        
+        toolBar.setItems([flexibleSpace, addButton], animated: false)
+        
+        userInput.inputAccessoryView = toolBar
         
         arrowDown.isHidden = true
         arrowDown2.isHidden = true
@@ -77,7 +91,7 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
+                self.view.frame.origin.y += keyboardSize.height - 110
                 
             }
         }
@@ -86,8 +100,22 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     @objc func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y -= keyboardSize.height
+                self.view.frame.origin.y -= keyboardSize.height - 110
             }
+        }
+    }
+    
+    @objc func doneClicked(){
+        if(userInput.text != ""){
+            players.append(userInput.text!)
+            tableViewPlayers.reloadData()
+            spinButtonOutlet.isHidden = false
+            userInput.text = ""
+        }
+        
+        if(players.count > 6){
+            arrowDown.isHidden = false
+            arrowDown2.isHidden = false
         }
     }
     
@@ -95,21 +123,6 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func addButton(_ sender: Any) {
-        
-        if(userInput.text != ""){
-        players.append(userInput.text!)
-        tableViewPlayers.reloadData()
-        spinButtonOutlet.isHidden = false
-        userInput.text = ""
-        }
-        
-        if(players.count > 6){
-            arrowDown.isHidden = false
-            arrowDown2.isHidden = false
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

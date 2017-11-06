@@ -118,6 +118,5 @@ class RandomGenerator: UIViewController{
 
             let DestViewController: DetailView_VC = segue.destination as! DetailView_VC
             DestViewController.dataFromResults = passOnData
-            //passOnData.removeAll()
     }
 }
