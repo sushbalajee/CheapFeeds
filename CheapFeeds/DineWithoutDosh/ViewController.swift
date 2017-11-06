@@ -23,7 +23,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
 
     var pickCC = [String]()
     var third = [String]()
-    var pickCuisine = ["Any", "African", "American", "Argentine", "Asian", "BBQ", "Bakery", "Beverages", "British", "Burger", "Cafe", "Cambodian", "Chinese", "Coffee and Tea", "Contemporary", "Continental", "Deli", "Desserts", "Dim Sum", "Drinks Only", "European", "Filipino", "Finger Food", "Fish and Chips", "French", "Fusion", "German", "Greek", "Grill", "Healthy", "Food", "Ice Cream", "Indian", "Indonesian", "International", "Irish", "Italian", "Japanese", "Juices", "Kiwi", "Korean", "Latin American", "Lebanese", "Malaysian", "Mediterranean", "Mexican", "Middle Eastern", "Mongolian", "Moroccan", "Nepalese", "North Indian", "Pacific", "Pizza", "Portuguese", "Pub Food", "Seafood", "Singaporean", "South Indian", "Spanish", "Sri Lankan", "Steak", "Street Food", "Sushi", "Taiwanese", "Thai", "Turkish", "Vietnamese"]
+    var pickCuisine = ["African", "American", "Argentine", "Asian", "BBQ", "Bakery", "Beverages", "British", "Burger", "Cafe", "Cambodian", "Chinese", "Coffee and Tea", "Contemporary", "Continental", "Deli", "Desserts", "Dim Sum", "Drinks Only", "European", "Filipino", "Finger Food", "Fish and Chips", "French", "Fusion", "German", "Greek", "Grill", "Healthy", "Food", "Ice Cream", "Indian", "Indonesian", "International", "Irish", "Italian", "Japanese", "Juices", "Kiwi", "Korean", "Latin American", "Lebanese", "Malaysian", "Mediterranean", "Mexican", "Middle Eastern", "Mongolian", "Moroccan", "Nepalese", "North Indian", "Pacific", "Pizza", "Portuguese", "Pub Food", "Seafood", "Singaporean", "South Indian", "Spanish", "Sri Lankan", "Steak", "Street Food", "Sushi", "Taiwanese", "Thai", "Turkish", "Vietnamese"]
     
     let locationManager = CLLocationManager()
     
@@ -51,9 +51,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //createAlert(title: "Warning", message: "Stop It")
-        
+  
         view1.layer.shadowColor = UIColor.darkGray.cgColor
         view1.layer.shadowOpacity = 1
         view1.layer.shadowOffset = CGSize.zero
@@ -101,8 +99,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
              xx += 20
              yy += 20
              }
-            //self.uploadData1()
-            
+            self.uploadData1()
+
         }
     }
     
@@ -116,7 +114,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
+
         let string = pickCC[row]
         return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor:UIColor.black])
     }
@@ -237,10 +235,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
 
     func uploadData(){
         
-        print(lats)
-        print(longs)
+        //print(lats)
+        //print(longs)
         
-        let zomatoKey =
+        let zomatoKey = 
 
         //let centerLatitude = -41.211040, centerLongitude = 174.906596
         let urlString = "https://developers.zomato.com/api/v2.1/search?&lat=\(lats)&lon=\(longs)&start=\(xx)&count=\(yy)";
@@ -292,13 +290,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         //self.pickCC = self.pickCC.sorted()
                                         self.pickCC = self.pickCC.sorted() { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
                                         
-                                        self.pickCC.insert("Any", at: 0 )
+                                        //self.pickCC.insert("Any", at: 0 )
                           
-                                        
                                         self.restaurantInfo.append(populate)
                                         
                                     }
                                     OperationQueue.main.addOperation {
+                                        //self.pickCC.insert("Any", at: 0 )
+                                        
                                         self.cuisinePicker.reloadAllComponents()
                                     }
                                 }
@@ -316,7 +315,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     func uploadData1(){
         
-        let zomatoKey = 
+        let zomatoKey =
 
         //let centerLatitude = -41.211040, centerLongitude = 174.906596
         //let urlString = "https://developers.zomato.com/api/v2.1/search?&lat=\(centerLatitude)&lon=\(centerLongitude)&start=\(xx)&count=\(yy)";
@@ -369,18 +368,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         let sepCuis = cuisines.components(separatedBy: ", ")
                                         
                                         self.pickCC.append(sepCuis[0])
-                                       
+                                        
                                         self.pickCC = Array(Set(self.pickCC))
                                         
-                                        //self.pickCC.insert("Any", at: 0)
+                                        self.pickCC = self.pickCC.sorted() { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
                                         
-                                        //self.pickCC = self.pickCC.removeDuplicates()
+                                        //self.pickCC.insert("Any", at: 0 )
                                         
                                         self.restaurantInfo.append(populate)
                                         
                                     }
                                     OperationQueue.main.addOperation {
                                         self.cuisinePicker.reloadAllComponents()
+                                        
+                                        self.pickCC.insert("Any", at: 0 )
                                     }
                                 }
                             }

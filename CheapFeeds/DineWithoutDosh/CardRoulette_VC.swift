@@ -10,6 +10,8 @@ import UIKit
 
 class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
+    @IBOutlet weak var arrowDown2: UIImageView!
+    @IBOutlet weak var arrowDown: UIImageView!
     @IBOutlet weak var view3: UIView!
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var view1: UIView!
@@ -29,6 +31,9 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        arrowDown.isHidden = true
+        arrowDown2.isHidden = true
         
         view1.layer.shadowColor = UIColor.darkGray.cgColor
         view1.layer.shadowOpacity = 1
@@ -64,6 +69,10 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
 
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
+}
+
     @objc func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -96,6 +105,11 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         spinButtonOutlet.isHidden = false
         userInput.text = ""
         }
+        
+        if(players.count > 6){
+            arrowDown.isHidden = false
+            arrowDown2.isHidden = false
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,7 +121,6 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let cell = UITableViewCell()
         
         cell.textLabel?.text = players[indexPath.row]
-        //cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.textAlignment = .center
         cell.backgroundColor = UIColor.clear
 
@@ -118,21 +131,13 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         if(spinButtonOutlet.titleLabel?.text == "Spin"){
             
+            spinButtonOutlet.isHidden = true
             mainTitle.text = "Who's Going To Pay"
-            //timeTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.rotateView), userInfo: nil, repeats: true)
-            
+      
             timmy = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RandomGenerator.action), userInfo: nil, repeats: true)
             
             self.rotateView()
-            //spinButtonOutlet.setTitle("Stop", for: .normal)
-            
         }
-        //else{
-
-            //timeTimer?.invalidate()
-            //spinButtonOutlet.setTitle("Spin", for: .normal)
-            //mainTitle.text = unlucky
-        //}
     }
     
     @objc func rotateView(){
@@ -155,7 +160,6 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         }
         else{
             tim += 1
-            print (tim)
         }
     }
     
@@ -164,5 +168,7 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         players.removeAll()
         tableViewPlayers.reloadData()
         spinButtonOutlet.isHidden = true
+        arrowDown.isHidden = true
+        arrowDown2.isHidden = true
     } 
 }

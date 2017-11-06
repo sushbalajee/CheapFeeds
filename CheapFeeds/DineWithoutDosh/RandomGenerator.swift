@@ -73,7 +73,7 @@ class RandomGenerator: UIViewController{
             passOnData.removeAll()
             plusButton.isHidden = true
             spinButtonOutlet.isHidden = true
-            DecidedPlace.text = "..."
+            DecidedPlace.text = "Loading..."
             
             timmy = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RandomGenerator.action), userInfo: nil, repeats: true)
             self.rotateView()

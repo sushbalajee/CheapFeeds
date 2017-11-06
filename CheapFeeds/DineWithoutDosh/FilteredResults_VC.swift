@@ -33,18 +33,6 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
  
         resultsTableView.backgroundColor = UIColor.clear
         
-        /*if(didTheyType == false){
-            noResultsMeme1.isHidden = true
-            noResultsMeme2.isHidden = true
-        }
-        if(didTheyType == true){
-            errorMeme.isHidden = true
-        }
-        if(didTheyType == true && pulledSearch.count > 0){
-            noResultsMeme1.isHidden = true
-            noResultsMeme2.isHidden = true
-        }*/
-        
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         resultsTableView.rowHeight = (100.00)
@@ -99,7 +87,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         cell.featureImage.layer.borderColor = UIColor.white.cgColor
-        cell.featureImage.layer.borderWidth = 15
+        cell.featureImage.layer.borderWidth = 10
         
         return cell
     }
