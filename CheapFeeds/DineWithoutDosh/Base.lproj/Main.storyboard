@@ -210,11 +210,11 @@ NOTE: Average cost per person is an approximate price according to results from 
                                     <constraint firstAttribute="bottom" secondItem="9EM-qy-DAw" secondAttribute="bottom" constant="17.5" id="wdJ-sq-Wo4"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEz-rV-amN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEz-rV-amN">
                                 <rect key="frame" x="0.0" y="553.5" width="375" height="35"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="EEz-rV-amN" secondAttribute="height" multiplier="375:41" id="boO-05-IV3"/>
+                                    <constraint firstAttribute="width" secondItem="EEz-rV-amN" secondAttribute="height" multiplier="375:41" constant="54.878048780487802" id="boO-05-IV3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Spin">
@@ -835,32 +835,26 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zomato Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-qI-XcM">
-                                <rect key="frame" x="290" y="560.5" width="66" height="22.5"/>
+                                <rect key="frame" x="290" y="561" width="66" height="24"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="12"/>
                                 <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-eo-BD5">
-                                <rect key="frame" x="73" y="561" width="55.5" height="24"/>
+                                <rect key="frame" x="74" y="561" width="55.5" height="24"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="12"/>
                                 <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTX-Ez-kx5">
-                                <rect key="frame" x="235" y="547" width="50" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="eTX-Ez-kx5" secondAttribute="height" multiplier="49:50" id="JYb-gT-nHA"/>
-                                </constraints>
+                                <rect key="frame" x="235" y="547" width="50" height="50"/>
                                 <state key="normal" image="icons8-Website-50"/>
                                 <connections>
                                     <segue destination="gSj-mw-ZYp" kind="show" identifier="push zomato" id="kVM-wv-6kY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVG-05-Mbr">
-                                <rect key="frame" x="16" y="546.5" width="51" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="uVG-05-Mbr" secondAttribute="height" multiplier="1:1" id="AgW-O8-lek"/>
-                                </constraints>
+                                <rect key="frame" x="19" y="547" width="50" height="50"/>
                                 <state key="normal" image="icons8-Restaurant Menu-50">
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -871,31 +865,30 @@ NOTE: Average cost per person is an approximate price according to results from 
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="DGk-eo-BD5" secondAttribute="bottom" constant="18" id="1Du-fd-mFu"/>
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="1LF-Av-Gap"/>
+                            <constraint firstItem="DGk-eo-BD5" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="74" id="2Vc-Jn-yOX"/>
                             <constraint firstItem="Wsr-tf-nvX" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="24" id="2wG-uW-irx"/>
-                            <constraint firstItem="KKf-qI-XcM" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="19" id="2zU-xH-AoB"/>
-                            <constraint firstItem="DGk-eo-BD5" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="19.5" id="4C3-T0-d7E"/>
+                            <constraint firstItem="KKf-qI-XcM" firstAttribute="leading" secondItem="eTX-Ez-kx5" secondAttribute="trailing" constant="5" id="3Ts-82-5dD"/>
+                            <constraint firstItem="uVG-05-Mbr" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5.5" id="54f-wN-MjC"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="uVG-05-Mbr" secondAttribute="bottom" constant="6" id="6Hx-7z-OfN"/>
                             <constraint firstItem="hDU-Ir-30B" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="84" id="763-KU-Ra6"/>
-                            <constraint firstItem="DGk-eo-BD5" firstAttribute="leading" secondItem="uVG-05-Mbr" secondAttribute="trailing" constant="6" id="86d-5y-vos"/>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="KKf-qI-XcM" secondAttribute="bottom" constant="20" id="8Xh-CV-aUY"/>
-                            <constraint firstItem="uVG-05-Mbr" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5" id="8dL-5N-y9X"/>
+                            <constraint firstItem="DGk-eo-BD5" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="19.5" id="CGl-V3-X12"/>
                             <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="Wsr-tf-nvX" secondAttribute="trailing" constant="24" id="EUu-Xa-qCW"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="KKf-qI-XcM" secondAttribute="trailing" constant="19" id="FSh-2X-kCE"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="GPc-tX-c8y"/>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="KKf-qI-XcM" secondAttribute="trailing" constant="19" id="JMr-D1-0Ff"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="KKf-qI-XcM" secondAttribute="bottom" constant="18" id="Hqd-tq-5IS"/>
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="LGQ-r1-xUw"/>
-                            <constraint firstItem="KKf-qI-XcM" firstAttribute="leading" secondItem="eTX-Ez-kx5" secondAttribute="trailing" constant="5" id="Pcr-YL-jIS"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="Pdj-UC-LWf"/>
                             <constraint firstItem="Wsr-tf-nvX" firstAttribute="top" secondItem="AcS-rT-pBS" secondAttribute="bottom" constant="-29.5" id="QDh-DF-Kmc"/>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="eTX-Ez-kx5" secondAttribute="bottom" constant="5" id="Zxh-dE-F0s"/>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="DGk-eo-BD5" secondAttribute="bottom" constant="18" id="bzX-lw-dgu"/>
+                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="eTX-Ez-kx5" secondAttribute="bottom" constant="6" id="bsB-r4-yH9"/>
+                            <constraint firstItem="eTX-Ez-kx5" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5.5" id="cDY-AP-Auv"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="top" secondItem="hDU-Ir-30B" secondAttribute="bottom" constant="4" id="chg-PE-kow"/>
+                            <constraint firstItem="KKf-qI-XcM" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="19.5" id="kt3-hl-hnZ"/>
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="top" secondItem="EUp-De-G6r" secondAttribute="top" id="pJc-cQ-us6"/>
                             <constraint firstItem="hDU-Ir-30B" firstAttribute="top" secondItem="Wsr-tf-nvX" secondAttribute="bottom" constant="4" id="qrU-LS-Xhk"/>
-                            <constraint firstItem="eTX-Ez-kx5" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5.5" id="qt0-XF-SzO"/>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="uVG-05-Mbr" secondAttribute="bottom" constant="5.5" id="tRS-eS-0b7"/>
-                            <constraint firstItem="uVG-05-Mbr" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="16" id="xhn-Vf-mrU"/>
+                            <constraint firstItem="uVG-05-Mbr" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="19" id="vCy-f2-Zx3"/>
                             <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="hDU-Ir-30B" secondAttribute="trailing" constant="85" id="y2b-FN-9Em"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DGk-eo-BD5" secondAttribute="trailing" constant="20" symbolic="YES" id="zZ3-Ct-bg5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EUp-De-G6r"/>
                     </view>
