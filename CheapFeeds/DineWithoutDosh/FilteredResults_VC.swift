@@ -72,15 +72,16 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         let url = URL(string: pulledSearch[indexPath.row].mainImage!)
 
         if(!(pulledSearch[indexPath.row].mainImage?.isEmpty)!){
-            let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-                guard let data = data, error == nil else { return }
-                
-                DispatchQueue.main.async() {
-                    cell.featureImage.image = UIImage(data: data)
-                }
-            }
             
-            task.resume()
+            let string = url?.description
+            let replaced = (string! as NSString).replacingOccurrences(of: "?output-format=webp", with: "")
+            
+            let Durl = URL(string: replaced)
+            
+            let imageView = cell.viewWithTag(1) as! UIImageView
+            
+            imageView.sd_setImage(with: URL(string: (Durl?.description)!))
+           
         }
         else{
             cell.featureImage.image = UIImage(named: "foodPasta")

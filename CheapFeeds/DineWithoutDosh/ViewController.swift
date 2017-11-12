@@ -46,8 +46,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         return false
     }
     
+    @objc func doneClicked(){
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil,action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil,action: #selector(self.doneClicked))
+        
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        textf.inputAccessoryView = toolBar
   
         view1.layer.shadowColor = UIColor.darkGray.cgColor
         view1.layer.shadowOpacity = 1
@@ -87,18 +102,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first{
-            lats = location.coordinate.latitude
-            longs = location.coordinate.longitude
+            lats = -36.879280
+            longs = 174.734735
+            //lats = location.coordinate.latitude
+            //longs = location.coordinate.longitude
+            
+            
+            
+            while stopTheGeo < 1 {
+                self.uploadData(changingURL: "https://developers.zomato.com/api/v2.1/geocode?lat=\(lats)&lon=\(longs)", APIHeader: "nearby_restaurants")
+                stopTheGeo += 1
+            }
             
             while xx < 100 {
                 self.uploadData(changingURL: "https://developers.zomato.com/api/v2.1/search?&lat=\(lats)&lon=\(longs)&start=\(xx)&count=\(yy)", APIHeader: "restaurants")
              xx += 20
              yy += 20
              }
-            while stopTheGeo < 1 {
-                self.uploadData(changingURL: "https://developers.zomato.com/api/v2.1/geocode?lat=\(lats)&lon=\(longs)", APIHeader: "nearby_restaurants")
-                stopTheGeo += 1
-            }
+            
         }
     }
     
@@ -280,18 +301,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         self.pickCC = self.pickCC.sorted() { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
 
                                         self.restaurantInfo.append(populate)
-                                        
+                                
                                     }
                                     OperationQueue.main.addOperation {
                                         
                                         self.cuisinePicker.reloadAllComponents()
                                         
                                     }
-                                    
                                 }
-                                
                             }
-                           
                         }
                         catch {
                             print(error)

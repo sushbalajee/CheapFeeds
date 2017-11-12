@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,7 +79,7 @@
                                     <constraint firstAttribute="width" secondItem="zS7-E8-JCe" secondAttribute="height" multiplier="75:88" id="Klo-Kz-P5R"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="32" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-YD-K6i">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="32" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-YD-K6i">
                                 <rect key="frame" x="16" y="90" width="343" height="417"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zq0-YD-K6i" secondAttribute="height" multiplier="343:417" id="NBK-uR-NdX"/>
@@ -121,6 +122,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                     <connections>
                         <outlet property="mainText" destination="Zq0-YD-K6i" id="mLM-1I-3O5"/>
                         <outlet property="mainTitle" destination="BjT-4i-x19" id="XUh-gJ-4vE"/>
+                        <outlet property="view1" destination="zS7-E8-JCe" id="HUK-u6-oIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3W-ua-olF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,7 +140,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who's Going To Pay?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QGd-wv-uPh">
                                 <rect key="frame" x="24" y="1" width="327" height="79"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="QGd-wv-uPh" secondAttribute="height" multiplier="327:79" id="OXV-F7-VHe"/>
+                                    <constraint firstAttribute="width" secondItem="QGd-wv-uPh" secondAttribute="height" multiplier="327:79" id="bh1-ie-dwe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="30"/>
                                 <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -146,26 +148,25 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prB-CN-XUF">
-                                <rect key="frame" x="0.0" y="80" width="375" height="181"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="188.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="M0z-K3-jhn">
-                                        <rect key="frame" x="67" y="12" width="240" height="157"/>
+                                        <rect key="frame" x="67" y="12" width="240" height="164.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="M0z-K3-jhn" secondAttribute="height" multiplier="240:157" id="wRW-dL-4UB"/>
+                                            <constraint firstAttribute="width" secondItem="M0z-K3-jhn" secondAttribute="height" multiplier="60:41" id="BQ2-3j-LRI"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="M0z-K3-jhn" secondAttribute="bottom" constant="12" id="ReH-I3-3IP"/>
-                                    <constraint firstItem="M0z-K3-jhn" firstAttribute="leading" secondItem="prB-CN-XUF" secondAttribute="leading" constant="67" id="dKc-44-Agg"/>
-                                    <constraint firstAttribute="width" secondItem="prB-CN-XUF" secondAttribute="height" multiplier="375:181" id="eKQ-u9-wZj"/>
-                                    <constraint firstItem="M0z-K3-jhn" firstAttribute="top" secondItem="prB-CN-XUF" secondAttribute="top" constant="12" id="oNW-6P-aTR"/>
-                                    <constraint firstAttribute="trailing" secondItem="M0z-K3-jhn" secondAttribute="trailing" constant="68" id="zP1-iN-XPc"/>
+                                    <constraint firstAttribute="trailing" secondItem="M0z-K3-jhn" secondAttribute="trailing" constant="68" id="3ic-Ve-HMn"/>
+                                    <constraint firstItem="M0z-K3-jhn" firstAttribute="leading" secondItem="prB-CN-XUF" secondAttribute="leading" constant="67" id="Cf5-6q-DFg"/>
+                                    <constraint firstAttribute="width" secondItem="prB-CN-XUF" secondAttribute="height" multiplier="375:188" id="IXU-c6-j8y"/>
+                                    <constraint firstItem="M0z-K3-jhn" firstAttribute="centerY" secondItem="prB-CN-XUF" secondAttribute="centerY" id="xww-q0-Rr4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVE-95-qLf">
-                                <rect key="frame" x="0.0" y="269" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="280.5" width="375" height="65"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter names of players" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Y3g-CN-HwP">
                                         <rect key="frame" x="63" y="17" width="249" height="30"/>
@@ -174,62 +175,44 @@ NOTE: Average cost per person is an approximate price according to results from 
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="0.35686274509803922" green="0.094117647058823528" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Y3g-CN-HwP" firstAttribute="leading" secondItem="lVE-95-qLf" secondAttribute="leading" constant="63" id="E8S-qL-KnV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Y3g-CN-HwP" secondAttribute="bottom" constant="18" id="Scv-jb-wLQ"/>
-                                    <constraint firstAttribute="width" secondItem="lVE-95-qLf" secondAttribute="height" multiplier="75:13" id="UGh-3J-mkQ"/>
-                                    <constraint firstItem="Y3g-CN-HwP" firstAttribute="top" secondItem="lVE-95-qLf" secondAttribute="top" constant="17" id="pp1-Vb-JGT"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y3g-CN-HwP" secondAttribute="trailing" constant="63" id="wcW-XQ-493"/>
+                                    <constraint firstAttribute="width" secondItem="lVE-95-qLf" secondAttribute="height" multiplier="75:13" id="H1E-ve-0wS"/>
+                                    <constraint firstItem="Y3g-CN-HwP" firstAttribute="leading" secondItem="lVE-95-qLf" secondAttribute="leading" constant="63" id="HZa-Kx-pHV"/>
+                                    <constraint firstItem="Y3g-CN-HwP" firstAttribute="centerY" secondItem="lVE-95-qLf" secondAttribute="centerY" id="Rib-I5-s11"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y3g-CN-HwP" secondAttribute="trailing" constant="63" id="w8C-fZ-bBJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyk-0g-vII">
-                                <rect key="frame" x="0.0" y="347.5" width="375" height="198"/>
+                                <rect key="frame" x="0.0" y="359" width="375" height="198"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrows_long_down1600" translatesAutoresizingMaskIntoConstraints="NO" id="XZt-Pn-YmI">
-                                        <rect key="frame" x="311.5" y="97.5" width="63.5" height="83"/>
+                                        <rect key="frame" x="311.5" y="98" width="63.5" height="83"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="XZt-Pn-YmI" secondAttribute="height" multiplier="63:83" id="fv4-i0-iqs"/>
+                                            <constraint firstAttribute="width" secondItem="XZt-Pn-YmI" secondAttribute="height" multiplier="63:83" id="oYg-gd-4Vg"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrows_long_down1600" translatesAutoresizingMaskIntoConstraints="NO" id="9EM-qy-DAw">
-                                        <rect key="frame" x="0.0" y="97.5" width="64" height="83"/>
+                                        <rect key="frame" x="0.0" y="98" width="64" height="83"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="9EM-qy-DAw" secondAttribute="height" multiplier="64:83" id="DpN-tK-OwR"/>
+                                            <constraint firstAttribute="width" secondItem="9EM-qy-DAw" secondAttribute="height" multiplier="64:83" id="fwC-t2-JsJ"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="9EM-qy-DAw" firstAttribute="leading" secondItem="vyk-0g-vII" secondAttribute="leading" id="44E-yf-wHe"/>
-                                    <constraint firstAttribute="width" secondItem="vyk-0g-vII" secondAttribute="height" multiplier="125:66" id="SI5-lq-atv"/>
-                                    <constraint firstItem="XZt-Pn-YmI" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="top" constant="97.5" id="tgq-p6-Gq7"/>
-                                    <constraint firstAttribute="bottom" secondItem="XZt-Pn-YmI" secondAttribute="bottom" constant="17.5" id="uR0-SL-qhh"/>
-                                    <constraint firstItem="9EM-qy-DAw" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="top" constant="97.5" id="vcA-Le-Ado"/>
-                                    <constraint firstAttribute="trailing" secondItem="XZt-Pn-YmI" secondAttribute="trailing" id="veT-aC-TOm"/>
-                                    <constraint firstAttribute="bottom" secondItem="9EM-qy-DAw" secondAttribute="bottom" constant="17.5" id="wdJ-sq-Wo4"/>
+                                    <constraint firstItem="XZt-Pn-YmI" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="top" constant="98" id="0N5-P0-rPv"/>
+                                    <constraint firstItem="9EM-qy-DAw" firstAttribute="leading" secondItem="vyk-0g-vII" secondAttribute="leading" id="2Kd-F1-szZ"/>
+                                    <constraint firstAttribute="width" secondItem="vyk-0g-vII" secondAttribute="height" multiplier="125:66" id="EMK-9y-JBu"/>
+                                    <constraint firstAttribute="bottom" secondItem="9EM-qy-DAw" secondAttribute="bottom" constant="17" id="Fbs-Ql-PQf"/>
+                                    <constraint firstItem="9EM-qy-DAw" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="top" constant="98" id="Te4-pR-9Nc"/>
+                                    <constraint firstAttribute="trailing" secondItem="XZt-Pn-YmI" secondAttribute="trailing" id="bup-jz-l7e"/>
+                                    <constraint firstAttribute="bottom" secondItem="XZt-Pn-YmI" secondAttribute="bottom" constant="17" id="lcW-vV-inc"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEz-rV-amN">
-                                <rect key="frame" x="0.0" y="553.5" width="375" height="35"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="EEz-rV-amN" secondAttribute="height" multiplier="375:41" constant="54.878048780487802" id="boO-05-IV3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Spin">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="spinButton:" destination="tSV-n2-8Ng" eventType="touchUpInside" id="zpl-tW-Cqy"/>
-                                </connections>
-                            </button>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="25" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uxe-gc-gLZ">
-                                <rect key="frame" x="68" y="356.5" width="239" height="174"/>
+                                <rect key="frame" x="68" y="368" width="239" height="174"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Uxe-gc-gLZ" secondAttribute="height" multiplier="239:174" id="bVf-Lm-yuA"/>
-                                </constraints>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -245,31 +228,52 @@ NOTE: Average cost per person is an approximate price according to results from 
                                     </connections>
                                 </button>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjH-0J-vlQ" userLabel="View4">
+                                <rect key="frame" x="0.0" y="557" width="375" height="46"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEz-rV-amN">
+                                        <rect key="frame" x="0.0" y="4.5" width="375" height="36"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Spin">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="spinButton:" destination="tSV-n2-8Ng" eventType="touchUpInside" id="zpl-tW-Cqy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EEz-rV-amN" secondAttribute="trailing" id="1lw-Vz-UKw"/>
+                                    <constraint firstItem="EEz-rV-amN" firstAttribute="leading" secondItem="wjH-0J-vlQ" secondAttribute="leading" id="5vG-Jz-0b4"/>
+                                    <constraint firstItem="EEz-rV-amN" firstAttribute="centerY" secondItem="wjH-0J-vlQ" secondAttribute="centerY" id="D2c-9U-Pqq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="prB-CN-XUF" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" id="GTO-zn-wzL"/>
-                            <constraint firstItem="prB-CN-XUF" firstAttribute="trailing" secondItem="dCv-hW-VXL" secondAttribute="trailing" id="GW5-Ug-yhl"/>
-                            <constraint firstItem="EEz-rV-amN" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="bottom" constant="8" id="Glq-ef-UWp"/>
-                            <constraint firstItem="dCv-hW-VXL" firstAttribute="trailing" secondItem="QGd-wv-uPh" secondAttribute="trailing" constant="24" id="Gni-2k-RUi"/>
-                            <constraint firstItem="QGd-wv-uPh" firstAttribute="top" secondItem="dCv-hW-VXL" secondAttribute="top" constant="1" id="IBT-ar-vhf"/>
-                            <constraint firstItem="Uxe-gc-gLZ" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" constant="68" id="Knd-aB-Chh"/>
-                            <constraint firstItem="EEz-rV-amN" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" id="MlW-gM-Twu"/>
-                            <constraint firstItem="Uxe-gc-gLZ" firstAttribute="top" secondItem="lVE-95-qLf" secondAttribute="bottom" constant="23" id="Pqn-8F-FxN"/>
-                            <constraint firstItem="lVE-95-qLf" firstAttribute="top" secondItem="prB-CN-XUF" secondAttribute="bottom" constant="8" id="VEi-bh-RsB"/>
-                            <constraint firstItem="vyk-0g-vII" firstAttribute="top" secondItem="lVE-95-qLf" secondAttribute="bottom" constant="13.5" id="Vf9-O4-2LJ"/>
-                            <constraint firstItem="EEz-rV-amN" firstAttribute="trailing" secondItem="dCv-hW-VXL" secondAttribute="trailing" id="YDA-I3-ZJ3"/>
-                            <constraint firstItem="vyk-0g-vII" firstAttribute="trailing" secondItem="dCv-hW-VXL" secondAttribute="trailing" id="chf-0U-Mt3"/>
-                            <constraint firstItem="dCv-hW-VXL" firstAttribute="trailing" secondItem="Uxe-gc-gLZ" secondAttribute="trailing" constant="68" id="ckb-FM-DsK"/>
-                            <constraint firstItem="vyk-0g-vII" firstAttribute="top" secondItem="lVE-95-qLf" secondAttribute="bottom" constant="13.5" id="d4U-da-nQ2"/>
-                            <constraint firstItem="EEz-rV-amN" firstAttribute="top" secondItem="Uxe-gc-gLZ" secondAttribute="bottom" constant="23" id="gy0-0v-sJg"/>
-                            <constraint firstItem="EEz-rV-amN" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="bottom" constant="8" id="hx7-d8-MD6"/>
-                            <constraint firstItem="lVE-95-qLf" firstAttribute="trailing" secondItem="dCv-hW-VXL" secondAttribute="trailing" id="iml-Bi-08E"/>
-                            <constraint firstItem="vyk-0g-vII" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" id="rxt-xz-A1D"/>
-                            <constraint firstItem="prB-CN-XUF" firstAttribute="top" secondItem="QGd-wv-uPh" secondAttribute="bottom" id="u5d-n9-GIS"/>
-                            <constraint firstItem="prB-CN-XUF" firstAttribute="top" secondItem="QGd-wv-uPh" secondAttribute="bottom" id="vK8-9g-BdM"/>
-                            <constraint firstItem="QGd-wv-uPh" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" constant="24" id="vuJ-Lv-Ke8"/>
-                            <constraint firstItem="lVE-95-qLf" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" id="xQe-Ki-a2T"/>
+                            <constraint firstItem="Uxe-gc-gLZ" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" constant="68" id="1IZ-AN-xvG"/>
+                            <constraint firstItem="wjH-0J-vlQ" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" id="2aj-i4-vQd"/>
+                            <constraint firstItem="vyk-0g-vII" firstAttribute="top" secondItem="lVE-95-qLf" secondAttribute="bottom" constant="13.5" id="7kt-yF-cUN"/>
+                            <constraint firstItem="vyk-0g-vII" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" id="8mv-TP-V3d"/>
+                            <constraint firstItem="QGd-wv-uPh" firstAttribute="top" secondItem="dCv-hW-VXL" secondAttribute="top" constant="1" id="A8c-xp-lAo"/>
+                            <constraint firstItem="dCv-hW-VXL" firstAttribute="trailing" secondItem="QGd-wv-uPh" secondAttribute="trailing" constant="24" id="AIl-PI-4xq"/>
+                            <constraint firstItem="dCv-hW-VXL" firstAttribute="trailing" secondItem="Uxe-gc-gLZ" secondAttribute="trailing" constant="68" id="Bwb-Eb-UO2"/>
+                            <constraint firstItem="wjH-0J-vlQ" firstAttribute="bottom" secondItem="dCv-hW-VXL" secondAttribute="bottom" id="E5c-F0-DFQ"/>
+                            <constraint firstItem="vyk-0g-vII" firstAttribute="trailing" secondItem="dCv-hW-VXL" secondAttribute="trailing" id="IaR-bx-QgP"/>
+                            <constraint firstItem="lVE-95-qLf" firstAttribute="top" secondItem="prB-CN-XUF" secondAttribute="bottom" constant="12" id="ObK-yr-EZ4"/>
+                            <constraint firstItem="prB-CN-XUF" firstAttribute="top" secondItem="QGd-wv-uPh" secondAttribute="bottom" id="PWZ-Sb-WQH"/>
+                            <constraint firstItem="Uxe-gc-gLZ" firstAttribute="top" secondItem="lVE-95-qLf" secondAttribute="bottom" constant="22.5" id="dIQ-Xy-zot"/>
+                            <constraint firstItem="wjH-0J-vlQ" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="bottom" id="ewl-7s-pDW"/>
+                            <constraint firstItem="QGd-wv-uPh" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" constant="24" id="fTb-w1-ops"/>
+                            <constraint firstItem="lVE-95-qLf" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" id="heR-ZK-dPV"/>
+                            <constraint firstItem="wjH-0J-vlQ" firstAttribute="top" secondItem="Uxe-gc-gLZ" secondAttribute="bottom" constant="15" id="hkk-Fc-91Y"/>
+                            <constraint firstItem="wjH-0J-vlQ" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="bottom" id="iPf-y3-TXq"/>
+                            <constraint firstItem="prB-CN-XUF" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" id="jco-FR-yPs"/>
+                            <constraint firstItem="wjH-0J-vlQ" firstAttribute="trailing" secondItem="dCv-hW-VXL" secondAttribute="trailing" id="k5h-Fv-CiK"/>
+                            <constraint firstItem="prB-CN-XUF" firstAttribute="trailing" secondItem="dCv-hW-VXL" secondAttribute="trailing" id="yhW-TA-yhg"/>
+                            <constraint firstItem="lVE-95-qLf" firstAttribute="trailing" secondItem="dCv-hW-VXL" secondAttribute="trailing" id="zOS-cA-RWU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dCv-hW-VXL"/>
                     </view>
@@ -335,7 +339,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="E9f-Ll-hwE" secondAttribute="height" multiplier="173:32" id="xEd-6E-CGR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
                                         <color key="textColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -344,7 +348,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FTN-a8-sft" secondAttribute="height" multiplier="173:29" id="s5Q-lc-g9C"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
                                         <color key="textColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -366,7 +370,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NdC-fB-zMG" secondAttribute="height" multiplier="221:29" id="lhX-PU-TTL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
                                         <color key="textColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -497,7 +501,6 @@ NOTE: Average cost per person is an approximate price according to results from 
                             <constraint firstItem="PGf-jf-M0f" firstAttribute="top" secondItem="cnK-6D-JHc" secondAttribute="bottom" constant="21" id="klZ-WB-7Nb"/>
                             <constraint firstItem="PGf-jf-M0f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nym-ym-qgm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4c2-ef-njU" secondAttribute="trailing" constant="58" id="oHD-CK-Ukg"/>
-                            <constraint firstItem="cnK-6D-JHc" firstAttribute="top" secondItem="4c2-ef-njU" secondAttribute="bottom" constant="11.5" id="tg3-lJ-iUC"/>
                             <constraint firstItem="PGf-jf-M0f" firstAttribute="top" secondItem="cnK-6D-JHc" secondAttribute="bottom" constant="21" id="umm-bH-aMG"/>
                             <constraint firstItem="A4R-OQ-aro" firstAttribute="top" secondItem="PGf-jf-M0f" secondAttribute="bottom" constant="16" id="zaD-z9-zfn"/>
                         </constraints>
@@ -557,20 +560,6 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmn-9h-CXV">
-                                <rect key="frame" x="0.0" y="542" width="375" height="41"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Gmn-9h-CXV" secondAttribute="height" multiplier="375:41" id="vwd-8w-p53"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Spin The Wheel">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="spinButton:" destination="P9j-3a-llu" eventType="touchUpInside" id="Za7-ja-jgr"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zs-Q7-Bpz">
                                 <rect key="frame" x="0.0" y="414" width="375" height="120"/>
                                 <subviews>
@@ -601,30 +590,51 @@ NOTE: Average cost per person is an approximate price according to results from 
                                     <segue destination="il3-bR-YGS" kind="show" identifier="showGeneratorResults" id="FUI-aB-ZQo"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yej-Gr-TIz" userLabel="View4">
+                                <rect key="frame" x="0.0" y="534" width="375" height="69"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmn-9h-CXV">
+                                        <rect key="frame" x="0.0" y="14" width="375" height="41"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Spin The Wheel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="spinButton:" destination="P9j-3a-llu" eventType="touchUpInside" id="Za7-ja-jgr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Gmn-9h-CXV" firstAttribute="leading" secondItem="yej-Gr-TIz" secondAttribute="leading" id="H1R-uO-hpl"/>
+                                    <constraint firstItem="Gmn-9h-CXV" firstAttribute="centerY" secondItem="yej-Gr-TIz" secondAttribute="centerY" id="Mz5-YY-LDm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gmn-9h-CXV" secondAttribute="trailing" id="Na7-be-t9H"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="AcD-4T-YON" firstAttribute="top" secondItem="zde-0s-YvB" secondAttribute="bottom" constant="20" id="11Z-yr-MQM"/>
                             <constraint firstItem="7zs-Q7-Bpz" firstAttribute="top" secondItem="AcD-4T-YON" secondAttribute="bottom" constant="46" id="72m-ga-ev9"/>
                             <constraint firstItem="oXI-9H-1Zd" firstAttribute="trailing" secondItem="zde-0s-YvB" secondAttribute="trailing" constant="24" id="Ksg-nr-yZe"/>
+                            <constraint firstItem="yej-Gr-TIz" firstAttribute="top" secondItem="7zs-Q7-Bpz" secondAttribute="bottom" id="OjF-OJ-3B0"/>
+                            <constraint firstItem="yej-Gr-TIz" firstAttribute="trailing" secondItem="oXI-9H-1Zd" secondAttribute="trailing" id="P72-S1-UxU"/>
                             <constraint firstItem="AcD-4T-YON" firstAttribute="leading" secondItem="oXI-9H-1Zd" secondAttribute="leading" id="QG4-ai-yfH"/>
-                            <constraint firstItem="Gmn-9h-CXV" firstAttribute="top" secondItem="7zs-Q7-Bpz" secondAttribute="bottom" constant="8" id="RGY-pn-3ye"/>
                             <constraint firstItem="fI2-ZR-Q2B" firstAttribute="trailing" secondItem="oXI-9H-1Zd" secondAttribute="trailing" id="UX5-gA-Pla"/>
                             <constraint firstItem="Og3-aW-XQd" firstAttribute="centerX" secondItem="0bE-ED-A5Y" secondAttribute="centerX" id="V6s-uX-QZQ"/>
-                            <constraint firstItem="Gmn-9h-CXV" firstAttribute="trailing" secondItem="oXI-9H-1Zd" secondAttribute="trailing" id="YBh-Ai-ncl"/>
                             <constraint firstItem="AcD-4T-YON" firstAttribute="trailing" secondItem="oXI-9H-1Zd" secondAttribute="trailing" id="Ygj-C9-47d"/>
                             <constraint firstItem="fI2-ZR-Q2B" firstAttribute="top" secondItem="oXI-9H-1Zd" secondAttribute="top" id="Zl3-on-aE5"/>
                             <constraint firstItem="7zs-Q7-Bpz" firstAttribute="leading" secondItem="oXI-9H-1Zd" secondAttribute="leading" id="c5d-yi-kS7"/>
                             <constraint firstItem="7zs-Q7-Bpz" firstAttribute="trailing" secondItem="oXI-9H-1Zd" secondAttribute="trailing" id="cP9-RB-jAA"/>
                             <constraint firstItem="zde-0s-YvB" firstAttribute="top" secondItem="oXI-9H-1Zd" secondAttribute="top" id="eGS-qb-LUK"/>
-                            <constraint firstItem="Gmn-9h-CXV" firstAttribute="leading" secondItem="oXI-9H-1Zd" secondAttribute="leading" id="gW7-ZQ-sgw"/>
                             <constraint firstItem="zde-0s-YvB" firstAttribute="leading" secondItem="oXI-9H-1Zd" secondAttribute="leading" constant="24" id="gnh-5C-HhQ"/>
                             <constraint firstItem="AcD-4T-YON" firstAttribute="top" secondItem="fI2-ZR-Q2B" secondAttribute="bottom" constant="20" id="iAy-Z1-Ce1"/>
                             <constraint firstItem="7zs-Q7-Bpz" firstAttribute="top" secondItem="Og3-aW-XQd" secondAttribute="bottom" constant="8" id="jF7-Xf-okF"/>
                             <constraint firstItem="fI2-ZR-Q2B" firstAttribute="leading" secondItem="oXI-9H-1Zd" secondAttribute="leading" id="jvQ-Ih-FN7"/>
+                            <constraint firstItem="yej-Gr-TIz" firstAttribute="leading" secondItem="oXI-9H-1Zd" secondAttribute="leading" id="nzQ-vG-nre"/>
                             <constraint firstItem="Og3-aW-XQd" firstAttribute="top" secondItem="AcD-4T-YON" secondAttribute="bottom" constant="8" id="pLJ-qh-Oxc"/>
-                            <constraint firstItem="Gmn-9h-CXV" firstAttribute="top" secondItem="7zs-Q7-Bpz" secondAttribute="bottom" constant="8" id="q0a-hJ-iWF"/>
-                            <constraint firstItem="AcD-4T-YON" firstAttribute="top" secondItem="fI2-ZR-Q2B" secondAttribute="bottom" constant="20" id="y09-P3-QUN"/>
+                            <constraint firstItem="yej-Gr-TIz" firstAttribute="bottom" secondItem="oXI-9H-1Zd" secondAttribute="bottom" id="yOU-zo-ydf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oXI-9H-1Zd"/>
                     </view>
@@ -665,29 +675,29 @@ NOTE: Average cost per person is an approximate price according to results from 
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="290"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FHg-TD-fhA">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FHg-TD-fhA">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="FHg-TD-fhA" secondAttribute="height" multiplier="125:67" id="3os-q9-TBW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QiL-M3-qmu">
-                                                    <rect key="frame" x="15" y="211" width="506" height="31"/>
+                                                    <rect key="frame" x="15" y="211" width="345" height="30.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="QiL-M3-qmu" secondAttribute="height" multiplier="359:22" id="cF4-sL-tdB"/>
+                                                        <constraint firstAttribute="width" secondItem="QiL-M3-qmu" secondAttribute="height" multiplier="359:22" constant="-153.86363636363632" id="cF4-sL-tdB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="22"/>
                                                     <color key="textColor" red="0.30588235294117649" green="0.30588235294117649" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gv-wL-wT8" userLabel="Distance Label">
-                                                    <rect key="frame" x="15" y="260.5" width="31.5" height="18.5"/>
+                                                    <rect key="frame" x="15" y="260" width="31.5" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="13"/>
                                                     <color key="textColor" red="0.58995895972711787" green="0.58995895972711787" blue="0.58995895972711787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCV-S4-tXi" userLabel="Cost Label">
-                                                    <rect key="frame" x="15" y="242" width="31.5" height="18.5"/>
+                                                    <rect key="frame" x="15" y="241.5" width="31.5" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="13"/>
                                                     <color key="textColor" red="0.58995895972711787" green="0.58995895972711787" blue="0.58995895972711787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -699,6 +709,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                                 <constraint firstItem="QiL-M3-qmu" firstAttribute="leading" secondItem="hjS-4Q-igi" secondAttribute="leading" constant="15" id="B1H-Ik-aVB"/>
                                                 <constraint firstItem="0Gv-wL-wT8" firstAttribute="top" secondItem="sCV-S4-tXi" secondAttribute="bottom" id="Eir-0L-bsb"/>
                                                 <constraint firstItem="0Gv-wL-wT8" firstAttribute="leading" secondItem="hjS-4Q-igi" secondAttribute="leading" constant="15" id="KNS-6Z-36k"/>
+                                                <constraint firstItem="QiL-M3-qmu" firstAttribute="trailing" secondItem="hjS-4Q-igi" secondAttribute="trailingMargin" constant="-7" id="Lt1-Aa-9xl"/>
                                                 <constraint firstItem="sCV-S4-tXi" firstAttribute="leading" secondItem="hjS-4Q-igi" secondAttribute="leading" constant="15" id="QG8-4i-bZt"/>
                                                 <constraint firstAttribute="trailing" secondItem="FHg-TD-fhA" secondAttribute="trailing" id="UQt-Lm-Rb0"/>
                                                 <constraint firstItem="QiL-M3-qmu" firstAttribute="top" secondItem="FHg-TD-fhA" secondAttribute="bottom" constant="10" id="YBK-aB-gts"/>
@@ -743,7 +754,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-rT-pBS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-rT-pBS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AcS-rT-pBS" secondAttribute="height" multiplier="375:158" id="KME-Kx-dTn"/>
@@ -752,7 +763,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gm-67-SIM">
                                 <rect key="frame" x="0.0" y="254.5" width="375" height="287"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KB-Ex-PeK" userLabel="Address Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7KB-Ex-PeK" userLabel="Address Label">
                                         <rect key="frame" x="24" y="0.0" width="327" height="73"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7KB-Ex-PeK" secondAttribute="height" multiplier="327:73" id="aSY-8r-cT9"/>
@@ -774,16 +785,16 @@ NOTE: Average cost per person is an approximate price according to results from 
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pzn-mj-ZlP" secondAttribute="height" multiplier="327:43" constant="-60.837209302325618" id="D1P-iO-aS8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
                                         <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMh-0V-qua" userLabel="AverageCostLabel">
-                                        <rect key="frame" x="24" y="255" width="152" height="22.5"/>
+                                        <rect key="frame" x="24" y="255" width="142" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bMh-0V-qua" secondAttribute="height" multiplier="27:4" id="Hgz-Fv-Pi9"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
                                         <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -867,7 +878,6 @@ NOTE: Average cost per person is an approximate price according to results from 
                         <constraints>
                             <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="DGk-eo-BD5" secondAttribute="bottom" constant="18" id="1Du-fd-mFu"/>
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="1LF-Av-Gap"/>
-                            <constraint firstItem="DGk-eo-BD5" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="74" id="2Vc-Jn-yOX"/>
                             <constraint firstItem="Wsr-tf-nvX" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="24" id="2wG-uW-irx"/>
                             <constraint firstItem="KKf-qI-XcM" firstAttribute="leading" secondItem="eTX-Ez-kx5" secondAttribute="trailing" constant="5" id="3Ts-82-5dD"/>
                             <constraint firstItem="uVG-05-Mbr" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5.5" id="54f-wN-MjC"/>
@@ -881,6 +891,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="LGQ-r1-xUw"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="Pdj-UC-LWf"/>
                             <constraint firstItem="Wsr-tf-nvX" firstAttribute="top" secondItem="AcS-rT-pBS" secondAttribute="bottom" constant="-29.5" id="QDh-DF-Kmc"/>
+                            <constraint firstItem="DGk-eo-BD5" firstAttribute="leading" secondItem="uVG-05-Mbr" secondAttribute="trailing" constant="5" id="Ybw-se-bgN"/>
                             <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="eTX-Ez-kx5" secondAttribute="bottom" constant="6" id="bsB-r4-yH9"/>
                             <constraint firstItem="eTX-Ez-kx5" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5.5" id="cDY-AP-Auv"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="top" secondItem="hDU-Ir-30B" secondAttribute="bottom" constant="4" id="chg-PE-kow"/>
@@ -889,6 +900,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                             <constraint firstItem="hDU-Ir-30B" firstAttribute="top" secondItem="Wsr-tf-nvX" secondAttribute="bottom" constant="4" id="qrU-LS-Xhk"/>
                             <constraint firstItem="uVG-05-Mbr" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="19" id="vCy-f2-Zx3"/>
                             <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="hDU-Ir-30B" secondAttribute="trailing" constant="85" id="y2b-FN-9Em"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DGk-eo-BD5" secondAttribute="trailing" constant="20" symbolic="YES" id="yfv-UQ-dR1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EUp-De-G6r"/>
                     </view>

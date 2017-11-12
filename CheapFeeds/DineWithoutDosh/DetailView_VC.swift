@@ -53,7 +53,13 @@ class DetailView_VC: UIViewController {
             let url = URL(string: item.mainImage!)
             
             if(!(item.mainImage!.isEmpty)){
-                let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+                
+                let string = url?.description
+                let replaced = (string! as NSString).replacingOccurrences(of: "?output-format=webp", with: "")
+                
+                let Durl = URL(string: replaced)
+                
+                let task = URLSession.shared.dataTask(with: Durl!) { data, response, error in
                     guard let data = data, error == nil else { return }
                     
                     DispatchQueue.main.async() {
@@ -98,28 +104,28 @@ class DetailView_VC: UIViewController {
             if (doubleRating! < 1){
                 self.starImages.image = UIImage(named: "1s")
             }
-            else if (doubleRating! > 1 && doubleRating! <= 1.5){
+            else if (doubleRating! > 1.25 && doubleRating! <= 1.75){
                 self.starImages.image = UIImage(named: "1.5s")
             }
-            else if (doubleRating! > 1.5 && doubleRating! <= 2){
+            else if (doubleRating! > 1.75 && doubleRating! <= 2.25){
                 self.starImages.image = UIImage(named: "2s")
             }
-            else if (doubleRating! > 2 && doubleRating! <= 2.5){
+            else if (doubleRating! > 2.25 && doubleRating! <= 2.75){
                 self.starImages.image = UIImage(named: "2.5s")
             }
-            else if (doubleRating! > 2.5 && doubleRating! <= 3){
+            else if (doubleRating! > 2.75 && doubleRating! <= 3.25){
                 self.starImages.image = UIImage(named: "3s")
             }
-            else if (doubleRating! > 3 && doubleRating! <= 3.5){
+            else if (doubleRating! > 3.25 && doubleRating! <= 3.75){
                 self.starImages.image = UIImage(named: "3.5s")
             }
-            else if (doubleRating! > 3.5 && doubleRating! <= 4){
+            else if (doubleRating! > 3.75 && doubleRating! <= 4.25){
                 self.starImages.image = UIImage(named: "4s")
             }
-            else if (doubleRating! > 4 && doubleRating! <= 4.5){
+            else if (doubleRating! > 4.25 && doubleRating! <= 4.75){
                 self.starImages.image = UIImage(named: "4.5s")
             }
-            else if (doubleRating! > 4.5 && doubleRating! <= 5){
+            else if (doubleRating! > 4.75 && doubleRating! <= 5){
                 self.starImages.image = UIImage(named: "5s")
             }
             
