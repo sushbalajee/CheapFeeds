@@ -16,16 +16,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view3: UIView!
     @IBOutlet weak var view2: UIView!
-    
-    var x = 0
-    var stopTheGeo = 0
-
-    var pickCC = [String]()
-
+ 
     let locationManager = CLLocationManager()
     
-    var centerLatitude = -41.210930, centerLongitude = 174.906774
-
+    var stopTheGeo = 0
+    var pickCC = [String]()
     var lats = CLLocationDegrees()
     var longs = CLLocationDegrees()
     var xx = 0
@@ -34,6 +29,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
 
     var filteredAnyByCost = [RestaurantData]()
     var restaurantInfo = [RestaurantData]()
+    
+//---------------------------------------------------------------------------------//
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -49,6 +46,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     @objc func doneClicked(){
         view.endEditing(true)
     }
+    
+//---------------------------------------------------------------------------------//
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +84,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
-            print("working")
         }
         
         textf.addTarget(nil, action:Selector(("firstResponderAction:")), for: .editingDidEndOnExit)
@@ -93,7 +91,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         textf.keyboardType = UIKeyboardType.numberPad
         
         cuisinePicker.reloadAllComponents()
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -101,13 +98,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         if let location = locations.first{
-            lats = -36.879280
-            longs = 174.734735
-            //lats = location.coordinate.latitude
-            //longs = location.coordinate.longitude
             
-            
+            lats = location.coordinate.latitude
+            longs = location.coordinate.longitude
             
             while stopTheGeo < 1 {
                 self.uploadData(changingURL: "https://developers.zomato.com/api/v2.1/geocode?lat=\(lats)&lon=\(longs)", APIHeader: "nearby_restaurants")
@@ -119,31 +114,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
              xx += 20
              yy += 20
              }
-            
         }
     }
+    
+//---------------------------------------------------------------------------------//
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         return pickCC.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-
-        let string = pickCC[row]
-        return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor:UIColor.black])
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickCC[row]
     }
-    
-    
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         pickedCuisine = pickCC[row]
-
     }
+    
+//---------------------------------------------------------------------------------//
     
     @IBAction func generate(_ sender: Any) {
 
@@ -151,7 +144,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             for items in restaurantInfo{
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
                     if(items.cuisines.contains(pickedCuisine)){
-                        
+                    
                         let all = items
                         filteredAnyByCost.append(all)
                     }
@@ -167,7 +160,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         }
     }
     
+//---------------------------------------------------------------------------------//
+    
     @IBAction func but(_ sender: Any) {
+        
         if let budget = Int(textf.text!){
             for items in restaurantInfo{
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
@@ -178,7 +174,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                     }
                 }
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
-                if(pickedCuisine == "--- Any ---"){
+                    if(pickedCuisine == "--- Any ---"){
                     
                     let all = items
                     filteredAnyByCost.append(all)
@@ -187,6 +183,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             }
         }
     }
+    
+//---------------------------------------------------------------------------------//
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
@@ -198,12 +196,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                 createAlert(title: "Warning", message: "Please enter your budget")
             }
             else{
-            if(filteredAnyByCost.count > 0){
-                DestViewController.pulledSearch = filteredAnyByCost
-            }
-            else{
-                createAlert(title: "Warning", message: "No results matching your budget/cuisine. Try increasing your budget!")
-            }
+                if(filteredAnyByCost.count > 0){
+                    DestViewController.pulledSearch = filteredAnyByCost
+                }
+                else{
+                    createAlert(title: "Warning", message: "No results matching your budget/cuisine. Try increasing your budget!")
+                }
             DestViewController.originLat = lats
             DestViewController.originLong = longs
             
@@ -222,8 +220,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                 if(filteredAnyByCost.count > 0){
                     DestViewController.dataToSelectFrom = filteredAnyByCost
                 }
-                else{
-                    createAlert(title: "Warning", message: "No results matching your budget/cuisine. Try increasing your budget!")
+            else{
+                createAlert(title: "Warning", message: "No results matching your budget/cuisine. Try increasing your budget!")
                 }
                 filteredAnyByCost.removeAll()
             }
@@ -234,6 +232,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         super.didReceiveMemoryWarning()
     }
     
+//---------------------------------------------------------------------------------//
+    
+    /* Error handling messages using pop up dialogs */
     func createAlert(title :String, message: String){
         // create the alert
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -247,7 +248,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         self.present(alert, animated: true, completion: nil)
     }
     
-
+//---------------------------------------------------------------------------------//
+    
+    /* API call and initialisation */
     func uploadData(changingURL: String, APIHeader: String){
         
         let zomatoKey = 
@@ -301,12 +304,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         self.pickCC = self.pickCC.sorted() { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
 
                                         self.restaurantInfo.append(populate)
-                                
                                     }
                                     OperationQueue.main.addOperation {
-                                        
                                         self.cuisinePicker.reloadAllComponents()
-                                        
                                     }
                                 }
                             }
@@ -315,13 +315,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                             print(error)
                         }
                     }
-                    
                 }
-                
             })
             task.resume()
         }
-        
     }
-   
 }

@@ -821,9 +821,9 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <rect key="frame" x="24" y="128.5" width="327" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-gk-5kH">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="92"/>
+                                        <rect key="frame" x="4" y="0.0" width="319" height="92"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="BY7-gk-5kH" secondAttribute="height" multiplier="327:92" id="oI1-MB-XXn"/>
+                                            <constraint firstAttribute="width" secondItem="BY7-gk-5kH" secondAttribute="height" multiplier="327:92" constant="-8" id="oI1-MB-XXn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="23"/>
                                         <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -834,9 +834,9 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <constraints>
                                     <constraint firstItem="BY7-gk-5kH" firstAttribute="top" secondItem="Wsr-tf-nvX" secondAttribute="top" id="8X2-lM-VMP"/>
                                     <constraint firstAttribute="width" secondItem="Wsr-tf-nvX" secondAttribute="height" multiplier="327:92" id="T0P-Sg-GIt"/>
-                                    <constraint firstAttribute="trailing" secondItem="BY7-gk-5kH" secondAttribute="trailing" id="WU6-Nz-ZBk"/>
+                                    <constraint firstAttribute="trailing" secondItem="BY7-gk-5kH" secondAttribute="trailing" constant="4" id="WU6-Nz-ZBk"/>
                                     <constraint firstAttribute="bottom" secondItem="BY7-gk-5kH" secondAttribute="bottom" id="c4Q-gp-v14"/>
-                                    <constraint firstItem="BY7-gk-5kH" firstAttribute="leading" secondItem="Wsr-tf-nvX" secondAttribute="leading" id="vnh-ee-WJk"/>
+                                    <constraint firstItem="BY7-gk-5kH" firstAttribute="leading" secondItem="Wsr-tf-nvX" secondAttribute="leading" constant="4" id="vnh-ee-WJk"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1s" translatesAutoresizingMaskIntoConstraints="NO" id="hDU-Ir-30B">

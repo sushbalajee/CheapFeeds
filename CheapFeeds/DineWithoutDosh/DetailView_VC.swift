@@ -27,6 +27,8 @@ class DetailView_VC: UIViewController {
     
     var dataFromResults = [RestaurantData]()
     
+//---------------------------------------------------------------------------------//
+    
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -44,8 +46,7 @@ class DetailView_VC: UIViewController {
         view3.layer.shadowOpacity = 1
         view3.layer.shadowOffset = CGSize.zero
         view3.layer.shadowRadius = 1
-        
-        
+    
         map.layer.cornerRadius = 10
         
         for item in dataFromResults {
@@ -131,10 +132,14 @@ class DetailView_VC: UIViewController {
             
         }
     }
+    
+//---------------------------------------------------------------------------------//
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+//---------------------------------------------------------------------------------//
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         

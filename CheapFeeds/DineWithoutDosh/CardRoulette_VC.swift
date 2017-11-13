@@ -28,9 +28,7 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
     var players = [String]()
     var unlucky = ""
     var timeTimer: Timer?
-    
-  
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

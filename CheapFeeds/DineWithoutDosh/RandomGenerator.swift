@@ -29,7 +29,6 @@ class RandomGenerator: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
      
         mainTitle.layer.shadowColor = UIColor.white.cgColor
         mainTitle.layer.shadowOpacity = 1
