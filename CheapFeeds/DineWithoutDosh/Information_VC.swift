@@ -10,18 +10,12 @@ import UIKit
 
 class Information_VC: UIViewController {
 
-
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var mainText: UILabel!
     @IBOutlet weak var mainTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainTitle.layer.shadowColor = UIColor.white.cgColor
-        mainTitle.layer.shadowOpacity = 0.5
-        mainTitle.layer.shadowOffset = CGSize.zero
-        mainTitle.layer.shadowRadius = 10
         
         view1.layer.shadowColor = UIColor.darkGray.cgColor
         view1.layer.shadowOpacity = 1

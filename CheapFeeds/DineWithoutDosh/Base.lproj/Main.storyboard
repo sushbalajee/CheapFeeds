@@ -56,11 +56,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjT-4i-x19">
-                                <rect key="frame" x="24" y="3" width="327" height="79"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BjT-4i-x19" secondAttribute="height" multiplier="327:79" id="0xH-5r-wjk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="27"/>
+                                <rect key="frame" x="24" y="22" width="327" height="38"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="24"/>
                                 <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -69,22 +66,15 @@
                             <imageView userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zomato" translatesAutoresizingMaskIntoConstraints="NO" id="kWv-Wy-lmW">
                                 <rect key="frame" x="77" y="526" width="221" height="77"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="kWv-Wy-lmW" secondAttribute="height" multiplier="221:77" id="5BR-O9-Gx6"/>
+                                    <constraint firstAttribute="width" secondItem="kWv-Wy-lmW" secondAttribute="height" multiplier="221:77" id="VUk-Xm-92P"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zS7-E8-JCe">
                                 <rect key="frame" x="0.0" y="82" width="375" height="440.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="zS7-E8-JCe" secondAttribute="height" multiplier="75:88" id="Klo-Kz-P5R"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="32" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-YD-K6i">
-                                <rect key="frame" x="16" y="90" width="343" height="417"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Zq0-YD-K6i" secondAttribute="height" multiplier="343:417" id="NBK-uR-NdX"/>
-                                </constraints>
-                                <string key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="32" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-YD-K6i">
+                                        <rect key="frame" x="16" y="11" width="343" height="417"/>
+                                        <string key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
 
 Features V1.0:
 
@@ -95,27 +85,34 @@ Features V1.0:
 * Card roulette game to decide who pays for the meals of participating players
 
 NOTE: Average cost per person is an approximate price according to results from Zomato. Check the menu link or restaurant websites for accurate prices</string>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Zq0-YD-K6i" secondAttribute="bottom" constant="12.5" id="0ov-sU-FGJ"/>
+                                    <constraint firstItem="Zq0-YD-K6i" firstAttribute="top" secondItem="zS7-E8-JCe" secondAttribute="top" constant="11" id="J2p-kv-rwn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zq0-YD-K6i" secondAttribute="trailing" constant="16" id="U8A-SP-ksg"/>
+                                    <constraint firstItem="Zq0-YD-K6i" firstAttribute="leading" secondItem="zS7-E8-JCe" secondAttribute="leading" constant="16" id="fIt-F7-iOh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ld0-5B-GcF" firstAttribute="trailing" secondItem="Zq0-YD-K6i" secondAttribute="trailing" constant="16" id="0iT-YY-zV3"/>
-                            <constraint firstItem="ld0-5B-GcF" firstAttribute="trailing" secondItem="BjT-4i-x19" secondAttribute="trailing" constant="24" id="D8i-hO-hXF"/>
-                            <constraint firstItem="kWv-Wy-lmW" firstAttribute="bottom" secondItem="ld0-5B-GcF" secondAttribute="bottom" id="GuG-Ut-aHf"/>
-                            <constraint firstItem="zS7-E8-JCe" firstAttribute="trailing" secondItem="ld0-5B-GcF" secondAttribute="trailing" id="HQ7-bM-cRv"/>
-                            <constraint firstItem="kWv-Wy-lmW" firstAttribute="top" secondItem="Zq0-YD-K6i" secondAttribute="bottom" constant="19" id="PVl-sA-lLq"/>
-                            <constraint firstItem="zS7-E8-JCe" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" id="RMr-HT-248"/>
-                            <constraint firstItem="kWv-Wy-lmW" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" constant="77" id="T6H-ZE-Rzr"/>
-                            <constraint firstItem="Zq0-YD-K6i" firstAttribute="top" secondItem="BjT-4i-x19" secondAttribute="bottom" constant="8" id="c3w-4Q-Zul"/>
-                            <constraint firstItem="BjT-4i-x19" firstAttribute="top" secondItem="ld0-5B-GcF" secondAttribute="top" constant="3" id="fEk-gh-J7k"/>
-                            <constraint firstItem="zS7-E8-JCe" firstAttribute="top" secondItem="BjT-4i-x19" secondAttribute="bottom" id="ge1-Pw-B70"/>
-                            <constraint firstItem="ld0-5B-GcF" firstAttribute="trailing" secondItem="kWv-Wy-lmW" secondAttribute="trailing" constant="77" id="iBj-Rc-Ngc"/>
-                            <constraint firstItem="BjT-4i-x19" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" constant="24" id="oSI-lg-fsY"/>
-                            <constraint firstItem="Zq0-YD-K6i" firstAttribute="top" secondItem="BjT-4i-x19" secondAttribute="bottom" constant="8" id="vQz-Ov-uej"/>
-                            <constraint firstItem="Zq0-YD-K6i" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" constant="16" id="yhH-tF-d6i"/>
+                            <constraint firstItem="ld0-5B-GcF" firstAttribute="trailing" secondItem="kWv-Wy-lmW" secondAttribute="trailing" constant="77" id="Anm-cT-TEz"/>
+                            <constraint firstItem="zS7-E8-JCe" firstAttribute="top" secondItem="BjT-4i-x19" secondAttribute="bottom" constant="22" id="CPR-Ul-7Lo"/>
+                            <constraint firstItem="BjT-4i-x19" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" constant="24" id="GbA-Rc-t98"/>
+                            <constraint firstItem="zS7-E8-JCe" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" id="L7B-GS-O7K"/>
+                            <constraint firstItem="BjT-4i-x19" firstAttribute="top" secondItem="ld0-5B-GcF" secondAttribute="top" constant="22" id="LrH-2c-NY4"/>
+                            <constraint firstItem="kWv-Wy-lmW" firstAttribute="top" secondItem="zS7-E8-JCe" secondAttribute="bottom" constant="3.5" id="MIQ-ER-z86"/>
+                            <constraint firstItem="kWv-Wy-lmW" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" constant="77" id="Xqc-eI-Iqz"/>
+                            <constraint firstItem="zS7-E8-JCe" firstAttribute="centerY" secondItem="jVZ-jE-a8G" secondAttribute="centerY" id="bqW-hI-T6b"/>
+                            <constraint firstItem="zS7-E8-JCe" firstAttribute="centerX" secondItem="jVZ-jE-a8G" secondAttribute="centerX" id="eCK-R0-QdD"/>
+                            <constraint firstItem="zS7-E8-JCe" firstAttribute="trailing" secondItem="ld0-5B-GcF" secondAttribute="trailing" id="hbx-uR-9ZA"/>
+                            <constraint firstItem="ld0-5B-GcF" firstAttribute="trailing" secondItem="BjT-4i-x19" secondAttribute="trailing" constant="24" id="jJQ-eh-3cj"/>
+                            <constraint firstItem="kWv-Wy-lmW" firstAttribute="bottom" secondItem="ld0-5B-GcF" secondAttribute="bottom" id="mI4-Fc-Tmn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ld0-5B-GcF"/>
                     </view>
@@ -146,12 +143,13 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prB-CN-XUF">
-                                <rect key="frame" x="0.0" y="80" width="375" height="188.5"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="188"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="M0z-K3-jhn">
-                                        <rect key="frame" x="67" y="12" width="240" height="164.5"/>
+                                        <rect key="frame" x="67" y="12" width="240" height="164"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="M0z-K3-jhn" secondAttribute="height" multiplier="60:41" id="BQ2-3j-LRI"/>
                                         </constraints>
@@ -166,10 +164,10 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVE-95-qLf">
-                                <rect key="frame" x="0.0" y="280.5" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="280" width="375" height="65"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter names of players" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Y3g-CN-HwP">
-                                        <rect key="frame" x="63" y="17" width="249" height="30"/>
+                                        <rect key="frame" x="63" y="17.5" width="249" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -184,7 +182,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyk-0g-vII">
-                                <rect key="frame" x="0.0" y="359" width="375" height="198"/>
+                                <rect key="frame" x="0.0" y="358.5" width="375" height="198"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrows_long_down1600" translatesAutoresizingMaskIntoConstraints="NO" id="XZt-Pn-YmI">
                                         <rect key="frame" x="311.5" y="98" width="63.5" height="83"/>
@@ -211,7 +209,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </constraints>
                             </view>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="25" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uxe-gc-gLZ">
-                                <rect key="frame" x="68" y="368" width="239" height="174"/>
+                                <rect key="frame" x="68" y="367.5" width="239" height="174"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,10 +227,10 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </button>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjH-0J-vlQ" userLabel="View4">
-                                <rect key="frame" x="0.0" y="557" width="375" height="46"/>
+                                <rect key="frame" x="0.0" y="556.5" width="375" height="46.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEz-rV-amN">
-                                        <rect key="frame" x="0.0" y="4.5" width="375" height="36"/>
+                                        <rect key="frame" x="0.0" y="5.5" width="375" height="36"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Spin">
@@ -440,7 +438,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <rect key="frame" x="0.0" y="68.5" width="375" height="68"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Required Field - Enter your budget in the local currency" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9y-2b-o2P" userLabel="textf">
-                                        <rect key="frame" x="31" y="19" width="312" height="30"/>
+                                        <rect key="frame" x="31" y="19.5" width="312" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -460,7 +458,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="41"/>
                                 <color key="textColor" red="0.30588235294117649" green="0.30588235294117649" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="-1" height="-1"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6b-m5-obG">
                                 <rect key="frame" x="319.5" y="547" width="39.5" height="43"/>
@@ -754,7 +752,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-rT-pBS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-rT-pBS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AcS-rT-pBS" secondAttribute="height" multiplier="375:158" id="KME-Kx-dTn"/>
@@ -828,6 +826,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="23"/>
                                         <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -845,62 +844,72 @@ NOTE: Average cost per person is an approximate price according to results from 
                                     <constraint firstAttribute="width" secondItem="hDU-Ir-30B" secondAttribute="height" multiplier="103:13" id="JXl-2A-NxL"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zomato Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-qI-XcM">
-                                <rect key="frame" x="290" y="561" width="66" height="24"/>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="12"/>
-                                <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-eo-BD5">
-                                <rect key="frame" x="74" y="561" width="55.5" height="24"/>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="12"/>
-                                <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTX-Ez-kx5">
-                                <rect key="frame" x="235" y="547" width="50" height="50"/>
-                                <state key="normal" image="icons8-Website-50"/>
-                                <connections>
-                                    <segue destination="gSj-mw-ZYp" kind="show" identifier="push zomato" id="kVM-wv-6kY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVG-05-Mbr">
-                                <rect key="frame" x="19" y="547" width="50" height="50"/>
-                                <state key="normal" image="icons8-Restaurant Menu-50">
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="gSj-mw-ZYp" kind="show" identifier="push menu" id="1Nl-O7-mgV"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddz-0F-YZS">
+                                <rect key="frame" x="0.0" y="542" width="375" height="61"/>
+                                <subviews>
+                                    <button verifyAmbiguity="ignoreSizes" opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVG-05-Mbr">
+                                        <rect key="frame" x="21" y="8.5" width="44" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" image="icons8-restaurant-menu">
+                                            <color key="titleColor" red="0.42316386421319796" green="0.29854674410801707" blue="0.0031640008254613669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="gSj-mw-ZYp" kind="show" identifier="push menu" id="1Nl-O7-mgV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-eo-BD5">
+                                        <rect key="frame" x="73" y="21.5" width="55.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="12"/>
+                                        <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTX-Ez-kx5">
+                                        <rect key="frame" x="236" y="8" width="44" height="44"/>
+                                        <state key="normal" image="icons8-website"/>
+                                        <connections>
+                                            <segue destination="gSj-mw-ZYp" kind="show" identifier="push zomato" id="kVM-wv-6kY"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zomato Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-qI-XcM">
+                                        <rect key="frame" x="288" y="22" width="66" height="17"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="12"/>
+                                        <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KKf-qI-XcM" secondAttribute="trailing" constant="21" id="7sB-NV-huq"/>
+                                    <constraint firstItem="eTX-Ez-kx5" firstAttribute="centerY" secondItem="ddz-0F-YZS" secondAttribute="centerY" id="Eu0-Rt-BU8"/>
+                                    <constraint firstItem="DGk-eo-BD5" firstAttribute="centerY" secondItem="ddz-0F-YZS" secondAttribute="centerY" id="FxW-a8-8eL"/>
+                                    <constraint firstItem="uVG-05-Mbr" firstAttribute="centerY" secondItem="ddz-0F-YZS" secondAttribute="centerY" id="Hpp-KM-ZOJ"/>
+                                    <constraint firstItem="DGk-eo-BD5" firstAttribute="leading" secondItem="uVG-05-Mbr" secondAttribute="trailing" constant="8" id="P6c-Lq-rcn"/>
+                                    <constraint firstItem="KKf-qI-XcM" firstAttribute="centerY" secondItem="ddz-0F-YZS" secondAttribute="centerY" id="YdU-Gb-Auj"/>
+                                    <constraint firstItem="uVG-05-Mbr" firstAttribute="leading" secondItem="ddz-0F-YZS" secondAttribute="leading" constant="21" id="eWz-GB-NqI"/>
+                                    <constraint firstItem="KKf-qI-XcM" firstAttribute="leading" secondItem="eTX-Ez-kx5" secondAttribute="trailing" constant="8" id="gFZ-Hm-whf"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DGk-eo-BD5" secondAttribute="trailing" constant="20" symbolic="YES" id="hkJ-eE-v0Q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="DGk-eo-BD5" secondAttribute="bottom" constant="18" id="1Du-fd-mFu"/>
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="1LF-Av-Gap"/>
                             <constraint firstItem="Wsr-tf-nvX" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="24" id="2wG-uW-irx"/>
-                            <constraint firstItem="KKf-qI-XcM" firstAttribute="leading" secondItem="eTX-Ez-kx5" secondAttribute="trailing" constant="5" id="3Ts-82-5dD"/>
-                            <constraint firstItem="uVG-05-Mbr" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5.5" id="54f-wN-MjC"/>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="uVG-05-Mbr" secondAttribute="bottom" constant="6" id="6Hx-7z-OfN"/>
+                            <constraint firstItem="ddz-0F-YZS" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="4Rj-Z9-ByN"/>
                             <constraint firstItem="hDU-Ir-30B" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="84" id="763-KU-Ra6"/>
-                            <constraint firstItem="DGk-eo-BD5" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="19.5" id="CGl-V3-X12"/>
                             <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="Wsr-tf-nvX" secondAttribute="trailing" constant="24" id="EUu-Xa-qCW"/>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="KKf-qI-XcM" secondAttribute="trailing" constant="19" id="FSh-2X-kCE"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="GPc-tX-c8y"/>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="KKf-qI-XcM" secondAttribute="bottom" constant="18" id="Hqd-tq-5IS"/>
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="LGQ-r1-xUw"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="Pdj-UC-LWf"/>
                             <constraint firstItem="Wsr-tf-nvX" firstAttribute="top" secondItem="AcS-rT-pBS" secondAttribute="bottom" constant="-29.5" id="QDh-DF-Kmc"/>
-                            <constraint firstItem="DGk-eo-BD5" firstAttribute="leading" secondItem="uVG-05-Mbr" secondAttribute="trailing" constant="5" id="Ybw-se-bgN"/>
-                            <constraint firstItem="EUp-De-G6r" firstAttribute="bottom" secondItem="eTX-Ez-kx5" secondAttribute="bottom" constant="6" id="bsB-r4-yH9"/>
-                            <constraint firstItem="eTX-Ez-kx5" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="5.5" id="cDY-AP-Auv"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="top" secondItem="hDU-Ir-30B" secondAttribute="bottom" constant="4" id="chg-PE-kow"/>
-                            <constraint firstItem="KKf-qI-XcM" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" constant="19.5" id="kt3-hl-hnZ"/>
+                            <constraint firstItem="ddz-0F-YZS" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" id="d4A-BK-jfO"/>
+                            <constraint firstItem="ddz-0F-YZS" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="i5O-J6-SKi"/>
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="top" secondItem="EUp-De-G6r" secondAttribute="top" id="pJc-cQ-us6"/>
                             <constraint firstItem="hDU-Ir-30B" firstAttribute="top" secondItem="Wsr-tf-nvX" secondAttribute="bottom" constant="4" id="qrU-LS-Xhk"/>
-                            <constraint firstItem="uVG-05-Mbr" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" constant="19" id="vCy-f2-Zx3"/>
+                            <constraint firstItem="ddz-0F-YZS" firstAttribute="bottom" secondItem="EUp-De-G6r" secondAttribute="bottom" id="tSc-LF-zTX"/>
                             <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="hDU-Ir-30B" secondAttribute="trailing" constant="85" id="y2b-FN-9Em"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DGk-eo-BD5" secondAttribute="trailing" constant="20" symbolic="YES" id="yfv-UQ-dR1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EUp-De-G6r"/>
                     </view>
@@ -962,8 +971,8 @@ NOTE: Average cost per person is an approximate price according to results from 
         <image name="arrows_long_down1600" width="1600" height="1600"/>
         <image name="finBut" width="755" height="230"/>
         <image name="icons8-About-50" width="50" height="50"/>
-        <image name="icons8-Restaurant Menu-50" width="50" height="50"/>
-        <image name="icons8-Website-50" width="50" height="50"/>
+        <image name="icons8-restaurant-menu" width="44" height="44"/>
+        <image name="icons8-website" width="44" height="44"/>
         <image name="spinner" width="1920" height="1280"/>
         <image name="zomato" width="650" height="163"/>
     </resources>

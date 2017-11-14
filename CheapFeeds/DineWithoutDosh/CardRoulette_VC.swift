@@ -22,12 +22,11 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var mainTitle: UILabel!
     
-    var tim = 0
-    var timmy: Timer?
+    var timePassed = 0
+    var timer: Timer?
     
     var players = [String]()
     var unlucky = ""
-    var timeTimer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +37,6 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil,action: nil)
         
         let addButton = UIBarButtonItem.init(title: "Click to add player", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.doneClicked))
-        
         
         toolBar.setItems([flexibleSpace, addButton], animated: false)
         
@@ -65,12 +63,6 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         userInput.addTarget(nil, action:Selector(("firstResponderAction:")), for: .editingDidEndOnExit)
         
         spinButtonOutlet.isHidden = true
-        
-        mainTitle.layer.shadowColor = UIColor.white.cgColor
-        mainTitle.layer.shadowOpacity = 0.5
-        mainTitle.layer.shadowOffset = CGSize.zero
-        mainTitle.layer.shadowRadius = 10
-        
         removeButtonOutlet.layer.cornerRadius = 10
 
         tableViewPlayers.delegate = self
@@ -80,10 +72,12 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
+    
+//---------------------------------------------------------------------------------//
 
-override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.view.endEditing(true)
-}
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     @objc func keyboardWillShow(notification: NSNotification) {
         
@@ -102,6 +96,8 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             }
         }
     }
+    
+//---------------------------------------------------------------------------------//
     
     @objc func doneClicked(){
         if(userInput.text != ""){
@@ -123,6 +119,8 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // Dispose of any resources that can be recreated.
     }
     
+//---------------------------------------------------------------------------------//
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players.count
     }
@@ -138,6 +136,8 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         return cell
     }
     
+//---------------------------------------------------------------------------------//
+    
     @IBAction func spinButton(_ sender: Any) {
         
         if(spinButtonOutlet.titleLabel?.text == "Spin"){
@@ -145,11 +145,13 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             spinButtonOutlet.isHidden = true
             mainTitle.text = "Who's Going To Pay"
       
-            timmy = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RandomGenerator.action), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RandomGenerator.action), userInfo: nil, repeats: true)
             
             self.rotateView()
         }
     }
+    
+//---------------------------------------------------------------------------------//
     
     @objc func rotateView(){
         UIView.animate(withDuration: 5.0, delay: 0, options: .curveEaseInOut, animations: { () -> Void in
@@ -161,18 +163,22 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         })
     }
     
+//---------------------------------------------------------------------------------//
+    
     @objc func action(){
-        if(tim == 4){
-            timmy?.invalidate()
-            tim = 0
+        if(timePassed == 4){
+            timer?.invalidate()
+            timePassed = 0
             mainTitle.text = unlucky
             spinButtonOutlet.isHidden = false
             
         }
         else{
-            tim += 1
+            timePassed += 1
         }
     }
+    
+//---------------------------------------------------------------------------------//
     
     @IBAction func removeAllButton(_ sender: Any) {
         

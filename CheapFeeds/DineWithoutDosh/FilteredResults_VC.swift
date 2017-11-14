@@ -8,11 +8,10 @@
 
 import UIKit
 import CoreLocation
+
 class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-
     @IBOutlet weak var resultsTableView: UITableView!
-
     
     var pulledSearch = [RestaurantData]()
     var passOnData = [RestaurantData]()
@@ -26,13 +25,14 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     var passOnTitle = ""
     var passOnImageLink = ""
     
-    var didTheyType = Bool()
+    //var didTheyType = Bool()
+    
+//---------------------------------------------------------------------------------//
     
     override func viewDidLoad() {
         super.viewDidLoad()
  
         resultsTableView.backgroundColor = UIColor.clear
-        
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         resultsTableView.rowHeight = (100.00)
@@ -42,6 +42,8 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+//---------------------------------------------------------------------------------//
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
   
@@ -104,6 +106,8 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 310
     }
+ 
+//---------------------------------------------------------------------------------//
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DestViewController: DetailView_VC = segue.destination as! DetailView_VC
@@ -112,5 +116,4 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         passOnData.removeAll()
         
     }
-    
 }

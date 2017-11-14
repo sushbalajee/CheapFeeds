@@ -197,6 +197,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             }
             else{
                 if(filteredAnyByCost.count > 0){
+                    
                     DestViewController.pulledSearch = filteredAnyByCost
                 }
                 else{
@@ -253,7 +254,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     /* API call and initialisation */
     func uploadData(changingURL: String, APIHeader: String){
         
-        let zomatoKey = 
+        let zomatoKey = "d7aa15e105531ac1ece595a45666a3e8"
 
         let urlString = changingURL
         
@@ -303,7 +304,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                                         
                                         self.pickCC = self.pickCC.sorted() { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
 
-                                        self.restaurantInfo.append(populate)
+                                                self.restaurantInfo.append(populate)
+                                       
+                                        self.restaurantInfo = self.restaurantInfo.unique{$0.id}
+                                    
                                     }
                                     OperationQueue.main.addOperation {
                                         self.cuisinePicker.reloadAllComponents()
@@ -319,5 +323,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             })
             task.resume()
         }
+    }
+}
+
+
+extension Array {
+    func unique<T:Hashable>(map: ((Element) -> (T)))  -> [Element] {
+        var set = Set<T>() //the unique list kept in a Set for fast retrieval
+        var arrayOrdered = [Element]() //keeping the unique list of elements but ordered
+        for value in self {
+            if !set.contains(map(value)) {
+                set.insert(map(value))
+                arrayOrdered.append(value)
+            }
+        }
+        return arrayOrdered
     }
 }

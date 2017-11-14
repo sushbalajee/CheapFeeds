@@ -27,11 +27,13 @@ class DetailView_VC: UIViewController {
     
     var dataFromResults = [RestaurantData]()
     
+    
 //---------------------------------------------------------------------------------//
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+
+        
         mainTitle.layer.shadowColor = UIColor.white.cgColor
         mainTitle.layer.shadowOpacity = 0.5
         mainTitle.layer.shadowOffset = CGSize.zero
@@ -60,15 +62,10 @@ class DetailView_VC: UIViewController {
                 
                 let Durl = URL(string: replaced)
                 
-                let task = URLSession.shared.dataTask(with: Durl!) { data, response, error in
-                    guard let data = data, error == nil else { return }
-                    
-                    DispatchQueue.main.async() {
-                        self.headImage.image = UIImage(data: data)
-                    }
-                }
+                let imageView = headImage.viewWithTag(2) as! UIImageView
                 
-                task.resume()
+                imageView.sd_setImage(with: URL(string: (Durl?.description)!))
+            
             }
             else{
                 self.headImage.image = UIImage(named: "foodPasta")
@@ -147,15 +144,17 @@ class DetailView_VC: UIViewController {
             let DestViewController: Links_VC = segue.destination as! Links_VC
          
             for data in dataFromResults{
-            DestViewController.linkkString = data.menuUrl
+            DestViewController.linkString = data.menuUrl
             }
         }
         if(segue.identifier == "push zomato" ){
             let DestViewController: Links_VC = segue.destination as! Links_VC
             
             for data in dataFromResults{
-                DestViewController.linkkString = data.url
+                DestViewController.linkString = data.url
             }
         }
     }
 }
+
+

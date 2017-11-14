@@ -13,12 +13,12 @@ class Links_VC: UIViewController {
     
     @IBOutlet weak var linkWebView: UIWebView!
     
-    var linkkString = String()
+    var linkString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        linkWebView.loadRequest((URLRequest(url: NSURL (string: linkkString)! as URL)))
+        linkWebView.loadRequest((URLRequest(url: NSURL (string: linkString)! as URL)))
         
     }
 

@@ -22,24 +22,16 @@ class RandomGenerator: UIViewController{
     var dataToSelectFrom = [RestaurantData]()
     var passOnData = [RestaurantData]()
     
-    var tim = 0
-    var timmy: Timer?
+    var timePassed = 0
+    var timer: Timer?
 
     var chosenPlace = ""
+    
+//---------------------------------------------------------------------------------//
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        mainTitle.layer.shadowColor = UIColor.white.cgColor
-        mainTitle.layer.shadowOpacity = 1
-        mainTitle.layer.shadowOffset = CGSize.zero
-        mainTitle.layer.shadowRadius = 10
         
-        spinButtonOutlet.titleLabel?.layer.shadowColor = UIColor.black.cgColor
-        spinButtonOutlet.titleLabel?.layer.shadowOpacity = 1
-        spinButtonOutlet.titleLabel?.layer.shadowOffset = CGSize.zero
-        spinButtonOutlet.titleLabel?.layer.shadowRadius = 10
-
         view1.layer.shadowColor = UIColor.darkGray.cgColor
         view1.layer.shadowOpacity = 1
         view1.layer.shadowOffset = CGSize.zero
@@ -65,6 +57,8 @@ class RandomGenerator: UIViewController{
         super.didReceiveMemoryWarning()
     }
     
+//---------------------------------------------------------------------------------//
+    
     @IBAction func spinButton(_ sender: UIButton) {
         
         if(spinButtonOutlet.titleLabel?.text == "Spin The Wheel"){
@@ -74,7 +68,7 @@ class RandomGenerator: UIViewController{
             spinButtonOutlet.isHidden = true
             DecidedPlace.text = "Loading..."
             
-            timmy = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RandomGenerator.action), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RandomGenerator.action), userInfo: nil, repeats: true)
             self.rotateView()
            
             for data in dataToSelectFrom{
@@ -86,6 +80,8 @@ class RandomGenerator: UIViewController{
             }
         }
     }
+    
+//---------------------------------------------------------------------------------//
     
     @objc func rotateView(){
         UIView.animate(withDuration: 5.0, delay: 0, options: .curveEaseInOut, animations: { () -> Void in
@@ -99,19 +95,22 @@ class RandomGenerator: UIViewController{
         })
     }
     
+//---------------------------------------------------------------------------------//
+    
     @objc func action(){
-        if(tim == 4){
-            timmy?.invalidate()
-            tim = 0
+        if(timePassed == 4){
+            timer?.invalidate()
+            timePassed = 0
             DecidedPlace.text = chosenPlace
             plusButton.isHidden = false
             spinButtonOutlet.isHidden = false
-            
         }
         else{
-        tim += 1
+        timePassed += 1
         }
     }
+    
+//---------------------------------------------------------------------------------//
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
 
