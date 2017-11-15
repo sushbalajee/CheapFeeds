@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "206297B11F7F594D00328DAD"
-               BuildableName = "DineWithoutDosh.app"
-               BlueprintName = "DineWithoutDosh"
-               ReferencedContainer = "container:DineWithoutDosh.xcodeproj">
+               BuildableName = "FindAFeed.app"
+               BlueprintName = "FindAFeed"
+               ReferencedContainer = "container:FindAFeed.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "206297C51F7F594D00328DAD"
-               BuildableName = "DineWithoutDoshTests.xctest"
-               BlueprintName = "DineWithoutDoshTests"
-               ReferencedContainer = "container:DineWithoutDosh.xcodeproj">
+               BuildableName = "FindAFeedTests.xctest"
+               BlueprintName = "FindAFeedTests"
+               ReferencedContainer = "container:FindAFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "206297D01F7F594D00328DAD"
-               BuildableName = "DineWithoutDoshUITests.xctest"
-               BlueprintName = "DineWithoutDoshUITests"
-               ReferencedContainer = "container:DineWithoutDosh.xcodeproj">
+               BuildableName = "FindAFeedUITests.xctest"
+               BlueprintName = "FindAFeedUITests"
+               ReferencedContainer = "container:FindAFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "206297B11F7F594D00328DAD"
-            BuildableName = "DineWithoutDosh.app"
-            BlueprintName = "DineWithoutDosh"
-            ReferencedContainer = "container:DineWithoutDosh.xcodeproj">
+            BuildableName = "FindAFeed.app"
+            BlueprintName = "FindAFeed"
+            ReferencedContainer = "container:FindAFeed.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "206297B11F7F594D00328DAD"
-            BuildableName = "DineWithoutDosh.app"
-            BlueprintName = "DineWithoutDosh"
-            ReferencedContainer = "container:DineWithoutDosh.xcodeproj">
+            BuildableName = "FindAFeed.app"
+            BlueprintName = "FindAFeed"
+            ReferencedContainer = "container:FindAFeed.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,9 +97,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "206297B11F7F594D00328DAD"
-            BuildableName = "DineWithoutDosh.app"
-            BlueprintName = "DineWithoutDosh"
-            ReferencedContainer = "container:DineWithoutDosh.xcodeproj">
+            BuildableName = "FindAFeed.app"
+            BlueprintName = "FindAFeed"
+            ReferencedContainer = "container:FindAFeed.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

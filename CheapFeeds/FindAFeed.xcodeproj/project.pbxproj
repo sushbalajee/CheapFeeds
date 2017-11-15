@@ -46,17 +46,17 @@
 
 /* Begin PBXFileReference section */
 		205A55AF1F8436F200087A9B /* Links_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links_VC.swift; sourceTree = "<group>"; };
-		206297B21F7F594D00328DAD /* DineWithoutDosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DineWithoutDosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		206297B21F7F594D00328DAD /* FindAFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindAFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		206297B51F7F594D00328DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		206297B71F7F594D00328DAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		206297BA1F7F594D00328DAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		206297BC1F7F594D00328DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		206297BF1F7F594D00328DAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		206297C11F7F594D00328DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		206297C61F7F594D00328DAD /* DineWithoutDoshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DineWithoutDoshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		206297C61F7F594D00328DAD /* FindAFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindAFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		206297CA1F7F594D00328DAD /* DineWithoutDoshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DineWithoutDoshTests.swift; sourceTree = "<group>"; };
 		206297CC1F7F594D00328DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		206297D11F7F594D00328DAD /* DineWithoutDoshUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DineWithoutDoshUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		206297D11F7F594D00328DAD /* FindAFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindAFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		206297D51F7F594D00328DAD /* DineWithoutDoshUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DineWithoutDoshUITests.swift; sourceTree = "<group>"; };
 		206297D71F7F594D00328DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		206297E31F7F6C7E00328DAD /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
@@ -121,9 +121,9 @@
 		206297B31F7F594D00328DAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				206297B21F7F594D00328DAD /* DineWithoutDosh.app */,
-				206297C61F7F594D00328DAD /* DineWithoutDoshTests.xctest */,
-				206297D11F7F594D00328DAD /* DineWithoutDoshUITests.xctest */,
+				206297B21F7F594D00328DAD /* FindAFeed.app */,
+				206297C61F7F594D00328DAD /* FindAFeedTests.xctest */,
+				206297D11F7F594D00328DAD /* FindAFeedUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,9 +194,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		206297B11F7F594D00328DAD /* DineWithoutDosh */ = {
+		206297B11F7F594D00328DAD /* FindAFeed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 206297DA1F7F594D00328DAD /* Build configuration list for PBXNativeTarget "DineWithoutDosh" */;
+			buildConfigurationList = 206297DA1F7F594D00328DAD /* Build configuration list for PBXNativeTarget "FindAFeed" */;
 			buildPhases = (
 				5DAE92C32AFBE395D5FDB6B6 /* [CP] Check Pods Manifest.lock */,
 				206297AE1F7F594D00328DAD /* Sources */,
@@ -209,14 +209,14 @@
 			);
 			dependencies = (
 			);
-			name = DineWithoutDosh;
+			name = FindAFeed;
 			productName = DineWithoutDosh;
-			productReference = 206297B21F7F594D00328DAD /* DineWithoutDosh.app */;
+			productReference = 206297B21F7F594D00328DAD /* FindAFeed.app */;
 			productType = "com.apple.product-type.application";
 		};
-		206297C51F7F594D00328DAD /* DineWithoutDoshTests */ = {
+		206297C51F7F594D00328DAD /* FindAFeedTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 206297DD1F7F594D00328DAD /* Build configuration list for PBXNativeTarget "DineWithoutDoshTests" */;
+			buildConfigurationList = 206297DD1F7F594D00328DAD /* Build configuration list for PBXNativeTarget "FindAFeedTests" */;
 			buildPhases = (
 				E1F1C760974AFBE809F44B44 /* [CP] Check Pods Manifest.lock */,
 				206297C21F7F594D00328DAD /* Sources */,
@@ -230,14 +230,14 @@
 			dependencies = (
 				206297C81F7F594D00328DAD /* PBXTargetDependency */,
 			);
-			name = DineWithoutDoshTests;
+			name = FindAFeedTests;
 			productName = DineWithoutDoshTests;
-			productReference = 206297C61F7F594D00328DAD /* DineWithoutDoshTests.xctest */;
+			productReference = 206297C61F7F594D00328DAD /* FindAFeedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		206297D01F7F594D00328DAD /* DineWithoutDoshUITests */ = {
+		206297D01F7F594D00328DAD /* FindAFeedUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 206297E01F7F594D00328DAD /* Build configuration list for PBXNativeTarget "DineWithoutDoshUITests" */;
+			buildConfigurationList = 206297E01F7F594D00328DAD /* Build configuration list for PBXNativeTarget "FindAFeedUITests" */;
 			buildPhases = (
 				72F2CB480273827E155CCCE3 /* [CP] Check Pods Manifest.lock */,
 				206297CD1F7F594D00328DAD /* Sources */,
@@ -251,9 +251,9 @@
 			dependencies = (
 				206297D31F7F594D00328DAD /* PBXTargetDependency */,
 			);
-			name = DineWithoutDoshUITests;
+			name = FindAFeedUITests;
 			productName = DineWithoutDoshUITests;
-			productReference = 206297D11F7F594D00328DAD /* DineWithoutDoshUITests.xctest */;
+			productReference = 206297D11F7F594D00328DAD /* FindAFeedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -283,7 +283,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 206297AD1F7F594D00328DAD /* Build configuration list for PBXProject "DineWithoutDosh" */;
+			buildConfigurationList = 206297AD1F7F594D00328DAD /* Build configuration list for PBXProject "FindAFeed" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -296,9 +296,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				206297B11F7F594D00328DAD /* DineWithoutDosh */,
-				206297C51F7F594D00328DAD /* DineWithoutDoshTests */,
-				206297D01F7F594D00328DAD /* DineWithoutDoshUITests */,
+				206297B11F7F594D00328DAD /* FindAFeed */,
+				206297C51F7F594D00328DAD /* FindAFeedTests */,
+				206297D01F7F594D00328DAD /* FindAFeedUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -519,12 +519,12 @@
 /* Begin PBXTargetDependency section */
 		206297C81F7F594D00328DAD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 206297B11F7F594D00328DAD /* DineWithoutDosh */;
+			target = 206297B11F7F594D00328DAD /* FindAFeed */;
 			targetProxy = 206297C71F7F594D00328DAD /* PBXContainerItemProxy */;
 		};
 		206297D31F7F594D00328DAD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 206297B11F7F594D00328DAD /* DineWithoutDosh */;
+			target = 206297B11F7F594D00328DAD /* FindAFeed */;
 			targetProxy = 206297D21F7F594D00328DAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -665,14 +665,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR67L9Z8F6;
 				INFOPLIST_FILE = DineWithoutDosh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sushant.FindAFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DineWithoutDosh/DineWithoutDosh-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -685,13 +685,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR67L9Z8F6;
 				INFOPLIST_FILE = DineWithoutDosh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sushant.FindAFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DineWithoutDosh/DineWithoutDosh-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -708,7 +708,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DineWithoutDosh.app/DineWithoutDosh";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindAFeed.app/FindAFeed";
 			};
 			name = Debug;
 		};
@@ -725,7 +725,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DineWithoutDosh.app/DineWithoutDosh";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindAFeed.app/FindAFeed";
 			};
 			name = Release;
 		};
@@ -764,7 +764,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		206297AD1F7F594D00328DAD /* Build configuration list for PBXProject "DineWithoutDosh" */ = {
+		206297AD1F7F594D00328DAD /* Build configuration list for PBXProject "FindAFeed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				206297D81F7F594D00328DAD /* Debug */,
@@ -773,7 +773,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		206297DA1F7F594D00328DAD /* Build configuration list for PBXNativeTarget "DineWithoutDosh" */ = {
+		206297DA1F7F594D00328DAD /* Build configuration list for PBXNativeTarget "FindAFeed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				206297DB1F7F594D00328DAD /* Debug */,
@@ -782,7 +782,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		206297DD1F7F594D00328DAD /* Build configuration list for PBXNativeTarget "DineWithoutDoshTests" */ = {
+		206297DD1F7F594D00328DAD /* Build configuration list for PBXNativeTarget "FindAFeedTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				206297DE1F7F594D00328DAD /* Debug */,
@@ -791,7 +791,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		206297E01F7F594D00328DAD /* Build configuration list for PBXNativeTarget "DineWithoutDoshUITests" */ = {
+		206297E01F7F594D00328DAD /* Build configuration list for PBXNativeTarget "FindAFeedUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				206297E11F7F594D00328DAD /* Debug */,
