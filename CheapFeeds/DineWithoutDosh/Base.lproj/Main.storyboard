@@ -135,7 +135,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who's Going To Pay?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QGd-wv-uPh">
-                                <rect key="frame" x="24" y="1" width="327" height="79"/>
+                                <rect key="frame" x="24" y="1.5" width="327" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QGd-wv-uPh" secondAttribute="height" multiplier="327:79" id="bh1-ie-dwe"/>
                                 </constraints>
@@ -146,10 +146,10 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prB-CN-XUF">
-                                <rect key="frame" x="0.0" y="80" width="375" height="188"/>
+                                <rect key="frame" x="0.0" y="80.5" width="375" height="188"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="M0z-K3-jhn">
-                                        <rect key="frame" x="67" y="12" width="240" height="164"/>
+                                        <rect key="frame" x="67" y="12.5" width="240" height="164"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="M0z-K3-jhn" secondAttribute="height" multiplier="60:41" id="BQ2-3j-LRI"/>
                                         </constraints>
@@ -164,10 +164,10 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVE-95-qLf">
-                                <rect key="frame" x="0.0" y="280" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="280.5" width="375" height="65"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter names of players" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Y3g-CN-HwP">
-                                        <rect key="frame" x="63" y="17.5" width="249" height="30"/>
+                                        <rect key="frame" x="63" y="18" width="249" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -182,16 +182,16 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyk-0g-vII">
-                                <rect key="frame" x="0.0" y="358.5" width="375" height="198"/>
+                                <rect key="frame" x="0.0" y="359" width="375" height="198"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrows_long_down1600" translatesAutoresizingMaskIntoConstraints="NO" id="XZt-Pn-YmI">
-                                        <rect key="frame" x="311.5" y="98" width="63.5" height="83"/>
+                                        <rect key="frame" x="311.5" y="98.5" width="63.5" height="83"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XZt-Pn-YmI" secondAttribute="height" multiplier="63:83" id="oYg-gd-4Vg"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrows_long_down1600" translatesAutoresizingMaskIntoConstraints="NO" id="9EM-qy-DAw">
-                                        <rect key="frame" x="0.0" y="98" width="64" height="83"/>
+                                        <rect key="frame" x="0.0" y="98.5" width="64" height="83"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="9EM-qy-DAw" secondAttribute="height" multiplier="64:83" id="fwC-t2-JsJ"/>
                                         </constraints>
@@ -201,7 +201,6 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <constraints>
                                     <constraint firstItem="XZt-Pn-YmI" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="top" constant="98" id="0N5-P0-rPv"/>
                                     <constraint firstItem="9EM-qy-DAw" firstAttribute="leading" secondItem="vyk-0g-vII" secondAttribute="leading" id="2Kd-F1-szZ"/>
-                                    <constraint firstAttribute="width" secondItem="vyk-0g-vII" secondAttribute="height" multiplier="125:66" id="EMK-9y-JBu"/>
                                     <constraint firstAttribute="bottom" secondItem="9EM-qy-DAw" secondAttribute="bottom" constant="17" id="Fbs-Ql-PQf"/>
                                     <constraint firstItem="9EM-qy-DAw" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="top" constant="98" id="Te4-pR-9Nc"/>
                                     <constraint firstAttribute="trailing" secondItem="XZt-Pn-YmI" secondAttribute="trailing" id="bup-jz-l7e"/>
@@ -209,7 +208,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </constraints>
                             </view>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="25" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uxe-gc-gLZ">
-                                <rect key="frame" x="68" y="367.5" width="239" height="174"/>
+                                <rect key="frame" x="68" y="368" width="239" height="174"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -227,11 +226,14 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </button>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjH-0J-vlQ" userLabel="View4">
-                                <rect key="frame" x="0.0" y="556.5" width="375" height="46.5"/>
+                                <rect key="frame" x="0.0" y="557" width="375" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEz-rV-amN">
-                                        <rect key="frame" x="0.0" y="5.5" width="375" height="36"/>
+                                        <rect key="frame" x="0.0" y="5" width="375" height="36"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="EEz-rV-amN" secondAttribute="height" multiplier="125:12" id="ICf-L5-gLb"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Spin">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -246,6 +248,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                     <constraint firstAttribute="trailing" secondItem="EEz-rV-amN" secondAttribute="trailing" id="1lw-Vz-UKw"/>
                                     <constraint firstItem="EEz-rV-amN" firstAttribute="leading" secondItem="wjH-0J-vlQ" secondAttribute="leading" id="5vG-Jz-0b4"/>
                                     <constraint firstItem="EEz-rV-amN" firstAttribute="centerY" secondItem="wjH-0J-vlQ" secondAttribute="centerY" id="D2c-9U-Pqq"/>
+                                    <constraint firstAttribute="width" secondItem="wjH-0J-vlQ" secondAttribute="height" multiplier="375:46" id="LWj-De-Mrf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -263,7 +266,6 @@ NOTE: Average cost per person is an approximate price according to results from 
                             <constraint firstItem="lVE-95-qLf" firstAttribute="top" secondItem="prB-CN-XUF" secondAttribute="bottom" constant="12" id="ObK-yr-EZ4"/>
                             <constraint firstItem="prB-CN-XUF" firstAttribute="top" secondItem="QGd-wv-uPh" secondAttribute="bottom" id="PWZ-Sb-WQH"/>
                             <constraint firstItem="Uxe-gc-gLZ" firstAttribute="top" secondItem="lVE-95-qLf" secondAttribute="bottom" constant="22.5" id="dIQ-Xy-zot"/>
-                            <constraint firstItem="wjH-0J-vlQ" firstAttribute="top" secondItem="vyk-0g-vII" secondAttribute="bottom" id="ewl-7s-pDW"/>
                             <constraint firstItem="QGd-wv-uPh" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" constant="24" id="fTb-w1-ops"/>
                             <constraint firstItem="lVE-95-qLf" firstAttribute="leading" secondItem="dCv-hW-VXL" secondAttribute="leading" id="heR-ZK-dPV"/>
                             <constraint firstItem="wjH-0J-vlQ" firstAttribute="top" secondItem="Uxe-gc-gLZ" secondAttribute="bottom" constant="15" id="hkk-Fc-91Y"/>
@@ -448,6 +450,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <constraints>
                                     <constraint firstItem="w9y-2b-o2P" firstAttribute="centerX" secondItem="cnK-6D-JHc" secondAttribute="centerX" id="6ui-kI-VJ9"/>
                                     <constraint firstItem="w9y-2b-o2P" firstAttribute="centerY" secondItem="cnK-6D-JHc" secondAttribute="centerY" id="TBI-bP-jb6"/>
+                                    <constraint firstAttribute="width" secondItem="cnK-6D-JHc" secondAttribute="height" multiplier="375:68" id="ob4-KF-Yuw"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find A Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4c2-ef-njU">
@@ -455,7 +458,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4c2-ef-njU" secondAttribute="height" multiplier="259:47" id="USF-DD-X6V"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="41"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="38"/>
                                 <color key="textColor" red="0.30588235294117649" green="0.30588235294117649" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -491,7 +494,6 @@ NOTE: Average cost per person is an approximate price according to results from 
                             <constraint firstItem="4c2-ef-njU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="RcW-Pz-miz"/>
                             <constraint firstItem="cnK-6D-JHc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T16-n2-36J"/>
                             <constraint firstItem="A4R-OQ-aro" firstAttribute="top" secondItem="PGf-jf-M0f" secondAttribute="bottom" constant="16.5" id="a1J-BT-gnP"/>
-                            <constraint firstItem="E6b-m5-obG" firstAttribute="leading" secondItem="J14-s2-6DY" secondAttribute="trailing" constant="21" id="c73-R8-BVd"/>
                             <constraint firstItem="cnK-6D-JHc" firstAttribute="top" secondItem="4c2-ef-njU" secondAttribute="bottom" constant="11.5" id="edM-Zo-uHK"/>
                             <constraint firstItem="E6b-m5-obG" firstAttribute="top" secondItem="A4R-OQ-aro" secondAttribute="bottom" constant="15" id="h0i-Ps-fzu"/>
                             <constraint firstItem="J14-s2-6DY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="h6e-3J-Tez"/>
@@ -499,7 +501,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                             <constraint firstItem="PGf-jf-M0f" firstAttribute="top" secondItem="cnK-6D-JHc" secondAttribute="bottom" constant="21" id="klZ-WB-7Nb"/>
                             <constraint firstItem="PGf-jf-M0f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nym-ym-qgm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4c2-ef-njU" secondAttribute="trailing" constant="58" id="oHD-CK-Ukg"/>
-                            <constraint firstItem="PGf-jf-M0f" firstAttribute="top" secondItem="cnK-6D-JHc" secondAttribute="bottom" constant="21" id="umm-bH-aMG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J14-s2-6DY" secondAttribute="trailing" constant="77" id="oHR-hp-sHf"/>
                             <constraint firstItem="A4R-OQ-aro" firstAttribute="top" secondItem="PGf-jf-M0f" secondAttribute="bottom" constant="16" id="zaD-z9-zfn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -539,7 +541,6 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="4Td-Ys-2TH" firstAttribute="top" secondItem="AcD-4T-YON" secondAttribute="top" constant="8" id="C2r-wJ-hzq"/>
-                                    <constraint firstAttribute="width" secondItem="AcD-4T-YON" secondAttribute="height" multiplier="25:17" id="UaW-Re-SBb"/>
                                     <constraint firstItem="4Td-Ys-2TH" firstAttribute="leading" secondItem="AcD-4T-YON" secondAttribute="leading" id="gZQ-le-PWO"/>
                                     <constraint firstAttribute="bottom" secondItem="4Td-Ys-2TH" secondAttribute="bottom" constant="8" id="jYe-RV-TxP"/>
                                     <constraint firstAttribute="trailing" secondItem="4Td-Ys-2TH" secondAttribute="trailing" id="wJU-0d-GUN"/>
@@ -606,6 +607,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                     <constraint firstItem="Gmn-9h-CXV" firstAttribute="leading" secondItem="yej-Gr-TIz" secondAttribute="leading" id="H1R-uO-hpl"/>
                                     <constraint firstItem="Gmn-9h-CXV" firstAttribute="centerY" secondItem="yej-Gr-TIz" secondAttribute="centerY" id="Mz5-YY-LDm"/>
                                     <constraint firstAttribute="trailing" secondItem="Gmn-9h-CXV" secondAttribute="trailing" id="Na7-be-t9H"/>
+                                    <constraint firstAttribute="width" secondItem="yej-Gr-TIz" secondAttribute="height" multiplier="125:23" id="Tkd-l1-MUD"/>
                                 </constraints>
                             </view>
                         </subviews>
