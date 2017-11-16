@@ -149,10 +149,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 <rect key="frame" x="0.0" y="80.5" width="375" height="188"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="M0z-K3-jhn">
-                                        <rect key="frame" x="67" y="12.5" width="240" height="164"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="M0z-K3-jhn" secondAttribute="height" multiplier="60:41" id="BQ2-3j-LRI"/>
-                                        </constraints>
+                                        <rect key="frame" x="67" y="-545.5" width="240" height="1280"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -754,9 +751,6 @@ NOTE: Average cost per person is an approximate price according to results from 
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-rT-pBS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="AcS-rT-pBS" secondAttribute="height" multiplier="375:158" id="KME-Kx-dTn"/>
-                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gm-67-SIM">
                                 <rect key="frame" x="0.0" y="254.5" width="375" height="287"/>
@@ -888,6 +882,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="ddz-0F-YZS" secondAttribute="height" multiplier="375:61" id="076-Gu-RAL"/>
                                     <constraint firstItem="eTX-Ez-kx5" firstAttribute="centerY" secondItem="ddz-0F-YZS" secondAttribute="centerY" id="Eu0-Rt-BU8"/>
                                     <constraint firstItem="uVG-05-Mbr" firstAttribute="centerY" secondItem="ddz-0F-YZS" secondAttribute="centerY" id="Hpp-KM-ZOJ"/>
                                     <constraint firstItem="zMe-XK-1cm" firstAttribute="centerY" secondItem="ddz-0F-YZS" secondAttribute="centerY" id="Mhh-6W-Sji"/>
