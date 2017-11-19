@@ -697,9 +697,20 @@ NOTE: Average cost per person is an approximate price according to results from 
                                                     <color key="textColor" red="0.58995895972711787" green="0.58995895972711787" blue="0.58995895972711787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKw-bj-TXO">
+                                                    <rect key="frame" x="327" y="0.0" width="48" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="rKw-bj-TXO" secondAttribute="height" multiplier="1:1" id="7vz-56-EKa"/>
+                                                    </constraints>
+                                                    <state key="normal" image="icons8-add-to-favorites-48"/>
+                                                    <connections>
+                                                        <action selector="addToFavs:" destination="DRo-fm-0fy" eventType="touchUpInside" id="fxp-zF-pdv"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="rKw-bj-TXO" firstAttribute="top" secondItem="hjS-4Q-igi" secondAttribute="top" id="77N-WA-D3x"/>
                                                 <constraint firstItem="sCV-S4-tXi" firstAttribute="top" secondItem="QiL-M3-qmu" secondAttribute="bottom" id="AEE-ke-zpa"/>
                                                 <constraint firstItem="QiL-M3-qmu" firstAttribute="leading" secondItem="hjS-4Q-igi" secondAttribute="leading" constant="15" id="B1H-Ik-aVB"/>
                                                 <constraint firstItem="0Gv-wL-wT8" firstAttribute="top" secondItem="sCV-S4-tXi" secondAttribute="bottom" id="Eir-0L-bsb"/>
@@ -710,6 +721,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                                                 <constraint firstItem="QiL-M3-qmu" firstAttribute="top" secondItem="FHg-TD-fhA" secondAttribute="bottom" constant="10" id="YBK-aB-gts"/>
                                                 <constraint firstItem="FHg-TD-fhA" firstAttribute="top" secondItem="hjS-4Q-igi" secondAttribute="top" id="YHv-9n-6J7"/>
                                                 <constraint firstItem="FHg-TD-fhA" firstAttribute="leading" secondItem="hjS-4Q-igi" secondAttribute="leading" id="aRg-hq-auu"/>
+                                                <constraint firstAttribute="trailing" secondItem="rKw-bj-TXO" secondAttribute="trailing" id="rhs-7G-iZo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -974,6 +986,7 @@ NOTE: Average cost per person is an approximate price according to results from 
         <image name="arrows_long_down1600" width="1600" height="1600"/>
         <image name="finBut" width="755" height="230"/>
         <image name="icons8-About-50" width="50" height="50"/>
+        <image name="icons8-add-to-favorites-48" width="48" height="48"/>
         <image name="icons8-restaurant-menu" width="44" height="44"/>
         <image name="icons8-website" width="44" height="44"/>
         <image name="spinner" width="1920" height="1280"/>
@@ -981,6 +994,6 @@ NOTE: Average cost per person is an approximate price according to results from 
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kVM-wv-6kY"/>
-        <segue reference="FUI-aB-ZQo"/>
+        <segue reference="1Sq-fq-pXC"/>
     </inferredMetricsTieBreakers>
 </document>

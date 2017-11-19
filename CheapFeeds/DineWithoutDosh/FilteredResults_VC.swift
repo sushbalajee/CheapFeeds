@@ -15,6 +15,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     
     var pulledSearch = [RestaurantData]()
     var passOnData = [RestaurantData]()
+    var favourites = [RestaurantData]()
     
     var locationOrigin = CLLocation()
     var locationDest = CLLocation()
@@ -22,16 +23,39 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     var originLat = Double()
     var originLong = Double()
     
+    var addedToFavs = false
     var passOnTitle = ""
     var passOnImageLink = ""
     
-    //var didTheyType = Bool()
+    @IBAction func addToFavs(_ sender: UIButton) {
+        
+        let buttonPosition = (sender as AnyObject).convert(CGPoint.zero, to: self.resultsTableView)
+        let indexPath = self.resultsTableView.indexPathForRow(at: buttonPosition)
+        if indexPath != nil {
+            
+            if favourites.contains(where: { $0.id == pulledSearch[(indexPath?.row)!].id}) {
+                print("Already Here")
+            }
+            else{
+            favourites.append(pulledSearch[(indexPath?.row)!])
+            addedToFavs = true
+            }
+            
+            if(addedToFavs == true){
+                sender.setImage(UIImage(named:"icons8-checked-48.png"), for: .normal)
+            }
+            
+            for items in favourites{
+                print(items.name)
+            }
+    }
+}
     
 //---------------------------------------------------------------------------------//
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
         resultsTableView.backgroundColor = UIColor.clear
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
