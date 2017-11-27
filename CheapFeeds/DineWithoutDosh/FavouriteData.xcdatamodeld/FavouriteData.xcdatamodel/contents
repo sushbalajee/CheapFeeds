@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="16G1036" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavEntity" representedClassName="FavEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="favAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favAverageCostPP" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="favCity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favCuisines" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favCurrency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favLatitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favLongitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favMainImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favMenuUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favRating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favUrl" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FavEntity" positionX="-63" positionY="-18" width="128" height="255"/>
+    </elements>
+</model>

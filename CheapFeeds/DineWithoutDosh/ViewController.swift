@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
 
@@ -46,6 +47,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     @objc func doneClicked(){
         view.endEditing(true)
     }
+    
     
 //---------------------------------------------------------------------------------//
     
@@ -254,7 +256,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     /* API call and initialisation */
     func uploadData(changingURL: String, APIHeader: String){
         
-        let zomatoKey = "d7aa15e105531ac1ece595a45666a3e8"
+        let zomatoKey = ""//"d7aa15e105531ac1ece595a45666a3e8"
 
         let urlString = changingURL
         

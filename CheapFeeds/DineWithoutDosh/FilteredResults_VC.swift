@@ -8,7 +8,9 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
+@available(iOS 10.0, *)
 class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var resultsTableView: UITableView!
@@ -16,6 +18,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     var pulledSearch = [RestaurantData]()
     var passOnData = [RestaurantData]()
     var favourites = [RestaurantData]()
+    var checkFavs = [String]()
     
     var locationOrigin = CLLocation()
     var locationDest = CLLocation()
@@ -33,12 +36,39 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         let indexPath = self.resultsTableView.indexPathForRow(at: buttonPosition)
         if indexPath != nil {
             
-            if favourites.contains(where: { $0.id == pulledSearch[(indexPath?.row)!].id}) {
+            if checkFavs.contains(pulledSearch[(indexPath?.row)!].id){
                 print("Already Here")
             }
             else{
             favourites.append(pulledSearch[(indexPath?.row)!])
             addedToFavs = true
+                //coreData stuff
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+                let newFav = NSEntityDescription.insertNewObject(forEntityName: "FavEntity", into: context)
+                
+                newFav.setValue(pulledSearch[(indexPath?.row)!].name, forKey: "favName")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].address, forKey: "favAddress")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].aggregateRating, forKey: "favRating")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].averageCostPP, forKey: "favAverageCostPP")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].city, forKey: "favCity")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].cuisines, forKey: "favCuisines")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].currency, forKey: "favCurrency")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].id, forKey: "favId")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].latitude, forKey: "favLatitude")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].longitude, forKey: "favLongitude")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].mainImage, forKey: "favMainImage")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].menuUrl, forKey: "favMenuUrl")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].url, forKey: "favUrl")
+                newFav.setValue(pulledSearch[(indexPath?.row)!].phoneNumber, forKey: "favPhone")
+                
+                do{
+                    try context.save()
+                    print("Saved")
+                }
+                catch{
+                    //Error
+                }
             }
             
             if(addedToFavs == true){
@@ -56,27 +86,74 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.deleteAllData(entity: "FavEntity")
+        
         resultsTableView.backgroundColor = UIColor.clear
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         resultsTableView.rowHeight = (100.00)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavEntity")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do{
+            let results = try context.fetch(request)
+            if results.count > 0{
+                for result in results as! [NSManagedObject]
+                {
+                    let favId = result.value(forKey: "favId") as! String
+                    
+                    checkFavs.append(favId)
+                }
+            }
+        }
+        catch{
+            //error
     }
-
+}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func deleteAllData(entity: String)
+    {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavEntity")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try context.fetch(request)
+            for result in results as! [NSManagedObject]
+            {
+                let managedObjectData:NSManagedObject = result
+                context.delete(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
+        }
+    }
+    
 //---------------------------------------------------------------------------------//
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  
-        return pulledSearch.count
+        if(pulledSearch.count > 0){
+            return pulledSearch.count
+        }
+        else{
+            return 10
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = resultsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! resultsTableViewCell
-        
+        if (!pulledSearch.isEmpty){
         let coordinate₀ = CLLocation(latitude: originLat, longitude: originLong)
         let coordinate₁ = CLLocation(latitude: Double(pulledSearch[indexPath.row].latitude)!, longitude: Double(pulledSearch[indexPath.row].longitude)!)
         
@@ -114,7 +191,11 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         cell.featureImage.layer.borderColor = UIColor.white.cgColor
-        cell.featureImage.layer.borderWidth = 10
+            cell.featureImage.layer.borderWidth = 10
+            
+        }else{
+            
+        }
         
         return cell
     }
@@ -130,6 +211,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 310
     }
+    
  
 //---------------------------------------------------------------------------------//
     
