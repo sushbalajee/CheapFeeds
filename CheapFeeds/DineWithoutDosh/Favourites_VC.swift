@@ -17,9 +17,11 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var favourites = [RestaurantData]()
     var passOnDataFromFavs = [RestaurantData]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+
+        favourites.removeAll()
         favsTableView.dataSource = self
         favsTableView.delegate = self
         favsTableView.rowHeight = (290.00)
@@ -53,6 +55,7 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                     let populate = RestaurantData(id: favId, averageCostPP: favAverageCostPP, currency: favCurrency, mainImage: favMainImage, cuisines: favCuisines, url: favUrl, address: favAddress, city: favCity, latitude: favLatitude, longitude: favLongitude, menuUrl: favMenuUrl, name: favName, aggregateRating: favRating, phoneNumber: favPhone)
                     
                         favourites.append(populate)
+                        favsTableView.reloadData()
                     
                 }
             }
@@ -61,7 +64,6 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             //error
         }
 
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,7 +74,6 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let cell = favsTableView.dequeueReusableCell(withIdentifier: "cellB", for: indexPath) as! favouritesTableViewCell
         
         cell.restLabel.text = favourites[indexPath.row].name
-        //cell.restLabel.text = "Testing"
         cell.costLabel.text = ("Average price: " + favourites[indexPath.row].currency +  favourites[indexPath.row].averageCostPP.description)
         
         let url = URL(string: favourites[indexPath.row].mainImage!)
@@ -95,7 +96,7 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         cell.featureImage.layer.borderColor = UIColor.white.cgColor
         cell.featureImage.layer.borderWidth = 10
-    
+        
         return cell
     }
     
@@ -113,8 +114,7 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             do
             {
                 let results = try context.fetch(request)
-                //for result in results as! [NSManagedObject]
-                //{
+             
                     context.delete(results[indexPath.row] as! NSManagedObject)
                     do{
                         try context.save()
@@ -123,7 +123,7 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                     catch{
                         //error
                     }
-                //}
+                
             }catch{
                 //error
             }

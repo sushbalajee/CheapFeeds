@@ -37,7 +37,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath != nil {
             
             if checkFavs.contains(pulledSearch[(indexPath?.row)!].id){
-                print("Already Here")
+                 createAlert(title: "Alert", message: "This restaurant is already in your favourites")
             }
             else{
             favourites.append(pulledSearch[(indexPath?.row)!])
@@ -46,7 +46,7 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let context = appDelegate.persistentContainer.viewContext
                 let newFav = NSEntityDescription.insertNewObject(forEntityName: "FavEntity", into: context)
-                
+        
                 newFav.setValue(pulledSearch[(indexPath?.row)!].name, forKey: "favName")
                 newFav.setValue(pulledSearch[(indexPath?.row)!].address, forKey: "favAddress")
                 newFav.setValue(pulledSearch[(indexPath?.row)!].aggregateRating, forKey: "favRating")
@@ -69,10 +69,6 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
                 catch{
                     //Error
                 }
-            }
-            
-            if(addedToFavs == true){
-                sender.setImage(UIImage(named:"icons8-checked-48.png"), for: .normal)
             }
             
             for items in favourites{
@@ -222,4 +218,22 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         passOnData.removeAll()
         
     }
+    
+    //---------------------------------------------------------------------------------//
+    
+    /* Error handling messages using pop up dialogs */
+    func createAlert(title :String, message: String){
+        // create the alert
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //---------------------------------------------------------------------------------//
 }

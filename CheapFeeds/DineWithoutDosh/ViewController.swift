@@ -53,6 +53,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.tabBarController?.tabBar.tintColor = UIColor.white
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -256,7 +258,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     /* API call and initialisation */
     func uploadData(changingURL: String, APIHeader: String){
         
-        let zomatoKey = ""//"d7aa15e105531ac1ece595a45666a3e8"
+        let zomatoKey = ""//d7aa15e105531ac1ece595a45666a3e8"
 
         let urlString = changingURL
         

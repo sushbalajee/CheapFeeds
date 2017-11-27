@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
           UINavigationBar.appearance().shadowImage = UIImage()
         
+       
         //IQKeyboardManager.sharedManager().enable = true
         // Override point for customization after application launch.
         return true

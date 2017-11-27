@@ -9,10 +9,11 @@
 import UIKit
 import CoreLocation
 import MapKit
+import CoreData
 
 class DetailView_VC: UIViewController {
-
     
+    @IBOutlet weak var addedToFavsOutlet: UIButton!
     @IBOutlet weak var starImages: UIImageView!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var headImage: UIImageView!
@@ -26,6 +27,7 @@ class DetailView_VC: UIViewController {
     @IBOutlet weak var map: MKMapView!
     
     var dataFromResults = [RestaurantData]()
+    var checkFavs = [String]()
     
     
 //---------------------------------------------------------------------------------//
@@ -51,7 +53,33 @@ class DetailView_VC: UIViewController {
     
         map.layer.cornerRadius = 10
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavEntity")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do{
+            let results = try context.fetch(request)
+            if results.count > 0{
+                for result in results as! [NSManagedObject]
+                {
+                    let favId = result.value(forKey: "favId") as! String
+                    
+                    checkFavs.append(favId)
+                }
+            }
+        }
+        catch{
+            //error
+        }
+        
+        
         for item in dataFromResults {
+            
+            if checkFavs.contains(item.id){
+                addedToFavsOutlet.setImage(UIImage(named:"icons8-checked-48.png"), for: .normal)
+            }
             
             let url = URL(string: item.mainImage!)
             
@@ -135,6 +163,45 @@ class DetailView_VC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    @IBAction func addToFavs(_ sender: Any) {
+        
+        for items in dataFromResults{
+            if checkFavs.contains(items.id){
+                //createAlert(title: "Alert", message: "This restaurant is already in your favourites")
+                //(sender as AnyObject).setImage(UIImage(named:"icons8-checked-48.png"), for: .normal)
+            }
+            else{
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+                let newFav = NSEntityDescription.insertNewObject(forEntityName: "FavEntity", into: context)
+                
+                newFav.setValue(items.name, forKey: "favName")
+                newFav.setValue(items.address, forKey: "favAddress")
+                newFav.setValue(items.aggregateRating, forKey: "favRating")
+                newFav.setValue(items.averageCostPP, forKey: "favAverageCostPP")
+                newFav.setValue(items.city, forKey: "favCity")
+                newFav.setValue(items.cuisines, forKey: "favCuisines")
+                newFav.setValue(items.currency, forKey: "favCurrency")
+                newFav.setValue(items.id, forKey: "favId")
+                newFav.setValue(items.latitude, forKey: "favLatitude")
+                newFav.setValue(items.longitude, forKey: "favLongitude")
+                newFav.setValue(items.mainImage, forKey: "favMainImage")
+                newFav.setValue(items.menuUrl, forKey: "favMenuUrl")
+                newFav.setValue(items.url, forKey: "favUrl")
+                newFav.setValue(items.phoneNumber, forKey: "favPhone")
+                
+                do{
+                    try context.save()
+                }
+                catch{
+                    //Error
+                }
+                viewDidLoad()
+            }
+        }
+     }
     
 //---------------------------------------------------------------------------------//
     
