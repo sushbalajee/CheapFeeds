@@ -77,6 +77,8 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+//---------------------------------------------------------------------------------//
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = resultsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! resultsTableViewCell
         if (!pulledSearch.isEmpty){
@@ -125,6 +127,8 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+//---------------------------------------------------------------------------------//
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let all = pulledSearch[indexPath.row]
@@ -132,6 +136,8 @@ class FilteredResults_VC: UIViewController, UITableViewDelegate, UITableViewData
         passOnData.append(all)
         self.performSegue(withIdentifier: "push to detail view", sender: self)
     }
+    
+//---------------------------------------------------------------------------------//
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 310

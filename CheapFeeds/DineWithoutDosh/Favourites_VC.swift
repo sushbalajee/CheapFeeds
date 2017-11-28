@@ -17,6 +17,7 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var favourites = [RestaurantData]()
     var passOnDataFromFavs = [RestaurantData]()
     
+//---------------------------------------------------------------------------------//
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
@@ -66,9 +67,13 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     }
     
+//---------------------------------------------------------------------------------//
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favourites.count
     }
+    
+//---------------------------------------------------------------------------------//
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = favsTableView.dequeueReusableCell(withIdentifier: "cellB", for: indexPath) as! favouritesTableViewCell
@@ -100,6 +105,8 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
+//---------------------------------------------------------------------------------//
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.delete
@@ -123,18 +130,20 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                     catch{
                         //error
                     }
-                
             }
             catch{
                 //error
             }
         }
-        
     }
+    
+//---------------------------------------------------------------------------------//
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 310
     }
+    
+//---------------------------------------------------------------------------------//
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -144,7 +153,7 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         self.performSegue(withIdentifier: "push from favourites", sender: self)
     }
     
-    //---------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------//
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DestViewController: DetailView_VC = segue.destination as! DetailView_VC

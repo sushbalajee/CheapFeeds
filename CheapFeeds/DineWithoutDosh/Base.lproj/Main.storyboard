@@ -26,7 +26,7 @@
         <scene sceneID="cTI-Pj-k5c">
             <objects>
                 <tabBarController id="INS-ju-Ux2" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="PCc-MA-2vz">
+                    <tabBar key="tabBar" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="PCc-MA-2vz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -42,11 +42,11 @@
             </objects>
             <point key="canvasLocation" x="-1580" y="90"/>
         </scene>
-        <!--Home-->
+        <!--Main-->
         <scene sceneID="QEn-tT-KZM">
             <objects>
                 <navigationController id="qtJ-zh-XDD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-27" id="Ju3-Vi-b7r"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="icons8-home-27" id="Ju3-Vi-b7r"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ckO-SZ-Dwu">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -95,17 +95,19 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="32" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-YD-K6i">
                                         <rect key="frame" x="16" y="11" width="343" height="369.5"/>
-                                        <string key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
+                                        <mutableString key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
 
-Features V1.0:
+Features V1.1:
 
 * Filter results from the budget/cuisine options selected by the user
 
 * Random generator to select a restaurant for the user depending on budget/cuisine options selected by the user
 
-* Card roulette game to decide who pays for the meals of participating players
+* Card roulette game to decide who pays for the meals of participating players                                                                       
 
-NOTE: Average cost per person is an approximate price according to results from Zomato. Check the menu link or restaurant websites for accurate prices</string>
+* Save your favourite restaurants by clicking on the heart icon in the restaurant information page
+
+NOTE: Average cost per person is an approximate price according to results from Zomato. Check the menu link or restaurant websites for accurate prices</mutableString>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -484,7 +486,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A4R-OQ-aro" secondAttribute="bottom" constant="16" id="18C-nb-BpE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A4R-OQ-aro" secondAttribute="bottom" id="18C-nb-BpE"/>
                             <constraint firstItem="A4R-OQ-aro" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1kX-Pe-2WG"/>
                             <constraint firstItem="4c2-ef-njU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="5gT-aF-Rpf"/>
                             <constraint firstItem="PGf-jf-M0f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8MN-jG-Kus"/>
@@ -895,11 +897,11 @@ NOTE: Average cost per person is an approximate price according to results from 
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR5-1F-yOn">
-                                <rect key="frame" x="330" y="0.0" width="45" height="45"/>
+                                <rect key="frame" x="340" y="5" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="hR5-1F-yOn" secondAttribute="height" multiplier="1:1" id="CCo-Cq-cmR"/>
+                                    <constraint firstAttribute="width" secondItem="hR5-1F-yOn" secondAttribute="height" multiplier="1:1" id="c15-b1-DJB"/>
                                 </constraints>
-                                <state key="normal" image="heartEmpty"/>
+                                <state key="normal" image="heartE30"/>
                                 <connections>
                                     <action selector="addToFavs:" destination="il3-bR-YGS" eventType="touchUpInside" id="Crp-Lk-QmS"/>
                                 </connections>
@@ -914,16 +916,16 @@ NOTE: Average cost per person is an approximate price according to results from 
                             <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="Wsr-tf-nvX" secondAttribute="trailing" constant="24" id="EUu-Xa-qCW"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="GPc-tX-c8y"/>
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="LGQ-r1-xUw"/>
+                            <constraint firstItem="hR5-1F-yOn" firstAttribute="top" secondItem="EUp-De-G6r" secondAttribute="top" constant="5" id="MJo-by-Gzs"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="Pdj-UC-LWf"/>
                             <constraint firstItem="Wsr-tf-nvX" firstAttribute="top" secondItem="AcS-rT-pBS" secondAttribute="bottom" constant="-55.5" id="QDh-DF-Kmc"/>
+                            <constraint firstItem="hR5-1F-yOn" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" constant="-5" id="SzD-Yx-Y7o"/>
                             <constraint firstItem="5Gm-67-SIM" firstAttribute="top" secondItem="hDU-Ir-30B" secondAttribute="bottom" constant="4" id="chg-PE-kow"/>
                             <constraint firstItem="ddz-0F-YZS" firstAttribute="top" secondItem="5Gm-67-SIM" secondAttribute="bottom" id="d4A-BK-jfO"/>
-                            <constraint firstItem="hR5-1F-yOn" firstAttribute="trailing" secondItem="EUp-De-G6r" secondAttribute="trailing" id="hWe-Ad-9hA"/>
                             <constraint firstItem="ddz-0F-YZS" firstAttribute="leading" secondItem="EUp-De-G6r" secondAttribute="leading" id="i5O-J6-SKi"/>
                             <constraint firstItem="AcS-rT-pBS" firstAttribute="top" secondItem="EUp-De-G6r" secondAttribute="top" id="pJc-cQ-us6"/>
                             <constraint firstItem="hDU-Ir-30B" firstAttribute="top" secondItem="Wsr-tf-nvX" secondAttribute="bottom" constant="4" id="qrU-LS-Xhk"/>
                             <constraint firstItem="ddz-0F-YZS" firstAttribute="bottom" secondItem="EUp-De-G6r" secondAttribute="bottom" id="tSc-LF-zTX"/>
-                            <constraint firstItem="hR5-1F-yOn" firstAttribute="top" secondItem="EUp-De-G6r" secondAttribute="top" id="thC-bO-geu"/>
                             <constraint firstItem="EUp-De-G6r" firstAttribute="trailing" secondItem="hDU-Ir-30B" secondAttribute="trailing" constant="85" id="y2b-FN-9Em"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EUp-De-G6r"/>
@@ -1126,7 +1128,7 @@ NOTE: Average cost per person is an approximate price according to results from 
         <image name="1s" width="1600" height="373"/>
         <image name="arrows_long_down1600" width="1600" height="1600"/>
         <image name="finBut" width="755" height="230"/>
-        <image name="heartEmpty" width="45" height="45"/>
+        <image name="heartE30" width="30" height="30"/>
         <image name="icons8-about-27" width="27" height="27"/>
         <image name="icons8-christmas-star-27" width="27" height="27"/>
         <image name="icons8-home-27" width="27" height="27"/>

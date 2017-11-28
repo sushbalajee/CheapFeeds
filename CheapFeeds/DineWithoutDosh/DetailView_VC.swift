@@ -29,13 +29,11 @@ class DetailView_VC: UIViewController {
     var dataFromResults = [RestaurantData]()
     var checkFavs = [String]()
     
-    
 //---------------------------------------------------------------------------------//
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         mainTitle.layer.shadowColor = UIColor.white.cgColor
         mainTitle.layer.shadowOpacity = 0.5
         mainTitle.layer.shadowOffset = CGSize.zero
@@ -78,7 +76,7 @@ class DetailView_VC: UIViewController {
         for item in dataFromResults {
             
             if checkFavs.contains(item.id){
-                addedToFavsOutlet.setImage(UIImage(named:"heartFilled"), for: .normal)
+                addedToFavsOutlet.setImage(UIImage(named:"heartF301"), for: .normal)
             }
             
             let url = URL(string: item.mainImage!)
@@ -164,6 +162,7 @@ class DetailView_VC: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+//---------------------------------------------------------------------------------//
     
     @IBAction func addToFavs(_ sender: Any) {
         

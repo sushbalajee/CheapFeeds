@@ -100,10 +100,13 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
 //---------------------------------------------------------------------------------//
     
     @objc func doneClicked(){
-        if(userInput.text != ""){
+        if(!(userInput.text?.trimmingCharacters(in: .whitespaces).isEmpty)!){
             players.append(userInput.text!)
             tableViewPlayers.reloadData()
             spinButtonOutlet.isHidden = false
+            userInput.text = ""
+        }
+        else{
             userInput.text = ""
         }
         
@@ -112,7 +115,6 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
             arrowDown2.isHidden = false
         }
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -132,8 +134,27 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         cell.textLabel?.text = players[indexPath.row]
         cell.textLabel?.textAlignment = .center
         cell.backgroundColor = UIColor.clear
+        
+        let btn = UIButton(type: UIButtonType.custom) as UIButton
+        btn.backgroundColor = UIColor.lightGray
+        btn.setTitle("x", for: UIControlState.normal)
+        btn.frame = CGRect(x: tableViewPlayers.frame.width - 20,y:1.5,width:20,height:22)
+        btn.layer.cornerRadius = 10
+        btn.addTarget(self, action: #selector(self.buttonPressed(sender:)), for: UIControlEvents.touchUpInside)
+        btn.tag = indexPath.row
+        cell.contentView.addSubview(btn)
 
         return cell
+    }
+
+//---------------------------------------------------------------------------------//
+    
+    //Button Action is
+    @objc func buttonPressed(sender:UIButton!)
+    {
+        let buttonRow = sender.tag
+        players.remove(at: buttonRow)
+        tableViewPlayers.reloadData()
     }
     
 //---------------------------------------------------------------------------------//
@@ -141,13 +162,18 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBAction func spinButton(_ sender: Any) {
         
         if(spinButtonOutlet.titleLabel?.text == "Spin"){
-            
+            if(players.count == 1){
+                createAlert(title: "Warning", message: "Enter more players")
+            }
+            else{
             spinButtonOutlet.isHidden = true
-            mainTitle.text = "Who's Going To Pay"
+            mainTitle.text = "Who's Going To Pay?"
       
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(RandomGenerator.action), userInfo: nil, repeats: true)
             
-            self.rotateView()
+                self.rotateView()
+                
+            }
         }
     }
     
@@ -187,5 +213,25 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
         spinButtonOutlet.isHidden = true
         arrowDown.isHidden = true
         arrowDown2.isHidden = true
-    } 
+        mainTitle.text = "Who's Going To Pay?"
+    }
+    
+//---------------------------------------------------------------------------------//
+    
+    /* Error handling messages using pop up dialogs */
+    func createAlert(title :String, message: String){
+        // create the alert
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+//---------------------------------------------------------------------------------//
+    
 }
