@@ -124,7 +124,8 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                         //error
                     }
                 
-            }catch{
+            }
+            catch{
                 //error
             }
         }

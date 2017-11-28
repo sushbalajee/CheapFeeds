@@ -78,7 +78,7 @@ class DetailView_VC: UIViewController {
         for item in dataFromResults {
             
             if checkFavs.contains(item.id){
-                addedToFavsOutlet.setImage(UIImage(named:"icons8-checked-48.png"), for: .normal)
+                addedToFavsOutlet.setImage(UIImage(named:"heartFilled"), for: .normal)
             }
             
             let url = URL(string: item.mainImage!)
@@ -169,8 +169,6 @@ class DetailView_VC: UIViewController {
         
         for items in dataFromResults{
             if checkFavs.contains(items.id){
-                //createAlert(title: "Alert", message: "This restaurant is already in your favourites")
-                //(sender as AnyObject).setImage(UIImage(named:"icons8-checked-48.png"), for: .normal)
             }
             else{
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
