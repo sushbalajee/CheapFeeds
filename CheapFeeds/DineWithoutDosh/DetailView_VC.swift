@@ -166,6 +166,8 @@ class DetailView_VC: UIViewController {
     
     @IBAction func addToFavs(_ sender: Any) {
         
+        if(addedToFavsOutlet.image(for: .normal) == UIImage(named: "heartE30")){
+            addedToFavsOutlet.setImage(UIImage(named:"heartF301"), for: .normal)
         for items in dataFromResults{
             if checkFavs.contains(items.id){
             }
@@ -195,9 +197,38 @@ class DetailView_VC: UIViewController {
                 catch{
                     //Error
                 }
-                viewDidLoad()
+            }
             }
         }
+        else if(addedToFavsOutlet.image(for: .normal) == UIImage(named: "heartF301")){
+                addedToFavsOutlet.setImage(UIImage(named:"heartE30"), for: .normal)
+            
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavEntity")
+            
+                for favitems in dataFromResults{
+                let idToDelete = favitems.id
+                request.predicate = NSPredicate.init(format: "favId == %@", idToDelete)
+                }
+            
+                request.returnsObjectsAsFaults = false
+                do
+                {
+                    let result = try? context.fetch(request)
+                    let resultData = result as! [NSManagedObject]
+                    
+                    for object in resultData{
+                        context.delete(object)
+                    }
+                    do{
+                        try context.save()
+                    }
+                    catch{
+                        //error
+                    }
+                }
+            }
      }
     
 //---------------------------------------------------------------------------------//

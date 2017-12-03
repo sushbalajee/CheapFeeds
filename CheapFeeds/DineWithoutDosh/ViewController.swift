@@ -144,6 +144,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     @IBAction func generate(_ sender: Any) {
 
+        if(lats != 0.0){
         if let budget = Int(textf.text!){
             for items in restaurantInfo{
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
@@ -161,6 +162,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                     }
                 }
             }
+            }
+        }
+        else{
+            createAlert(title: "Warning", message: "Please enable location services: Go to Settings -> Privacy -> Location Services -> Find A Feed")
         }
     }
     
@@ -168,6 +173,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     @IBAction func but(_ sender: Any) {
         
+        if(lats != 0.0){
         if let budget = Int(textf.text!){
             for items in restaurantInfo{
                 if(items.averageCostPP <= budget && items.averageCostPP > 0){
@@ -185,6 +191,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                     }
                 }
             }
+            }
+        }
+        else{
+            createAlert(title: "Warning", message: "Please enable location services: Go to Settings -> Privacy -> Location Services -> Find A Feed")
         }
     }
     

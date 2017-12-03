@@ -95,7 +95,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="32" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-YD-K6i">
                                         <rect key="frame" x="16" y="11" width="343" height="369.5"/>
-                                        <mutableString key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
+                                        <string key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
 
 Features V1.1:
 
@@ -107,7 +107,7 @@ Features V1.1:
 
 * Save your favourite restaurants by clicking on the heart icon in the restaurant information page
 
-NOTE: Average cost per person is an approximate price according to results from Zomato. Check the menu link or restaurant websites for accurate prices</mutableString>
+NOTE: Average cost per person is an approximate price according to results from Zomato. Check the menu link or restaurant websites for accurate prices</string>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -732,7 +732,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5SJ-ch-U0P"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hY7-kP-ucH"/>
+                    <navigationItem key="navigationItem" title="Results" id="hY7-kP-ucH"/>
                     <connections>
                         <outlet property="resultsTableView" destination="kF6-YQ-XPY" id="bua-w7-vTB"/>
                         <segue destination="il3-bR-YGS" kind="show" identifier="push to detail view" id="1Sq-fq-pXC"/>
