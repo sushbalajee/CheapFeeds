@@ -24,6 +24,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     var pickCC = [String]()
     var lats = CLLocationDegrees()
     var longs = CLLocationDegrees()
+    
+    var newLatitude = CLLocationDegrees()
+    var newLongitude = CLLocationDegrees()
+    
+    var hasNewLocation = false
+    
     var xx = 0
     var yy = 20
     var pickedCuisine = "--- Any ---"
@@ -53,7 +59,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tabBarController?.tabBar.tintColor = UIColor.white
         
         let toolBar = UIToolbar()
@@ -105,8 +111,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         
         if let location = locations.first{
             
+            if(hasNewLocation == false || newLatitude == 0.0 && newLongitude == 0.0){
             lats = location.coordinate.latitude
             longs = location.coordinate.longitude
+                print("reached first")
+                print(lats)
+                print(longs)
+            }else if(hasNewLocation == true){
+                lats = newLatitude
+                longs = newLongitude
+                print(lats)
+                print(longs)
+                print("reached second")
+            }
             
             while stopTheGeo < 1 {
                 self.uploadData(changingURL: "https://developers.zomato.com/api/v2.1/geocode?lat=\(lats)&lon=\(longs)", APIHeader: "nearby_restaurants")
@@ -268,7 +285,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     /* API call and initialisation */
     func uploadData(changingURL: String, APIHeader: String){
         
-        let zomatoKey = "d7aa15e105531ac1ece595a45666a3e8"
+        let zomatoKey = ""//"d7aa15e105531ac1ece595a45666a3e8"
 
         let urlString = changingURL
         
