@@ -17,8 +17,6 @@ class MapPopUp_VC: UIViewController, CLLocationManagerDelegate{
     var newLats = CLLocationDegrees()
     var newLongs = CLLocationDegrees()
     
-    var tacbBarController: UITabBarController?
-    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -72,12 +70,14 @@ class MapPopUp_VC: UIViewController, CLLocationManagerDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DestViewController: ViewController = segue.destination as! ViewController
         
+        //tabBarController?.selectedIndex = 0
         DestViewController.newLatitude = newLats
         DestViewController.newLongitude = newLongs
         DestViewController.hasNewLocation = true
-        tabBarController?.selectedIndex = 0
+        
         
         
     }
     
 }
+

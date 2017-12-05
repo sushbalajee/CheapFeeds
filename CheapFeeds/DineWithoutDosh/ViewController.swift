@@ -114,15 +114,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             if(hasNewLocation == false || newLatitude == 0.0 && newLongitude == 0.0){
             lats = location.coordinate.latitude
             longs = location.coordinate.longitude
-                print("reached first")
-                print(lats)
-                print(longs)
-            }else if(hasNewLocation == true){
-                lats = newLatitude
-                longs = newLongitude
-                print(lats)
-                print(longs)
-                print("reached second")
+      
+            }
+            else if(hasNewLocation == true && newLatitude != 0.0 && newLongitude != 0.0){
+            lats = newLatitude
+            longs = newLongitude
+          
             }
             
             while stopTheGeo < 1 {
@@ -235,8 +232,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                     createAlert(title: "Warning", message: "No results matching your budget/cuisine. Try increasing your budget!")
                 }
             DestViewController.originLat = lats
+                print(lats)
             DestViewController.originLong = longs
-            
+            print(longs)
             filteredAnyByCost.removeAll()
             }
         }

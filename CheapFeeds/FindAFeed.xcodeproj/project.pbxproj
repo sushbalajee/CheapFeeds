@@ -26,6 +26,7 @@
 		20BE7C731F82497900CAA2E6 /* DetailView_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BE7C721F82497900CAA2E6 /* DetailView_VC.swift */; };
 		20D15FE11FC3B23D00A24CD9 /* Favourites_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D15FE01FC3B23D00A24CD9 /* Favourites_VC.swift */; };
 		20D15FE31FC3B31000A24CD9 /* favouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D15FE21FC3B31000A24CD9 /* favouritesTableViewCell.swift */; };
+		20D8CE2B1FD744030032DE7A /* TabBar_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8CE2A1FD744030032DE7A /* TabBar_VC.swift */; };
 		20F8447D1F80B07900791B27 /* FilteredResults_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8447C1F80B07900791B27 /* FilteredResults_VC.swift */; };
 		20F8447F1F80B32900791B27 /* resultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8447E1F80B32900791B27 /* resultsTableViewCell.swift */; };
 		A1B586282F83CFA99C0DB746 /* Pods_DineWithoutDoshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9FF0E5EDD64C3FC45D0C79 /* Pods_DineWithoutDoshTests.framework */; };
@@ -73,6 +74,7 @@
 		20BE7C721F82497900CAA2E6 /* DetailView_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView_VC.swift; sourceTree = "<group>"; };
 		20D15FE01FC3B23D00A24CD9 /* Favourites_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourites_VC.swift; sourceTree = "<group>"; };
 		20D15FE21FC3B31000A24CD9 /* favouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favouritesTableViewCell.swift; sourceTree = "<group>"; };
+		20D8CE2A1FD744030032DE7A /* TabBar_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar_VC.swift; sourceTree = "<group>"; };
 		20F8447C1F80B07900791B27 /* FilteredResults_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredResults_VC.swift; sourceTree = "<group>"; };
 		20F8447E1F80B32900791B27 /* resultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsTableViewCell.swift; sourceTree = "<group>"; };
 		26E544A26EA26793EA843B04 /* Pods-DineWithoutDosh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DineWithoutDosh.release.xcconfig"; path = "Pods/Target Support Files/Pods-DineWithoutDosh/Pods-DineWithoutDosh.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				20BE7C721F82497900CAA2E6 /* DetailView_VC.swift */,
 				207D78E31F832042008C2B9B /* RandomGenerator.swift */,
 				2084FAB61F8B83BE006E3C0C /* Information_VC.swift */,
+				20D8CE2A1FD744030032DE7A /* TabBar_VC.swift */,
 				208F8FFE1F89D28F007B665C /* CardRoulette_VC.swift */,
 				205A55AF1F8436F200087A9B /* Links_VC.swift */,
 				206297B91F7F594D00328DAD /* Main.storyboard */,
@@ -506,6 +509,7 @@
 				20AABC081FD61FAA00F89977 /* MapPopUp_VC.swift in Sources */,
 				20D15FE11FC3B23D00A24CD9 /* Favourites_VC.swift in Sources */,
 				206297B61F7F594D00328DAD /* AppDelegate.swift in Sources */,
+				20D8CE2B1FD744030032DE7A /* TabBar_VC.swift in Sources */,
 				208F8FFF1F89D28F007B665C /* CardRoulette_VC.swift in Sources */,
 				2084FAB71F8B83BF006E3C0C /* Information_VC.swift in Sources */,
 				20BE7C731F82497900CAA2E6 /* DetailView_VC.swift in Sources */,
