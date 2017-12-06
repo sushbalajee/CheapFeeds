@@ -148,8 +148,7 @@ class CardRoulette_VC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
 
 //---------------------------------------------------------------------------------//
-    
-    //Button Action is
+
     @objc func buttonPressed(sender:UIButton!)
     {
         let buttonRow = sender.tag

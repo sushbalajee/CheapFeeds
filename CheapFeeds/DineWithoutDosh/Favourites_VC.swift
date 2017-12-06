@@ -163,6 +163,4 @@ class Favourites_VC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         passOnDataFromFavs.removeAll()
         
     }
-    
-    
 }

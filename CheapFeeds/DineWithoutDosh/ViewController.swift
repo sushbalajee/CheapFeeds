@@ -12,6 +12,9 @@ import CoreData
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
 
+    @IBOutlet weak var B1: UIButton!
+    @IBOutlet weak var B2: UIButton!
+    @IBOutlet weak var B3: UIButton!
     @IBOutlet weak var textf: UITextField!
     @IBOutlet weak var cuisinePicker: UIPickerView!
     @IBOutlet weak var view1: UIView!
@@ -87,8 +90,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         view3.layer.shadowOpacity = 1
         view3.layer.shadowOffset = CGSize.zero
         view3.layer.shadowRadius = 1
-   
-      locationManager.requestAlwaysAuthorization()
+        
+        B1.layer.cornerRadius = 5
+        B1.layer.borderWidth = 1
+        B1.layer.borderColor = UIColor.darkGray.cgColor
+        
+        B2.layer.cornerRadius = 5
+        B2.layer.borderWidth = 1
+        B2.layer.borderColor = UIColor.darkGray.cgColor
+        
+        B3.layer.cornerRadius = 5
+        B3.layer.borderWidth = 1
+        B3.layer.borderColor = UIColor.darkGray.cgColor
+        
+        locationManager.requestAlwaysAuthorization()
         
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self

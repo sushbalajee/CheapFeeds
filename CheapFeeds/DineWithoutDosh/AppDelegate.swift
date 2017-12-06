@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
         GMSServices.provideAPIKey("AIzaSyDvyecJWYEgWO5DQOEIJBaM2CaCJHzgIpo")
         GMSPlacesClient.provideAPIKey("AIzaSyDvyecJWYEgWO5DQOEIJBaM2CaCJHzgIpo")
-
-        //IQKeyboardManager.sharedManager().enable = true
+        
         // Override point for customization after application launch.
         return true
     }

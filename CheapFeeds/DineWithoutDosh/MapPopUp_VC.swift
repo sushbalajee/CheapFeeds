@@ -14,8 +14,8 @@ import GooglePlaces
 class MapPopUp_VC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, GMSAutocompleteViewControllerDelegate{
    
    
+    @IBOutlet weak var buttonOut: UIButton!
     @IBOutlet weak var view1: UIView!
-    
     @IBOutlet weak var googleMapsView: GMSMapView!
 
     var newLats = CLLocationDegrees()
@@ -23,9 +23,13 @@ class MapPopUp_VC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
     
     var locationManager = CLLocationManager()
     
+//---------------------------------------------------------------------------------//
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buttonOut.titleLabel?.numberOfLines = 1;
+        buttonOut.titleLabel?.adjustsFontSizeToFitWidth = true
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -51,7 +55,8 @@ class MapPopUp_VC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
 
     }
     
-   
+//---------------------------------------------------------------------------------//
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
@@ -97,6 +102,8 @@ class MapPopUp_VC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
         newLongs = coordinate.longitude
     }
     
+//---------------------------------------------------------------------------------//
+    
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
         let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
@@ -128,6 +135,8 @@ class MapPopUp_VC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
         self.present(autoCompleteController, animated: true, completion: nil)
         
     }
+    
+//---------------------------------------------------------------------------------//
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DestViewController: ViewController = segue.destination as! ViewController
