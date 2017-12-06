@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjT-4i-x19">
-                                <rect key="frame" x="24" y="22" width="327" height="36.5"/>
+                                <rect key="frame" x="24" y="22" width="327" height="34"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="24"/>
                                 <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -91,50 +91,23 @@
                                     <constraint firstAttribute="width" secondItem="kWv-Wy-lmW" secondAttribute="height" multiplier="221:77" id="VUk-Xm-92P"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zS7-E8-JCe">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d30-SY-brI">
                                 <rect key="frame" x="0.0" y="80.5" width="375" height="393"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="32" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-YD-K6i">
-                                        <rect key="frame" x="16" y="11" width="343" height="369.5"/>
-                                        <string key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
-
-Features V1.1:
-
-* Filter results from the budget/cuisine options selected by the user
-
-* Random generator to select a restaurant for the user depending on budget/cuisine options selected by the user
-
-* Card roulette game to decide who pays for the meals of participating players                                                                       
-
-* Save your favourite restaurants by clicking on the heart icon in the restaurant information page
-
-NOTE: Average cost per person is an approximate price according to results from Zomato. Check the menu link or restaurant websites for accurate prices</string>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Zq0-YD-K6i" secondAttribute="bottom" constant="12.5" id="0ov-sU-FGJ"/>
-                                    <constraint firstItem="Zq0-YD-K6i" firstAttribute="top" secondItem="zS7-E8-JCe" secondAttribute="top" constant="11" id="J2p-kv-rwn"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zq0-YD-K6i" secondAttribute="trailing" constant="16" id="U8A-SP-ksg"/>
-                                    <constraint firstItem="Zq0-YD-K6i" firstAttribute="leading" secondItem="zS7-E8-JCe" secondAttribute="leading" constant="16" id="fIt-F7-iOh"/>
-                                </constraints>
-                            </view>
+                                <connections>
+                                    <segue destination="UmC-Kn-tMF" kind="embed" id="fwf-h9-nLB"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="d30-SY-brI" firstAttribute="trailing" secondItem="ld0-5B-GcF" secondAttribute="trailing" id="6Oe-eI-FrP"/>
                             <constraint firstItem="ld0-5B-GcF" firstAttribute="trailing" secondItem="kWv-Wy-lmW" secondAttribute="trailing" constant="77" id="Anm-cT-TEz"/>
-                            <constraint firstItem="zS7-E8-JCe" firstAttribute="top" secondItem="BjT-4i-x19" secondAttribute="bottom" constant="22" id="CPR-Ul-7Lo"/>
                             <constraint firstItem="BjT-4i-x19" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" constant="24" id="GbA-Rc-t98"/>
-                            <constraint firstItem="zS7-E8-JCe" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" id="L7B-GS-O7K"/>
                             <constraint firstItem="BjT-4i-x19" firstAttribute="top" secondItem="ld0-5B-GcF" secondAttribute="top" constant="22" id="LrH-2c-NY4"/>
-                            <constraint firstItem="kWv-Wy-lmW" firstAttribute="top" secondItem="zS7-E8-JCe" secondAttribute="bottom" constant="3.5" id="MIQ-ER-z86"/>
+                            <constraint firstItem="kWv-Wy-lmW" firstAttribute="top" secondItem="d30-SY-brI" secondAttribute="bottom" constant="3.5" id="TU5-80-mcC"/>
                             <constraint firstItem="kWv-Wy-lmW" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" constant="77" id="Xqc-eI-Iqz"/>
-                            <constraint firstItem="zS7-E8-JCe" firstAttribute="centerY" secondItem="jVZ-jE-a8G" secondAttribute="centerY" id="bqW-hI-T6b"/>
-                            <constraint firstItem="zS7-E8-JCe" firstAttribute="centerX" secondItem="jVZ-jE-a8G" secondAttribute="centerX" id="eCK-R0-QdD"/>
-                            <constraint firstItem="zS7-E8-JCe" firstAttribute="trailing" secondItem="ld0-5B-GcF" secondAttribute="trailing" id="hbx-uR-9ZA"/>
+                            <constraint firstItem="d30-SY-brI" firstAttribute="top" secondItem="BjT-4i-x19" secondAttribute="bottom" constant="24.5" id="Ysk-me-mIR"/>
+                            <constraint firstItem="d30-SY-brI" firstAttribute="leading" secondItem="ld0-5B-GcF" secondAttribute="leading" id="dLH-jS-odo"/>
                             <constraint firstItem="ld0-5B-GcF" firstAttribute="trailing" secondItem="BjT-4i-x19" secondAttribute="trailing" constant="24" id="jJQ-eh-3cj"/>
                             <constraint firstItem="kWv-Wy-lmW" firstAttribute="bottom" secondItem="ld0-5B-GcF" secondAttribute="bottom" id="mI4-Fc-Tmn"/>
                         </constraints>
@@ -142,9 +115,7 @@ NOTE: Average cost per person is an approximate price according to results from 
                     </view>
                     <navigationItem key="navigationItem" id="Uqj-O9-duG"/>
                     <connections>
-                        <outlet property="mainText" destination="Zq0-YD-K6i" id="mLM-1I-3O5"/>
                         <outlet property="mainTitle" destination="BjT-4i-x19" id="XUh-gJ-4vE"/>
-                        <outlet property="view1" destination="zS7-E8-JCe" id="HUK-u6-oIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3W-ua-olF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1229,6 +1200,80 @@ NOTE: Average cost per person is an approximate price according to results from 
             </objects>
             <point key="canvasLocation" x="-684" y="860"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="bvD-95-wEp">
+            <objects>
+                <viewController id="UmC-Kn-tMF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="26D-lY-ge0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="760"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="fpU-zr-jnr">
+                                <rect key="frame" x="16" y="20" width="343" height="740"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgk-dP-rz7">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="760"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="39" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0t-XJ-h3G">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="727"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <mutableString key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
+
+Features V1.3:
+
+* Filter results from the budget/cuisine options selected by the user
+
+* Random generator to select a restaurant for the user depending on budget/cuisine options selected by the user
+
+* Card roulette game to decide who pays for the meals of participating players                                                                       
+
+* Save your favourite restaurants by clicking on the heart icon in the restaurant information page
+
+* Enter a custom location to find restaurants near the specified location. Current location and custom location are seperate so that you may compare options easily
+
+NOTE: 
+
+* Average cost per person is an approximate price according to results from Zomato. Check the menu link or restaurant websites for accurate prices
+
+Having problems?
+
+If the restaurant results being presented to you are a bit far from your location, this may be because Zomato is not available in your region. Zomato is avaiable in 10,000 cities across 24 countries. To check if this app can help you Find A Feed, go to www.zomato.com/newzealand
+
+For any other issues or enquiries please visit www.sushantbalajee.wixsite.com/findafeed</mutableString>
+                                                <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="760" id="jx2-xJ-cev"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="fgk-dP-rz7" secondAttribute="bottom" id="9ZS-VL-JdI"/>
+                                    <constraint firstItem="fgk-dP-rz7" firstAttribute="top" secondItem="fpU-zr-jnr" secondAttribute="top" id="Sd5-Xn-E4s"/>
+                                    <constraint firstAttribute="trailing" secondItem="fgk-dP-rz7" secondAttribute="trailing" id="mFG-k6-Wrz"/>
+                                    <constraint firstItem="fgk-dP-rz7" firstAttribute="leading" secondItem="fpU-zr-jnr" secondAttribute="leading" id="o3F-uN-FlV"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fgk-dP-rz7" firstAttribute="width" secondItem="26D-lY-ge0" secondAttribute="width" id="1zI-u0-fSX"/>
+                            <constraint firstItem="fpU-zr-jnr" firstAttribute="leading" secondItem="26D-lY-ge0" secondAttribute="leadingMargin" id="D2J-3a-JQA"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fpU-zr-jnr" secondAttribute="bottom" id="EsS-AU-olo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fpU-zr-jnr" secondAttribute="trailing" id="VYR-au-vS1"/>
+                            <constraint firstItem="fpU-zr-jnr" firstAttribute="top" secondItem="26D-lY-ge0" secondAttribute="topMargin" id="lQs-Yy-Xc5"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="375" height="760"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M2f-h1-D58" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1580" y="2379"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1s" width="1600" height="373"/>
@@ -1246,7 +1291,7 @@ NOTE: Average cost per person is an approximate price according to results from 
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kVM-wv-6kY"/>
-        <segue reference="FUI-aB-ZQo"/>
+        <segue reference="H2y-PR-63D"/>
         <segue reference="nPR-jR-d3n"/>
     </inferredMetricsTieBreakers>
 </document>
