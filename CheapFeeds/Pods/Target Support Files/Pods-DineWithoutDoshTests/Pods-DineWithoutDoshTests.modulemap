@@ -1,6 +1,0 @@
-framework module Pods_DineWithoutDoshTests {
-  umbrella header "Pods-DineWithoutDoshTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

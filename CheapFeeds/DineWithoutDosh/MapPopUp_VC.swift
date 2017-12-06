@@ -7,77 +7,134 @@
 //
 
 import UIKit
-import MapKit
 import CoreLocation
+import GoogleMaps
+import GooglePlaces
 
-class MapPopUp_VC: UIViewController, CLLocationManagerDelegate{
+class MapPopUp_VC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, GMSAutocompleteViewControllerDelegate{
+   
+   
+    @IBOutlet weak var view1: UIView!
     
-    @IBOutlet weak var mapView: MKMapView!
-    
+    @IBOutlet weak var googleMapsView: GMSMapView!
+
     var newLats = CLLocationDegrees()
     var newLongs = CLLocationDegrees()
     
-    let locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
+        
+        
+        self.googleMapsView.delegate = self
+        self.googleMapsView.isMyLocationEnabled = true
+        self.googleMapsView.settings.myLocationButton = true
+        
+        view1.layer.shadowColor = UIColor.darkGray.cgColor
+        view1.layer.shadowOpacity = 1
+        view1.layer.shadowOffset = CGSize.zero
+        view1.layer.shadowRadius = 1
+        
+        googleMapsView.layer.shadowColor = UIColor.darkGray.cgColor
+        googleMapsView.layer.shadowOpacity = 1
+        googleMapsView.layer.shadowOffset = CGSize.zero
+        googleMapsView.layer.shadowRadius = 1
+        googleMapsView.layer.borderColor = UIColor.lightGray.cgColor
+        googleMapsView.layer.borderWidth = 1
 
     }
-
     
-    @IBAction func dismissPopUp(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+   
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-       
+        let location = locations.last
         
-        let loc = locations.first
+        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
         
-        print("got location")
-        print((loc?.coordinate.latitude.description)! + " , " + (loc?.coordinate.longitude.description)!)
-        locationManager.stopUpdatingLocation()
+        self.googleMapsView.animate(to: camera)
         
-        let span = MKCoordinateSpanMake(3.0, 3.0)
-        let region = MKCoordinateRegion(center: (loc?.coordinate)!, span: span)
-        mapView.setRegion(region, animated: true)
+        self.locationManager.stopUpdatingLocation()
     
-       
-    }
-    
-    @IBAction func dropPin(_ sender: UITapGestureRecognizer) {
+        googleMapsView.clear() // clearing Pin before adding new
+        let marker = GMSMarker(position: (location?.coordinate)!)
+        marker.map = googleMapsView
+        newLats = (location?.coordinate.latitude)!
+        newLongs = (location?.coordinate.longitude)!
         
-        let location = sender.location(in: self.mapView)
-        let locCoord = self.mapView.convert(location, toCoordinateFrom: self.mapView)
-        let annotation = MKPointAnnotation()
-        
-        annotation.coordinate = locCoord
-        annotation.title = "Ti"
-        
-        self.mapView.removeAnnotations(mapView.annotations)
-        self.mapView.addAnnotation(annotation)
-        
-        newLats = locCoord.latitude
-        newLongs = locCoord.longitude
         
     }
     
+    // MARK: GMSMapview Delegate
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        self.googleMapsView.isMyLocationEnabled = true
+    }
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        
+        self.googleMapsView.isMyLocationEnabled = true
+        if (gesture) {
+            mapView.selectedMarker = nil
+            
+        }
+        
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
+        googleMapsView.clear() // clearing Pin before adding new
+        let marker = GMSMarker(position: coordinate)
+        marker.map = googleMapsView
+        newLats = coordinate.latitude
+        newLongs = coordinate.longitude
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        
+        let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
+        
+        self.googleMapsView.camera = camera
+        self.dismiss(animated: true, completion: nil)
+        
+        googleMapsView.clear() // clearing Pin before adding new
+        let marker = GMSMarker(position: place.coordinate)
+        marker.map = googleMapsView
+        newLats = place.coordinate.latitude
+        newLongs = place.coordinate.longitude
+        
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        print(error)
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        self.dismiss(animated: true, completion: nil) 
+    }
+
+    @IBAction func openSearch(_ sender: UIBarButtonItem) {
+        let autoCompleteController = GMSAutocompleteViewController()
+        autoCompleteController.delegate = self
+        
+        self.locationManager.startUpdatingLocation()
+        self.present(autoCompleteController, animated: true, completion: nil)
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DestViewController: ViewController = segue.destination as! ViewController
         
-        //tabBarController?.selectedIndex = 0
         DestViewController.newLatitude = newLats
         DestViewController.newLongitude = newLongs
         DestViewController.hasNewLocation = true
-        
-        
-        
     }
-    
 }
 

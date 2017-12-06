@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		009CF880DFAFB1A050963345 /* Pods_DineWithoutDosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A622FD09048DDF5C04EECB8 /* Pods_DineWithoutDosh.framework */; };
-		0F4CACAA893D7CA271675C8B /* Pods_DineWithoutDoshUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6470F80741C5989D2EB68B /* Pods_DineWithoutDoshUITests.framework */; };
+		178D77C18DA1C1D211EAE0B5 /* Pods_FindAFeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD06C81FCF692A4B3502C20 /* Pods_FindAFeedUITests.framework */; };
 		205A55B01F8436F200087A9B /* Links_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A55AF1F8436F200087A9B /* Links_VC.swift */; };
 		206297B61F7F594D00328DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206297B51F7F594D00328DAD /* AppDelegate.swift */; };
 		206297B81F7F594D00328DAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206297B71F7F594D00328DAD /* ViewController.swift */; };
@@ -29,7 +28,8 @@
 		20D8CE2B1FD744030032DE7A /* TabBar_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8CE2A1FD744030032DE7A /* TabBar_VC.swift */; };
 		20F8447D1F80B07900791B27 /* FilteredResults_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8447C1F80B07900791B27 /* FilteredResults_VC.swift */; };
 		20F8447F1F80B32900791B27 /* resultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8447E1F80B32900791B27 /* resultsTableViewCell.swift */; };
-		A1B586282F83CFA99C0DB746 /* Pods_DineWithoutDoshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9FF0E5EDD64C3FC45D0C79 /* Pods_DineWithoutDoshTests.framework */; };
+		5D28FF7A864C7B9B601B148A /* Pods_FindAFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C63EBEEEA333379AA8E51 /* Pods_FindAFeed.framework */; };
+		EBDB46131BA1BB408D225C78 /* Pods_FindAFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8D2450325640DBED8F42B9 /* Pods_FindAFeedTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040C63EBEEEA333379AA8E51 /* Pods_FindAFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindAFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		137B35F1B17C3EB8248D8BFC /* Pods-FindAFeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindAFeedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindAFeedTests/Pods-FindAFeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		205A55AF1F8436F200087A9B /* Links_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links_VC.swift; sourceTree = "<group>"; };
 		206297B21F7F594D00328DAD /* FindAFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindAFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		206297B51F7F594D00328DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,15 +79,13 @@
 		20D8CE2A1FD744030032DE7A /* TabBar_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar_VC.swift; sourceTree = "<group>"; };
 		20F8447C1F80B07900791B27 /* FilteredResults_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredResults_VC.swift; sourceTree = "<group>"; };
 		20F8447E1F80B32900791B27 /* resultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsTableViewCell.swift; sourceTree = "<group>"; };
-		26E544A26EA26793EA843B04 /* Pods-DineWithoutDosh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DineWithoutDosh.release.xcconfig"; path = "Pods/Target Support Files/Pods-DineWithoutDosh/Pods-DineWithoutDosh.release.xcconfig"; sourceTree = "<group>"; };
-		2F9FF0E5EDD64C3FC45D0C79 /* Pods_DineWithoutDoshTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DineWithoutDoshTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D6470F80741C5989D2EB68B /* Pods_DineWithoutDoshUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DineWithoutDoshUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4857FBBA011DA7FA4B13C06C /* Pods-DineWithoutDoshTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DineWithoutDoshTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DineWithoutDoshTests/Pods-DineWithoutDoshTests.release.xcconfig"; sourceTree = "<group>"; };
-		6A622FD09048DDF5C04EECB8 /* Pods_DineWithoutDosh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DineWithoutDosh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD35AB4486C7FB2C11D135E9 /* Pods-DineWithoutDoshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DineWithoutDoshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DineWithoutDoshTests/Pods-DineWithoutDoshTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D2B93374D46F41554AE666D7 /* Pods-DineWithoutDoshUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DineWithoutDoshUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DineWithoutDoshUITests/Pods-DineWithoutDoshUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E6CE0601B26B11ADB2C13059 /* Pods-DineWithoutDosh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DineWithoutDosh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DineWithoutDosh/Pods-DineWithoutDosh.debug.xcconfig"; sourceTree = "<group>"; };
-		FCB9357B2ED66CA4D5117D73 /* Pods-DineWithoutDoshUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DineWithoutDoshUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DineWithoutDoshUITests/Pods-DineWithoutDoshUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C86AB90DF33DE1CF6B02BE5 /* Pods-FindAFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindAFeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindAFeed/Pods-FindAFeed.release.xcconfig"; sourceTree = "<group>"; };
+		3C8D2450325640DBED8F42B9 /* Pods_FindAFeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindAFeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56ABFACBFA675F02C53D60A4 /* Pods-FindAFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindAFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindAFeed/Pods-FindAFeed.debug.xcconfig"; sourceTree = "<group>"; };
+		6DD06C81FCF692A4B3502C20 /* Pods_FindAFeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindAFeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A457BE20FA1B4D1473BB7FA /* Pods-FindAFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindAFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindAFeedTests/Pods-FindAFeedTests.release.xcconfig"; sourceTree = "<group>"; };
+		C57DBD69EF38F23C54EE6D4D /* Pods-FindAFeedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindAFeedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindAFeedUITests/Pods-FindAFeedUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E5740D787EC5828217D93E2A /* Pods-FindAFeedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindAFeedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindAFeedUITests/Pods-FindAFeedUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009CF880DFAFB1A050963345 /* Pods_DineWithoutDosh.framework in Frameworks */,
+				5D28FF7A864C7B9B601B148A /* Pods_FindAFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1B586282F83CFA99C0DB746 /* Pods_DineWithoutDoshTests.framework in Frameworks */,
+				EBDB46131BA1BB408D225C78 /* Pods_FindAFeedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F4CACAA893D7CA271675C8B /* Pods_DineWithoutDoshUITests.framework in Frameworks */,
+				178D77C18DA1C1D211EAE0B5 /* Pods_FindAFeedUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,9 +186,9 @@
 		70C46E7F5A8485DDAE009320 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A622FD09048DDF5C04EECB8 /* Pods_DineWithoutDosh.framework */,
-				2F9FF0E5EDD64C3FC45D0C79 /* Pods_DineWithoutDoshTests.framework */,
-				3D6470F80741C5989D2EB68B /* Pods_DineWithoutDoshUITests.framework */,
+				040C63EBEEEA333379AA8E51 /* Pods_FindAFeed.framework */,
+				3C8D2450325640DBED8F42B9 /* Pods_FindAFeedTests.framework */,
+				6DD06C81FCF692A4B3502C20 /* Pods_FindAFeedUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -196,12 +196,12 @@
 		A4649CFF50F6E82EB678FFAC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E6CE0601B26B11ADB2C13059 /* Pods-DineWithoutDosh.debug.xcconfig */,
-				26E544A26EA26793EA843B04 /* Pods-DineWithoutDosh.release.xcconfig */,
-				AD35AB4486C7FB2C11D135E9 /* Pods-DineWithoutDoshTests.debug.xcconfig */,
-				4857FBBA011DA7FA4B13C06C /* Pods-DineWithoutDoshTests.release.xcconfig */,
-				FCB9357B2ED66CA4D5117D73 /* Pods-DineWithoutDoshUITests.debug.xcconfig */,
-				D2B93374D46F41554AE666D7 /* Pods-DineWithoutDoshUITests.release.xcconfig */,
+				56ABFACBFA675F02C53D60A4 /* Pods-FindAFeed.debug.xcconfig */,
+				3C86AB90DF33DE1CF6B02BE5 /* Pods-FindAFeed.release.xcconfig */,
+				137B35F1B17C3EB8248D8BFC /* Pods-FindAFeedTests.debug.xcconfig */,
+				7A457BE20FA1B4D1473BB7FA /* Pods-FindAFeedTests.release.xcconfig */,
+				E5740D787EC5828217D93E2A /* Pods-FindAFeedUITests.debug.xcconfig */,
+				C57DBD69EF38F23C54EE6D4D /* Pods-FindAFeedUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -358,7 +358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DineWithoutDoshTests/Pods-DineWithoutDoshTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindAFeedTests/Pods-FindAFeedTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		429CD2246B31F01B570521D7 /* [CP] Embed Pods Frameworks */ = {
@@ -373,7 +373,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DineWithoutDoshUITests/Pods-DineWithoutDoshUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindAFeedUITests/Pods-FindAFeedUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5DAE92C32AFBE395D5FDB6B6 /* [CP] Check Pods Manifest.lock */ = {
@@ -387,7 +387,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DineWithoutDosh-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FindAFeed-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,7 +405,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DineWithoutDoshUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FindAFeedUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -418,13 +418,17 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FindAFeed/Pods-FindAFeed-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DineWithoutDosh/Pods-DineWithoutDosh-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindAFeed/Pods-FindAFeed-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA00EBC5F0E3D6002E4E77A7 /* [CP] Copy Pods Resources */ = {
@@ -439,7 +443,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DineWithoutDoshUITests/Pods-DineWithoutDoshUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindAFeedUITests/Pods-FindAFeedUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C3CDB91C5F48281741748216 /* [CP] Embed Pods Frameworks */ = {
@@ -448,7 +452,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DineWithoutDosh/Pods-DineWithoutDosh-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FindAFeed/Pods-FindAFeed-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -457,7 +461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DineWithoutDosh/Pods-DineWithoutDosh-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindAFeed/Pods-FindAFeed-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2E132A2E8FE6C0317F9C9C5 /* [CP] Embed Pods Frameworks */ = {
@@ -472,7 +476,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DineWithoutDoshTests/Pods-DineWithoutDoshTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindAFeedTests/Pods-FindAFeedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E1F1C760974AFBE809F44B44 /* [CP] Check Pods Manifest.lock */ = {
@@ -486,7 +490,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DineWithoutDoshTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FindAFeedTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -680,7 +684,7 @@
 		};
 		206297DB1F7F594D00328DAD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6CE0601B26B11ADB2C13059 /* Pods-DineWithoutDosh.debug.xcconfig */;
+			baseConfigurationReference = 56ABFACBFA675F02C53D60A4 /* Pods-FindAFeed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -701,7 +705,7 @@
 		};
 		206297DC1F7F594D00328DAD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26E544A26EA26793EA843B04 /* Pods-DineWithoutDosh.release.xcconfig */;
+			baseConfigurationReference = 3C86AB90DF33DE1CF6B02BE5 /* Pods-FindAFeed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -721,7 +725,7 @@
 		};
 		206297DE1F7F594D00328DAD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD35AB4486C7FB2C11D135E9 /* Pods-DineWithoutDoshTests.debug.xcconfig */;
+			baseConfigurationReference = 137B35F1B17C3EB8248D8BFC /* Pods-FindAFeedTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -738,7 +742,7 @@
 		};
 		206297DF1F7F594D00328DAD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4857FBBA011DA7FA4B13C06C /* Pods-DineWithoutDoshTests.release.xcconfig */;
+			baseConfigurationReference = 7A457BE20FA1B4D1473BB7FA /* Pods-FindAFeedTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -755,7 +759,7 @@
 		};
 		206297E11F7F594D00328DAD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCB9357B2ED66CA4D5117D73 /* Pods-DineWithoutDoshUITests.debug.xcconfig */;
+			baseConfigurationReference = E5740D787EC5828217D93E2A /* Pods-FindAFeedUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -771,7 +775,7 @@
 		};
 		206297E21F7F594D00328DAD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2B93374D46F41554AE666D7 /* Pods-DineWithoutDoshUITests.release.xcconfig */;
+			baseConfigurationReference = C57DBD69EF38F23C54EE6D4D /* Pods-FindAFeedUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

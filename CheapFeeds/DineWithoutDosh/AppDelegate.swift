@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -18,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
           UINavigationBar.appearance().shadowImage = UIImage()
+        
+        GMSServices.provideAPIKey("AIzaSyDvyecJWYEgWO5DQOEIJBaM2CaCJHzgIpo")
+        GMSPlacesClient.provideAPIKey("AIzaSyDvyecJWYEgWO5DQOEIJBaM2CaCJHzgIpo")
 
         //IQKeyboardManager.sharedManager().enable = true
         // Override point for customization after application launch.

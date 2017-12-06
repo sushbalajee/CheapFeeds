@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-DineWithoutDosh.xcscheme</key>
+		<key>Pods-FindAFeed.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-DineWithoutDoshTests.xcscheme</key>
+		<key>Pods-FindAFeedTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-DineWithoutDoshUITests.xcscheme</key>
+		<key>Pods-FindAFeedUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

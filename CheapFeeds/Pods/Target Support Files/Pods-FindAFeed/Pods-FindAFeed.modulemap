@@ -1,0 +1,6 @@
+framework module Pods_FindAFeed {
+  umbrella header "Pods-FindAFeed-umbrella.h"
+
+  export *
+  module * { export * }
+}

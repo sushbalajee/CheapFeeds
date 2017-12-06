@@ -114,12 +114,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
             if(hasNewLocation == false || newLatitude == 0.0 && newLongitude == 0.0){
             lats = location.coordinate.latitude
             longs = location.coordinate.longitude
-      
             }
             else if(hasNewLocation == true && newLatitude != 0.0 && newLongitude != 0.0){
             lats = newLatitude
             longs = newLongitude
-          
             }
             
             while stopTheGeo < 1 {
