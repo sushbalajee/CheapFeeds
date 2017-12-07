@@ -1227,7 +1227,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="39" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="w0t-XJ-h3G">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="752"/>
-                                                <mutableString key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
+                                                <string key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
 
 Features V1.3:
 
@@ -1249,7 +1249,7 @@ Having problems?
 
 If the restaurant results being presented to you are a bit far from your location, this may be because Zomato is not available in your region. Zomato is available in 10,000 cities across 24 countries. To check if this app can help you Find A Feed, go to www.zomato.com/newzealand
 
-For any other issues or enquiries please visit www.sushantbalajee.wixsite.com/findafeed</mutableString>
+For any other issues or enquiries please visit www.sushantbalajee.wixsite.com/findafeed</string>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
