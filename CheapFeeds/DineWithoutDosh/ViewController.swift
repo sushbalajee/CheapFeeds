@@ -245,9 +245,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
                     createAlert(title: "Warning", message: "No results matching your budget/cuisine. Try increasing your budget!")
                 }
             DestViewController.originLat = lats
-                print(lats)
             DestViewController.originLong = longs
-            print(longs)
             filteredAnyByCost.removeAll()
             }
         }
@@ -296,7 +294,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     /* API call and initialisation */
     func uploadData(changingURL: String, APIHeader: String){
         
-        let zomatoKey = ""//"d7aa15e105531ac1ece595a45666a3e8"
+        let zomatoKey = "d7aa15e105531ac1ece595a45666a3e8"
 
         let urlString = changingURL
         

@@ -17,8 +17,8 @@ class TabBar_VC: UITabBarController, UITabBarControllerDelegate{
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
-        let yourView = self.viewControllers![3] as! UINavigationController
-        yourView.popToRootViewController(animated: false)
+        //let yourView = self.viewControllers![2] as! UINavigationController
+        //yourView.popToRootViewController(animated: false)
         
         let yourView2 = self.viewControllers![1] as! UINavigationController
         yourView2.popToRootViewController(animated: false)

@@ -78,8 +78,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjT-4i-x19">
-                                <rect key="frame" x="24" y="22" width="327" height="34"/>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="24"/>
+                                <rect key="frame" x="24" y="22" width="327" height="42"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="30"/>
                                 <color key="textColor" red="0.3043900698" green="0.3043900698" blue="0.3043900698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,7 +92,7 @@
                                 </constraints>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d30-SY-brI">
-                                <rect key="frame" x="0.0" y="80.5" width="375" height="393"/>
+                                <rect key="frame" x="0.0" y="88.5" width="375" height="385"/>
                                 <connections>
                                     <segue destination="UmC-Kn-tMF" kind="embed" id="fwf-h9-nLB"/>
                                 </connections>
@@ -167,7 +167,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.094117647060000004" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lVE-95-qLf" secondAttribute="height" multiplier="75:13" id="H1E-ve-0wS"/>
                                     <constraint firstItem="Y3g-CN-HwP" firstAttribute="leading" secondItem="lVE-95-qLf" secondAttribute="leading" constant="63" id="HZa-Kx-pHV"/>
@@ -524,14 +524,14 @@
                                         <rect key="frame" x="15.5" y="7" width="343" height="54"/>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="30"/>
                                         <state key="normal" title="Press To Update Location">
-                                            <color key="titleColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" identifier="pushToCustom" id="WdN-3a-c1l"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.094117647060000004" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ohT-KI-7G0" secondAttribute="trailing" constant="16.5" id="Dk7-ev-hl9"/>
                                     <constraint firstItem="ohT-KI-7G0" firstAttribute="top" secondItem="RiF-nt-yXO" secondAttribute="top" constant="7" id="JYG-a1-VP3"/>
@@ -1227,7 +1227,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="39" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="w0t-XJ-h3G">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="752"/>
-                                                <string key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
+                                                <mutableString key="text">Find A Feed uses information from Zomato to find restaurants near your location. You must enter your budget in the text field provided, while choosing a cuisine is optional. 
 
 Features V1.3:
 
@@ -1247,9 +1247,9 @@ NOTE:
 
 Having problems?
 
-If the restaurant results being presented to you are a bit far from your location, this may be because Zomato is not available in your region. Zomato is avaiable in 10,000 cities across 24 countries. To check if this app can help you Find A Feed, go to www.zomato.com/newzealand
+If the restaurant results being presented to you are a bit far from your location, this may be because Zomato is not available in your region. Zomato is available in 10,000 cities across 24 countries. To check if this app can help you Find A Feed, go to www.zomato.com/newzealand
 
-For any other issues or enquiries please visit www.sushantbalajee.wixsite.com/findafeed</string>
+For any other issues or enquiries please visit www.sushantbalajee.wixsite.com/findafeed</mutableString>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1306,6 +1306,6 @@ For any other issues or enquiries please visit www.sushantbalajee.wixsite.com/fi
     <inferredMetricsTieBreakers>
         <segue reference="kVM-wv-6kY"/>
         <segue reference="FUI-aB-ZQo"/>
-        <segue reference="nPR-jR-d3n"/>
+        <segue reference="WdN-3a-c1l"/>
     </inferredMetricsTieBreakers>
 </document>
